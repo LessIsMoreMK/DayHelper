@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:DayHelper"
         mc:Ignorable="d"
         Title="Day Helper" Height="450" Width="800">
+
+    
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
@@ -19,8 +22,17 @@
 
         <Label Grid.Row="0" Grid.Column="0" 
                Content="{Binding Tekst}"/>
-        <Button Grid.Row="0" Grid.Column="1" 
-                Content="Button"
+        <Button Grid.Row="0" 
+                Grid.Column="1" 
+                Style="{StaticResource RedButton}"
+                FontFamily="{StaticResource FontAwesome}"
+                Content="{StaticResource FontAwesomeUserIcon}"      
                 Command="{Binding StartCommand}"/>
+
+        <TextBlock Grid.Row="1" 
+                   Grid.Column="0"
+                   Style="{StaticResource HeaderText}" 
+                   Text="Texttt" 
+                   />
     </Grid>
 </Window>
