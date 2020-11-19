@@ -18,3 +18,23 @@ C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.pdb
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Texts.baml
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\App.baml
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Buttons.baml
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\bin\Debug\DayHelper.exe.config
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\bin\Debug\DayHelper.exe
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\bin\Debug\DayHelper.pdb
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.csprojAssemblyReference.cache
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\Views\MainWindow.g.cs
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\App.g.cs
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper_MarkupCompile.cache
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper_MarkupCompile.lref
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\App.baml
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\Styles\Buttons.baml
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\Styles\Colors.baml
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\Styles\Fonts.baml
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\Styles\Texts.baml
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\Views\MainWindow.baml
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.g.resources
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.Properties.Resources.resources
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.GenerateResource.cache
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CoreCompileInputs.cache
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.exe
+C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.pdb

@@ -23,13 +23,13 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- Red Button -->
-    <Style TargetType="{x:Type Button}" x:Key="RedButton" BasedOn="{StaticResource Hoverless}">
-
+    <!-- Default Button -->
+    <Style TargetType="{x:Type Button}" x:Key="DefaultButton" BasedOn="{StaticResource Hoverless}">
+        <Setter Property="Background" Value="{StaticResource LightThemePrimaryBrush}" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="Red" />
-                <Setter Property="Foreground" Value="{StaticResource BackgroundLightBrush}" />
+                <Setter Property="Background" Value="{StaticResource LightThemePrimaryBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource LightThemeOnPrimaryBrush}" />
             </Trigger>
         </Style.Triggers>
 
