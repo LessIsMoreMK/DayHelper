@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
 namespace DayHelper
@@ -18,5 +20,13 @@ namespace DayHelper
         /// </summary>
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        /// <summary>
+        /// Call this to fire a <see cref="PropertyChanged"/> event with lambda
+        /// </summary>
+        protected virtual void OnPropertyChanged<T>(Expression<Func<T>> property)
+        {
+            string propertyName = ((MemberExpression)property.Body).Member.Name;
+            OnPropertyChanged(propertyName);
+        }
     }
 }

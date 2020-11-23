@@ -38,3 +38,4 @@ C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CoreCompileInputs.cache
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.exe
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.pdb
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\GeneratedInternalTypeHelper.g.cs
