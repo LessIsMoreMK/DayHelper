@@ -15,8 +15,13 @@
     <system:Double x:Key="FontSizeLarge">20</system:Double>
     <system:Double x:Key="FontSizeVeryLarge">30</system:Double>
 
+
     <system:String x:Key="FontAwesomeMinimize">&#xf2d1;</system:String>
     <system:String x:Key="FontAwesomeMaximize">&#xf2d0;</system:String>
     <system:String x:Key="FontAwesomeRestore">&#xf2d2;</system:String>
     <system:String x:Key="FontAwesomeCancel">&#xf00d;</system:String>
+    <system:String x:Key="FontAwesomeUserIcon">&#xf007;</system:String>
+    <system:String x:Key="FontAwesomeCalendarIcon">&#xf073;</system:String>
+    <system:String x:Key="FontAwesomeMenuIcon">&#xf0c9;</system:String>
+    <system:String x:Key="FontAwesomeHeartIcon">&#xf004;</system:String>
 </ResourceDictionary>
