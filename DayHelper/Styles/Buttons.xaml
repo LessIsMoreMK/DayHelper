@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:DayHelper">
+    
     <ResourceDictionary.MergedDictionaries>
         <!-- Order is important -->
         <ResourceDictionary Source="Colors.xaml"/>
@@ -23,6 +24,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <!-- Default Button -->
     <Style TargetType="{x:Type Button}" x:Key="DefaultButton" BasedOn="{StaticResource Hoverless}">
         <Setter Property="Background" Value="{StaticResource LightThemePrimaryBrush}" />
@@ -32,8 +34,39 @@
                 <Setter Property="Foreground" Value="{StaticResource LightThemeOnPrimaryBrush}" />
             </Trigger>
         </Style.Triggers>
-
     </Style>
+    
+    <!-- Round Button -->
+    <Style x:Key="RoundedButton" TargetType="{x:Type Button}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="button" CornerRadius="30" BorderThickness="0" Background="{StaticResource LightThemePrimaryBrush}">
+                            <TextBlock Text="{TemplateBinding Button.Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="button" Property="Background"  Value="{StaticResource LightThemePrimaryBrush}"/>
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="button"  Property="Background" Value="Green"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="button" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="button" Property="Opacity" Value="0.7" />
+                                <Setter Property="Foreground" Value="Gray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
 
 
 </ResourceDictionary>

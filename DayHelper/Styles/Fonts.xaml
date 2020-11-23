@@ -14,4 +14,7 @@
     <system:Double x:Key="FontSizeVeryLarge">30</system:Double>
 
     <system:String x:Key="FontAwesomeUserIcon">&#xf007;</system:String>
+    <system:String x:Key="FontAwesomeCalendarIcon">&#xf073;</system:String>
+    <system:String x:Key="FontAwesomeMenuIcon">&#xf0c9;</system:String>
+    <system:String x:Key="FontAwesomeHeartIcon">&#xf004;</system:String>
 </ResourceDictionary>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Day Helper" Height="450" Width="800">
 
-    
+
     <!-- MAIN GRID -->
     <Grid Background="{StaticResource LightThemeBackgroundBrush}">
         <Grid.RowDefinitions>
@@ -25,43 +25,34 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                
-                <Label Grid.Row="0"
-               Content="asdasd{Binding Tekst}"
-               Background="{StaticResource LightThemeSurfaceBrush}"/>
 
-<<<<<<< HEAD
-                <Button Grid.Row="1" 
-                Grid.Column="0" 
-                Style="{StaticResource DefaultButton}"
-=======
-        <Label Grid.Row="0" Grid.Column="0" 
-               Content="{Binding Tekst}"/>
-        
-        <Button Grid.Row="0" 
-                Grid.Column="1" 
-                Style="{StaticResource RedButton}"
->>>>>>> 9ce6381 (Borys)
+
+                <Label Content="Username" Grid.Row="0"/>
+                <Label Content="{StaticResource FontAwesomeMenuIcon}" Grid.Row="1"/>
+                <Button Content="{StaticResource FontAwesomeCalendarIcon}" Grid.Row="1" FontSize="30"/>
+                <Label Content="Listy" Grid.Row="2"/>
+                <Label Content="Pomodoro" Grid.Row="3"/>
+                <Label Content="Ukończone" Grid.Row="4"/>
+                <Label Content="Kosz" Grid.Row="5"/>
+
+                <Button Grid.Row="6"
+                Style="{StaticResource RoundedButton}"
                 FontFamily="{StaticResource FontAwesome}"
-                Content="{StaticResource FontAwesomeUserIcon}"
-                Command="{Binding StartCommand}"/>
+                Content="{StaticResource FontAwesomeCalendarIcon}"
+                Command="{Binding StartCommand}"
+                Width="50"
+                HorizontalAlignment="right"/>
 
-                <TextBlock Grid.Row="2" 
-                   Grid.Column="0"
-                   Style="{StaticResource HeaderText}" 
-<<<<<<< HEAD
-                   Text="Texttt" 
-                   Background="{StaticResource LightThemeSurfaceBrush}"/>
             </Grid>
- 
+
         </Grid>
-        
-  
-=======
-                   Text="Texttt" />
->>>>>>> 9ce6381 (Borys)
+
     </Grid>
 </Window>
