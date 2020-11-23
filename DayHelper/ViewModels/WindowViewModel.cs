@@ -115,11 +115,12 @@ namespace DayHelper
         /// </summary>
         private Point GetMousePosition()
         {
-            // Position of the mouse relative to the window
             var position = Mouse.GetPosition(mWindow);
 
-            // Add the window position so its a "ToScreen"
-            return new Point(position.X + mWindow.Left, position.Y + mWindow.Top);
+            if (Application.Current.MainWindow.WindowState == WindowState.Normal)
+                return new Point(position.X + mWindow.Left, position.Y + mWindow.Top);
+            else
+                return new Point(position.X, position.Y);
         }
 
         #endregion
