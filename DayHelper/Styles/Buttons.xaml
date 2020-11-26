@@ -36,13 +36,13 @@
         <Setter Property="FontFamily" Value="{StaticResource FontAwesome}"/>
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Padding" Value="5 0 5 0"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Foreground" Value="{StaticResource LightThemePrimaryBrush}" />
 
         <Setter Property="LayoutTransform">
             <Setter.Value>
-                <ScaleTransform ScaleX="1.5" />
+                <ScaleTransform ScaleX="1.7" ScaleY="1.7"/>
             </Setter.Value>
         </Setter>
 
@@ -61,7 +61,8 @@
 
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource LightThemeOnBackgroundBrush}" />
+                <Setter Property="Background" Value="{StaticResource LightThemePrimaryBrush}" />
+                <Setter Property="Foreground" Value="{Binding OnSurfaceBrush}"/>
             </Trigger>
         </Style.Triggers>
 
@@ -70,11 +71,11 @@
     
     <!-- Default Button -->
     <Style TargetType="{x:Type Button}" x:Key="DefaultButton" BasedOn="{StaticResource Hoverless}">
-        <Setter Property="Background" Value="{StaticResource LightThemePrimaryBrush}" />
+        <Setter Property="Background" Value="Transparent" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{StaticResource LightThemePrimaryBrush}" />
-                <Setter Property="Foreground" Value="{StaticResource LightThemeOnPrimaryBrush}" />
+                <Setter Property="Foreground" Value="{Binding OnSurfaceBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -91,10 +92,10 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="button" Property="Background"  Value="{StaticResource LightThemePrimaryBrush}"/>
-                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Foreground" Value="{Binding OnPrimaryBrush}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="button"  Property="Background" Value="Green"/>
+                                <Setter TargetName="button"  Property="Background" Value="{StaticResource LightThemePrimaryBrush}"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
                                 <Setter TargetName="button" Property="BorderBrush" Value="#FF282828" />

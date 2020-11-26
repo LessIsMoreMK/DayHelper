@@ -21,19 +21,27 @@ namespace DayHelper
         /// </summary>
         private int mWindowRadius = 15;
 
-        private Brush backgroundBrush = Brushes.White;
-        private Color surfaceBrush;
-        private Color primaryBrush;
-        private Color secondaryBrush;
-        private Color onBackgroundBrush;
-        private Color onSurfaceBrush;
-        private Color onPrimaryBrush;
-        private Color onSecondaryBrush;
+        #region BRUSHES FIELDS
+        /// <summary>
+        /// BRUSHES
+        /// </summary>
+        private Brush backgroundBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
+        private Brush surfaceBrush = new BrushConverter().ConvertFromString("#ccc5b9") as SolidColorBrush;
+        private Brush primaryBrush = new BrushConverter().ConvertFromString("#eb5e28") as SolidColorBrush;
+        private Brush secondaryBrush = new BrushConverter().ConvertFromString("#219ebc") as SolidColorBrush;
+        private Brush onBackgroundBrush = new BrushConverter().ConvertFromString("#403d39") as SolidColorBrush;
+        private Brush onSurfaceBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
+        private Brush onPrimaryBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
+        private Brush onSecondaryBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
+        #endregion
 
         #endregion
 
         #region Public Properties
+
         public bool lightTheme = true;
+
+
         /// <summary>
         /// The size of the resize border around the window
         /// </summary>
@@ -63,6 +71,7 @@ namespace DayHelper
         /// </summary>
         public int TitleHeight { get; set; } = 42;
 
+        #region BRUSHES PROPERTIES
         /// <summary>
         /// Background brush property
         /// </summary>
@@ -78,8 +87,7 @@ namespace DayHelper
                 OnPropertyChanged("BackgroundBrush");
             }
         }
-
-        public Color SurfaceBrush
+        public Brush SurfaceBrush
         {
             get
             {
@@ -91,8 +99,7 @@ namespace DayHelper
                 OnPropertyChanged("SurfaceBrush");
             }
         }
-
-        public Color PrimaryBrush
+        public Brush PrimaryBrush
         {
             get
             {
@@ -104,6 +111,68 @@ namespace DayHelper
                 OnPropertyChanged("PrimaryBrush");
             }
         }
+        public Brush SecondaryBrush
+        {
+            get
+            {
+                return secondaryBrush;
+            }
+            set
+            {
+                secondaryBrush = value;
+                OnPropertyChanged("SecondaryBrush");
+            }
+        }
+        public Brush OnBackgroundBrush
+        {
+            get
+            {
+                return onBackgroundBrush;
+            }
+            set
+            {
+                onBackgroundBrush = value;
+                OnPropertyChanged("OnBackgroundBrush");
+            }
+        }
+        public Brush OnSurfaceBrush
+        {
+            get
+            {
+                return onSurfaceBrush;
+            }
+            set
+            {
+                onSurfaceBrush = value;
+                OnPropertyChanged("OnSurfaceBrush");
+            }
+        }
+        public Brush OnPrimaryBrush
+        {
+            get
+            {
+                return onPrimaryBrush;
+            }
+            set
+            {
+                onPrimaryBrush = value;
+                OnPropertyChanged("OnPrimaryBrush");
+            }
+        }
+        public Brush OnSecondaryBrush
+        {
+            get
+            {
+                return onSecondaryBrush;
+            }
+            set
+            {
+                onSecondaryBrush = value;
+                OnPropertyChanged("OnSecondaryBrush");
+            }
+        }
+        #endregion
+
         #endregion
 
         #region Commands
@@ -128,7 +197,11 @@ namespace DayHelper
         /// </summary>
         public ICommand MenuCommand { get; set; }
 
+        /// <summary>
+        /// The command to change the color palette
+        /// </summary>
         public ICommand ThemeChangeCommand { get; set; }
+
         #endregion
 
         #region Constructor
@@ -153,36 +226,47 @@ namespace DayHelper
             MaximizeCommand = new RelayCommand(() => mWindow.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => mWindow.Close());
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(mWindow, GetMousePosition()));
-
             ThemeChangeCommand = new RelayCommand(() => ChangeTheme());
+
             // Fix window resize issue
             var resizer = new WindowResizer(mWindow);
 
+            // Light/Dark theme indicator
+            bool lightTheme = true;
+    }
 
-        }
+    #endregion
 
-        #endregion
-
-        #region Methods
-        /// <summary>
-        /// Change theme Method
-        /// </summary>
-        /// <returns></returns>
-        public void ChangeTheme()
+    #region Methods
+    /// <summary>
+    /// CHANGE THEME METHOD
+    /// </summary>
+    public void ChangeTheme()
         {
             if (lightTheme == true)
             {
-                BackgroundBrush = Brushes.Gray;
-                SurfaceBrush = (Color)ColorConverter.ConvertFromString("#403d39");
-                PrimaryBrush = (Color)ColorConverter.ConvertFromString("#eb5e28");
+                BackgroundBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
+                SurfaceBrush = new BrushConverter().ConvertFromString("#403d39") as SolidColorBrush;
+                PrimaryBrush = new BrushConverter().ConvertFromString("#eb5e28") as SolidColorBrush;
+                SecondaryBrush = new BrushConverter().ConvertFromString("#219ebc") as SolidColorBrush;
+                OnBackgroundBrush = new BrushConverter().ConvertFromString("#ccc5b9") as SolidColorBrush;
+                OnSurfaceBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
+                OnPrimaryBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
+                OnSecondaryBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
 
                 lightTheme = false;
             }
             else
             {
-                BackgroundBrush = Brushes.White;
-                SurfaceBrush = (Color)ColorConverter.ConvertFromString("#ccc5b9");
-                PrimaryBrush = (Color)ColorConverter.ConvertFromString("#eb5e28");
+                BackgroundBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
+                SurfaceBrush = new BrushConverter().ConvertFromString("#ccc5b9") as SolidColorBrush;
+                PrimaryBrush = new BrushConverter().ConvertFromString("#eb5e28") as SolidColorBrush;
+                SecondaryBrush = new BrushConverter().ConvertFromString("#219ebc") as SolidColorBrush;
+                OnBackgroundBrush = new BrushConverter().ConvertFromString("#403d39") as SolidColorBrush;
+                OnSurfaceBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
+                OnPrimaryBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
+                OnSecondaryBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
+
                 lightTheme = true;
             }
         }

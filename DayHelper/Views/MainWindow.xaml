@@ -11,13 +11,14 @@
         Title="Day Helper" 
         Height="450" Width="800">
 
+
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
                         <!-- Main window outline -->
-                        <Grid Background="{DynamicResource LightThemeBackgroundBrush}">
+                        <Grid Background="{Binding BackgroundBrush}">
                             <!-- Window border-->
                             <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
                                     BorderThickness="0"
@@ -27,92 +28,98 @@
                             <!-- The main window content -->
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <!-- Title Bar -->
-
-
-                                    <!-- Underline -->
-                                    <!--<RowDefinition Height="Auto"/>-->
-
                                     <!-- Window Content -->
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-
-                                <Border Grid.Row="1" Height="1" BorderThickness="0 0.5 0 0">
-                                    <!--Underline-->
-                                    <Border.BorderBrush>
-                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                            <GradientStop Color="{StaticResource DarkThemeSecondary}" Offset="0.2"/>
-                                            <GradientStop Color="{StaticResource DarkThemePrimary}" Offset="0.5"/>
-                                            <GradientStop Color="{StaticResource DarkThemeSecondary}" Offset="1"/>
-                                        </LinearGradientBrush>
-                                    </Border.BorderBrush>
-                                </Border>
 
 
                                 <!-- Main Content -->
                                 <Grid Grid.Row="2">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="0.1*"/>
-                                        <RowDefinition Height="0.8*"/>
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="160"/>
                                         <ColumnDefinition Width="2*"/>
                                         <ColumnDefinition Width="2*"/>
                                     </Grid.ColumnDefinitions>
 
                                     <!-- SIDE MENU GRID -->
                                     <Grid Grid.Column="0" 
-                                          Background="{DynamicResource LightThemeSurfaceBrush}" 
+                                          Background="{Binding SurfaceBrush}"
                                           Grid.RowSpan="2">
                                         <Grid>
                                             <Grid.RowDefinitions>
+                                                <RowDefinition Height="100"/>
+                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="50"/>
                                                 <RowDefinition Height="*"/>
-                                                <RowDefinition Height="40"/>
-                                                <RowDefinition Height="40"/>
-                                                <RowDefinition Height="40"/>
-                                                <RowDefinition Height="40"/>
-                                                <RowDefinition Height="40"/>
-                                                <RowDefinition Height="40"/>
-                                                <RowDefinition/>
+                                                <RowDefinition Height="65"/>
                                             </Grid.RowDefinitions>
 
-
-                                            <Label Content="LOGO" Grid.Row="0"/>
-                                            <Label Content="{StaticResource FontAwesomeMenuIcon}" Grid.Row="1"/>
-                                            <Button Content="{StaticResource FontAwesomeCalendarIcon}" Grid.Row="1" FontSize="30"/>
-                                            <Label Content="Listy" Grid.Row="2"/>
-                                            <Label Content="Pomodoro" Grid.Row="3"/>
-                                            <Label Content="Ukończone" Grid.Row="4"/>
-                                            <Label Content="Kosz" Grid.Row="5"/>
-
-                                            <Button Grid.Row="7"
-                                            Style="{StaticResource RoundedButton}"
-                                            FontFamily="{StaticResource FontAwesome}"
-                                            Content="{StaticResource FontAwesomeCalendarIcon}"
-                                            Command="{Binding ThemeChangeCommand}"
-                                            Width="40"
-                                            Height="40"
-                                            HorizontalAlignment="Left"
-                                            VerticalAlignment="Bottom"/>
+                                            <!-- SIDE MENU LOGO -->
+                                            <Button Content="Logo" Style="{StaticResource DefaultButton}" />
+                                            
+                                            <!-- SIDE MENU BUTTONS -->
+                                            <Button Content="{StaticResource FontAwesomeUserIcon}" Grid.Row="1" FontSize="30" Style="{StaticResource DefaultButton}"/>
+                                            <Button Content="Listy" Style="{StaticResource DefaultButton}" Grid.Row="2" />
+                                            <Button Content="Pomodoro" Style="{StaticResource DefaultButton}" Grid.Row="3"/>
+                                            <Button Content="Ukończone" Style="{StaticResource DefaultButton}" Grid.Row="4"/>
+                                            <Button Content="Kosz" Style="{StaticResource DefaultButton}" Grid.Row="5"/>
 
                                             
+                                            <!-- Change theme button -->
+                                            <StackPanel Orientation="Horizontal" Grid.Row="7" HorizontalAlignment="Center">
+
+                                                <Button Margin="0 0 10 0"
+                                                Style="{StaticResource RoundedButton}"
+                                                FontFamily="{StaticResource FontAwesome}"
+                                                FontSize="{StaticResource FontSizeLarge}"
+                                                Content="{StaticResource FontAwesomeUserIcon}"
+                                                Command="{Binding ThemeChangeCommand}"
+                                                Width="40"
+                                                Height="40"/>
+
+                                                <Button
+                                                Style="{StaticResource RoundedButton}"
+                                                FontFamily="{StaticResource FontAwesome}"
+                                                FontSize="{StaticResource FontSizeLarge}"
+                                                Content="{StaticResource FontAwesomeHeartIcon}"
+                                                Command="{Binding ThemeChangeCommand}"
+                                                Width="40"
+                                                Height="40"/>
+                                                
+                                                <Button Margin="10 0 0 0"
+                                                Style="{StaticResource RoundedButton}"
+                                                FontFamily="{StaticResource FontAwesome}"
+                                                FontSize="{StaticResource FontSizeLarge}"
+                                                Content="{StaticResource FontAwesomeMenuIcon}"
+                                                Width="40"
+                                                Height="40"/>
+                                                
+                                            </StackPanel>
+
                                         </Grid>
                                     </Grid>
 
                                     
                                     <!-- TITLE BAR -->
                                     <Grid Grid.Column="1" Grid.ColumnSpan="2">
-                                        <Grid Background="{DynamicResource LightThemeOnBackgroundBrush}">
-
+                                        <Grid Background="{Binding OnBackgroundBrush}">
                                             <Grid.ColumnDefinitions>
-                                                <!-- Icon -->
-                                                <!--<ColumnDefinition Width="auto"/>-->
                                                 <!-- Title -->
                                                 <ColumnDefinition Width="*"/>
                                                 <!-- Windows Buttons -->
                                                 <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50"/>
+                                            </Grid.RowDefinitions>
 
                                             <!-- Icon -->
                                             <!--<Button Style="{StaticResource SystemIconButton}" 
@@ -122,14 +129,27 @@
 
                                             <!-- Title -->
                                             <Viewbox Grid.Column="0" 
-                                             Grid.ColumnSpan="3" 
+                                             Grid.ColumnSpan="2" 
                                              Margin="5">
-                                                <TextBlock FontSize="{StaticResource FontSizeSmall}"
+                                                <Label FontSize="{StaticResource FontSizeSmall}"
                                                    FontFamily="{StaticResource CinzelDecorative}"
-                                                   Foreground="{StaticResource DarkThemePrimaryBrush}"
+                                                   Foreground="{Binding PrimaryBrush}"
                                                    Margin="0,0,0,0" 
-                                                   Text="DayHelper"/>
+                                                   Content="DayHelper"/>
                                             </Viewbox>
+
+
+                                            <!--Underline-->
+                                            <Border Grid.Column="0" Grid.ColumnSpan="2" Height="2" BorderThickness="0 1 0 0" VerticalAlignment="Bottom">
+                                                <Border.BorderBrush>
+                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                        <GradientStop Color="{StaticResource DarkThemeSecondary}" Offset="0.2"/>
+                                                        <GradientStop Color="{StaticResource DarkThemePrimary}" Offset="0.5"/>
+                                                        <GradientStop Color="{StaticResource DarkThemeSecondary}" Offset="1"/>
+                                                    </LinearGradientBrush>
+                                                </Border.BorderBrush>
+                                            </Border>
+
 
                                             <!-- Window Buttons -->
                                             <StackPanel Grid.Column="2" Orientation="Horizontal">
@@ -143,13 +163,11 @@
                                                 Style="{StaticResource WindowControlButton}" 
                                                 Content="{StaticResource FontAwesomeCancel}"/>
                                             </StackPanel>
+
+
+
+
                                         </Grid>
-
-                                    </Grid>
-                                    <Grid Grid.Column="1" Grid.Row="1" Background="{Binding BackgroundBrush}">
-
-                                        <Button Style="{StaticResource Hoverless}" Background="{Binding BackgroundBrush}" Content="aa"/>
-
                                     </Grid>
                                 </Grid>
                             </Grid>
