@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:DayHelper">
 
     <Style TargetType="{x:Type TextBlock}" x:Key="HeaderText">
-        <Setter Property="Foreground" Value="{StaticResource LightThemeBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundMainBrush}"/>
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}"/>
         <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
         <Setter Property="VerticalAlignment" Value="Center"/>

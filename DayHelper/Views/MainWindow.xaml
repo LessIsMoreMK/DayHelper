@@ -17,7 +17,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
                         <!-- Main window outline -->
-                        <Grid Background="{StaticResource DarkThemeBackgroundBrush}">
+                        <Grid Background="{DynamicResource BackgroundMainBrush}">
                             <!-- Window border-->
                             <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
                                     BorderThickness="0"
@@ -37,7 +37,7 @@
 
                                 <!-- Title Bar -->
                                 <Grid Grid.Column="0"
-                                      Background="{StaticResource DarkThemeBackgroundBrush}">
+                                      Background="{DynamicResource BackgroundMainBrush}">
 
                                     <Grid.ColumnDefinitions>
                                         <!-- Icon -->
@@ -60,7 +60,7 @@
                                              Margin="5">
                                         <TextBlock FontSize="{StaticResource FontSizeSmall}"
                                                    FontFamily="{StaticResource CinzelDecorative}"
-                                                   Foreground="{StaticResource DarkThemePrimaryBrush}"
+                                                   Foreground="{DynamicResource PrimaryBrush}"
                                                    Margin="0,0,0,0" 
                                                    Text="DayHelper"/>
                                     </Viewbox>
@@ -83,9 +83,9 @@
                                     <!--Underline-->
                                     <Border.BorderBrush>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                            <GradientStop Color="{StaticResource DarkThemeSecondary}" Offset="0.2"/>
-                                            <GradientStop Color="{StaticResource DarkThemePrimary}" Offset="0.5"/>
-                                            <GradientStop Color="{StaticResource DarkThemeSecondary}" Offset="1"/>
+                                            <GradientStop Color="{DynamicResource Secondary}" Offset="0.2"/>
+                                            <GradientStop Color="{DynamicResource Primary}" Offset="0.5"/>
+                                            <GradientStop Color="{DynamicResource Secondary}" Offset="1"/>
                                         </LinearGradientBrush>
                                     </Border.BorderBrush>
                                 </Border>
@@ -105,12 +105,13 @@
 
                                     <!-- SIDE MENU GRID -->
                                     <Grid Grid.Column="0" 
-                                          Background="{StaticResource LightThemeSurfaceBrush}" 
+                                          Background="{DynamicResource ForegroundThreeBrush}" 
                                           Grid.RowSpan="2">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="50"/>
                                                 <RowDefinition Height="2*"/>
+                                                <RowDefinition/>
                                                 <RowDefinition/>
                                                 <RowDefinition/>
                                                 <RowDefinition/>
@@ -132,6 +133,13 @@
                                             FontFamily="{StaticResource FontAwesome}"
                                             Content="{StaticResource FontAwesomeCalendarIcon}"
                                             Command="{Binding StartCommand}"
+                                            Width="50"
+                                            HorizontalAlignment="right"/>
+                                            <Button Grid.Row="7"
+                                            Style="{StaticResource RoundedButton}"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Content="{StaticResource FontAwesomeCalendarIcon}"
+                                            Command="{Binding ThemeCommand}"
                                             Width="50"
                                             HorizontalAlignment="right"/>
                                         </Grid>

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DayHelper
@@ -19,6 +20,11 @@ namespace DayHelper
         /// The radius of the edges of the window
         /// </summary>
         private int mWindowRadius = 15;
+
+        /// <summary>
+        /// Flag indicating theme style(true-dark)
+        /// </summary>
+        private bool theme = true;
 
         #endregion
 
@@ -77,6 +83,10 @@ namespace DayHelper
         /// </summary>
         public ICommand MenuCommand { get; set; }
 
+        /// <summary>
+        /// The command to switch theme
+        /// </summary>
+        public ICommand ThemeCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -101,6 +111,7 @@ namespace DayHelper
             MaximizeCommand = new RelayCommand(() => mWindow.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => mWindow.Close());
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(mWindow, GetMousePosition()));
+            ThemeCommand = new RelayCommand(ChangeTheme);
 
             // Fix window resize issue
             var resizer = new WindowResizer(mWindow);
@@ -110,9 +121,21 @@ namespace DayHelper
 
         #region Private Helpers
 
-        /// <summary>
-        /// Gets the current mouse position on the screen
-        /// </summary>
+        private void ChangeTheme()
+        {
+            var app = App.Current as App;
+            if(theme)
+            {
+                app.ChangeTheme(new Uri(@"/Styles/ColorsLight.xaml", UriKind.Relative));
+                theme = false;
+            }
+            else
+            {
+                app.ChangeTheme(new Uri(@"/Styles/ColorsDark.xaml", UriKind.Relative));
+                theme = true;
+            }
+        }
+
         private Point GetMousePosition()
         {
             var position = Mouse.GetPosition(mWindow);

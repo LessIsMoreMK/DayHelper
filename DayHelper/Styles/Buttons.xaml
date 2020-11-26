@@ -4,7 +4,7 @@
     
     <ResourceDictionary.MergedDictionaries>
         <!-- Order is important -->
-        <ResourceDictionary Source="Colors.xaml"/>
+        <ResourceDictionary Source="ColorsDark.xaml"/>
         <ResourceDictionary Source="Fonts.xaml"/>
         <ResourceDictionary Source="Texts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
@@ -38,7 +38,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Padding" Value="8"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="Foreground" Value="{StaticResource LightThemePrimaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
 
         <Setter Property="LayoutTransform">
             <Setter.Value>
@@ -61,7 +61,7 @@
 
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource LightThemeOnBackgroundBrush}" />
+                <Setter Property="Background" Value="{DynamicResource ForegroundTwoBrush}" />
             </Trigger>
         </Style.Triggers>
 
@@ -70,11 +70,11 @@
     
     <!-- Default Button -->
     <Style TargetType="{x:Type Button}" x:Key="DefaultButton" BasedOn="{StaticResource Hoverless}">
-        <Setter Property="Background" Value="{StaticResource LightThemePrimaryBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource LightThemePrimaryBrush}" />
-                <Setter Property="Foreground" Value="{StaticResource LightThemeOnPrimaryBrush}" />
+                <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource BackgroundMainBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -85,12 +85,12 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="button" CornerRadius="30" BorderThickness="0" Background="{StaticResource LightThemePrimaryBrush}">
+                        <Border x:Name="button" CornerRadius="30" BorderThickness="0" Background="{DynamicResource PrimaryBrush}">
                             <TextBlock Text="{TemplateBinding Button.Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="button" Property="Background"  Value="{StaticResource LightThemePrimaryBrush}"/>
+                                <Setter TargetName="button" Property="Background"  Value="{DynamicResource PrimaryBrush}"/>
                                 <Setter Property="Foreground" Value="White" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
@@ -109,8 +109,4 @@
             </Setter>
         </Style.Setters>
     </Style>
-
-
-
->>>>>>> origin/master
 </ResourceDictionary>
