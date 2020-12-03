@@ -6,7 +6,6 @@ C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\MainWindow.g.cs
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\App.g.cs
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper_MarkupCompile.cache
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper_MarkupCompile.lref
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Colors.baml
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Fonts.baml
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\MainWindow.baml
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.g.resources
@@ -39,3 +38,5 @@ C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.exe
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.pdb
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\ColorsLight.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\ColorsDark.baml

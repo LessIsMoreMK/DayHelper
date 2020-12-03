@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DayHelper">
+
+    <Color x:Key="BackgroundMain">#252422</Color>
+    <SolidColorBrush x:Key="BackgroundMainBrush" Color="{StaticResource BackgroundMain}"/>
+
+    <Color x:Key="Primary">#eb5e28</Color>
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
+
+    <Color x:Key="Secondary">#219ebc</Color>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
+
+    <Color x:Key="Foreground">#fffcf2</Color>
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource Foreground}"/>
+
+    <Color x:Key="ForegroundOne">#252422</Color>
+    <SolidColorBrush x:Key="ForegroundOneBrush" Color="{StaticResource ForegroundOne}"/>
+
+    <Color x:Key="ForegroundTwo">#403d39</Color>
+    <SolidColorBrush x:Key="ForegroundTwoBrush" Color="{StaticResource ForegroundTwo}"/>
+
+    <Color x:Key="ForegroundThree">#ccc5b9</Color>
+    <SolidColorBrush x:Key="ForegroundThreeBrush" Color="{StaticResource ForegroundThree}"/>
+
+    <Color x:Key="ForegroundFour">#252422</Color>
+    <SolidColorBrush x:Key="ForegroundFourBrush" Color="{StaticResource ForegroundFour}"/>
+
+</ResourceDictionary>

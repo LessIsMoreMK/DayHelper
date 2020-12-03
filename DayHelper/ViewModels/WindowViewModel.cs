@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace DayHelper
 {
@@ -21,31 +21,19 @@ namespace DayHelper
         /// </summary>
         private int mWindowRadius = 15;
 
-        #region BRUSHES FIELDS
         /// <summary>
-        /// BRUSHES
+        /// Flag indicating theme style(true-dark)
         /// </summary>
-        private Brush backgroundBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
-        private Brush surfaceBrush = new BrushConverter().ConvertFromString("#ccc5b9") as SolidColorBrush;
-        private Brush primaryBrush = new BrushConverter().ConvertFromString("#eb5e28") as SolidColorBrush;
-        private Brush secondaryBrush = new BrushConverter().ConvertFromString("#219ebc") as SolidColorBrush;
-        private Brush onBackgroundBrush = new BrushConverter().ConvertFromString("#403d39") as SolidColorBrush;
-        private Brush onSurfaceBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
-        private Brush onPrimaryBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
-        private Brush onSecondaryBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
-        #endregion
+        private bool theme = true;
 
         #endregion
 
         #region Public Properties
 
-        public bool lightTheme = true;
-
-
         /// <summary>
         /// The size of the resize border around the window
         /// </summary>
-        public int ResizeBorder { get; set; } = 6;
+        public int ResizeBorder => mWindow.WindowState == WindowState.Maximized ? 0 : 6;
 
         /// <summary>
         /// The size of the resize border around the window
@@ -70,108 +58,6 @@ namespace DayHelper
         /// The height of the title bar / caption of the window
         /// </summary>
         public int TitleHeight { get; set; } = 42;
-
-        #region BRUSHES PROPERTIES
-        /// <summary>
-        /// Background brush property
-        /// </summary>
-        public Brush BackgroundBrush
-        {
-            get 
-            { 
-                return backgroundBrush; 
-            }
-            set 
-            {
-                backgroundBrush = value;
-                OnPropertyChanged("BackgroundBrush");
-            }
-        }
-        public Brush SurfaceBrush
-        {
-            get
-            {
-                return surfaceBrush;
-            }
-            set
-            {
-                surfaceBrush = value;
-                OnPropertyChanged("SurfaceBrush");
-            }
-        }
-        public Brush PrimaryBrush
-        {
-            get
-            {
-                return primaryBrush;
-            }
-            set
-            {
-                primaryBrush = value;
-                OnPropertyChanged("PrimaryBrush");
-            }
-        }
-        public Brush SecondaryBrush
-        {
-            get
-            {
-                return secondaryBrush;
-            }
-            set
-            {
-                secondaryBrush = value;
-                OnPropertyChanged("SecondaryBrush");
-            }
-        }
-        public Brush OnBackgroundBrush
-        {
-            get
-            {
-                return onBackgroundBrush;
-            }
-            set
-            {
-                onBackgroundBrush = value;
-                OnPropertyChanged("OnBackgroundBrush");
-            }
-        }
-        public Brush OnSurfaceBrush
-        {
-            get
-            {
-                return onSurfaceBrush;
-            }
-            set
-            {
-                onSurfaceBrush = value;
-                OnPropertyChanged("OnSurfaceBrush");
-            }
-        }
-        public Brush OnPrimaryBrush
-        {
-            get
-            {
-                return onPrimaryBrush;
-            }
-            set
-            {
-                onPrimaryBrush = value;
-                OnPropertyChanged("OnPrimaryBrush");
-            }
-        }
-        public Brush OnSecondaryBrush
-        {
-            get
-            {
-                return onSecondaryBrush;
-            }
-            set
-            {
-                onSecondaryBrush = value;
-                OnPropertyChanged("OnSecondaryBrush");
-            }
-        }
-        #endregion
 
         #endregion
 
@@ -198,10 +84,9 @@ namespace DayHelper
         public ICommand MenuCommand { get; set; }
 
         /// <summary>
-        /// The command to change the color palette
+        /// The command to switch theme
         /// </summary>
-        public ICommand ThemeChangeCommand { get; set; }
-
+        public ICommand ThemeCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -226,57 +111,31 @@ namespace DayHelper
             MaximizeCommand = new RelayCommand(() => mWindow.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => mWindow.Close());
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(mWindow, GetMousePosition()));
-            ThemeChangeCommand = new RelayCommand(() => ChangeTheme());
+            ThemeCommand = new RelayCommand(ChangeTheme);
 
             // Fix window resize issue
             var resizer = new WindowResizer(mWindow);
-
-            // Light/Dark theme indicator
-            bool lightTheme = true;
-    }
-
-    #endregion
-
-    #region Methods
-    /// <summary>
-    /// CHANGE THEME METHOD
-    /// </summary>
-    public void ChangeTheme()
-        {
-            if (lightTheme == true)
-            {
-                BackgroundBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
-                SurfaceBrush = new BrushConverter().ConvertFromString("#403d39") as SolidColorBrush;
-                PrimaryBrush = new BrushConverter().ConvertFromString("#eb5e28") as SolidColorBrush;
-                SecondaryBrush = new BrushConverter().ConvertFromString("#219ebc") as SolidColorBrush;
-                OnBackgroundBrush = new BrushConverter().ConvertFromString("#ccc5b9") as SolidColorBrush;
-                OnSurfaceBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
-                OnPrimaryBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
-                OnSecondaryBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
-
-                lightTheme = false;
-            }
-            else
-            {
-                BackgroundBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
-                SurfaceBrush = new BrushConverter().ConvertFromString("#ccc5b9") as SolidColorBrush;
-                PrimaryBrush = new BrushConverter().ConvertFromString("#eb5e28") as SolidColorBrush;
-                SecondaryBrush = new BrushConverter().ConvertFromString("#219ebc") as SolidColorBrush;
-                OnBackgroundBrush = new BrushConverter().ConvertFromString("#403d39") as SolidColorBrush;
-                OnSurfaceBrush = new BrushConverter().ConvertFromString("#252422") as SolidColorBrush;
-                OnPrimaryBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
-                OnSecondaryBrush = new BrushConverter().ConvertFromString("#fffcf2") as SolidColorBrush;
-
-                lightTheme = true;
-            }
         }
+
         #endregion
 
         #region Private Helpers
 
-        /// <summary>
-        /// Gets the current mouse position on the screen
-        /// </summary>
+        private void ChangeTheme()
+        {
+            var app = App.Current as App;
+            if(theme)
+            {
+                app.ChangeTheme(new Uri(@"/Styles/ColorsLight.xaml", UriKind.Relative));
+                theme = false;
+            }
+            else
+            {
+                app.ChangeTheme(new Uri(@"/Styles/ColorsDark.xaml", UriKind.Relative));
+                theme = true;
+            }
+        }
+
         private Point GetMousePosition()
         {
             var position = Mouse.GetPosition(mWindow);
