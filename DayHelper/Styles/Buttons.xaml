@@ -61,7 +61,7 @@
 
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource ForegroundTwoBrush}" />
+                <Setter Property="Background" Value="{DynamicResource OnBackgroundBrush}" />
             </Trigger>
         </Style.Triggers>
 
@@ -70,11 +70,11 @@
     
     <!-- Default Button -->
     <Style TargetType="{x:Type Button}" x:Key="DefaultButton" BasedOn="{StaticResource Hoverless}">
-        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
-                <Setter Property="Foreground" Value="{DynamicResource BackgroundMainBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource BackgroundBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -94,7 +94,7 @@
                                 <Setter Property="Foreground" Value="White" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="button"  Property="Background" Value="{StaticResource LightThemePrimaryBrush}"/>
+                                <Setter TargetName="button"  Property="Background" Value="{DynamicResource PrimaryBrush}"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
                                 <Setter TargetName="button" Property="BorderBrush" Value="#FF282828" />

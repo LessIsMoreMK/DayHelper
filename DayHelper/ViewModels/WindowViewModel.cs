@@ -119,12 +119,12 @@ namespace DayHelper
 
         #endregion
 
-        #region Private Helpers
+        #region Methods
 
         private void ChangeTheme()
         {
             var app = App.Current as App;
-            if(theme)
+            if (theme)
             {
                 app.ChangeTheme(new Uri(@"/Styles/ColorsLight.xaml", UriKind.Relative));
                 theme = false;
@@ -135,6 +135,12 @@ namespace DayHelper
                 theme = true;
             }
         }
+
+
+        #endregion
+
+        #region Private Helpers
+
 
         private Point GetMousePosition()
         {

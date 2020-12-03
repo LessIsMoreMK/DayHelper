@@ -2,28 +2,38 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:DayHelper">
 
-    <Color x:Key="BackgroundMain">#ccc5b9</Color>
-    <SolidColorBrush x:Key="BackgroundMainBrush" Color="{StaticResource BackgroundMain}"/>
+    <!-- Background color -->
+    <Color x:Key="Background">#fffcf2</Color>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource Background}"/>
 
+    <!-- Surface color -->
+    <Color x:Key="Surface">#ccc5b9</Color>
+    <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource Surface}"/>
+
+    <!-- Primary color -->
     <Color x:Key="Primary">#eb5e28</Color>
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
 
+    <!-- Secondary color -->
     <Color x:Key="Secondary">#219ebc</Color>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
 
-    <Color x:Key="Foreground">#252422</Color>
-    <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource Foreground}"/>
+    <!-- On Background color -->
+    <Color x:Key="OnBackground">#403d39</Color>
+    <SolidColorBrush x:Key="OnBackgroundBrush" Color="{StaticResource OnBackground}"/>
 
-    <Color x:Key="ForegroundOne">#252422</Color>
-    <SolidColorBrush x:Key="ForegroundOneBrush" Color="{StaticResource ForegroundOne}"/>
+    <!-- On Surface color -->
+    <Color x:Key="OnSurface">#252422</Color>
+    <SolidColorBrush x:Key="OnSurfaceBrush" Color="{StaticResource OnSurface}"/>
 
-    <Color x:Key="ForegroundTwo">#403d39</Color>
-    <SolidColorBrush x:Key="ForegroundTwoBrush" Color="{StaticResource ForegroundTwo}"/>
+    <!-- On Surface color -->
+    <Color x:Key="OnPrimary">#fffcf2</Color>
+    <SolidColorBrush x:Key="OnPrimaryBrush" Color="{StaticResource OnPrimary}"/>
 
-    <Color x:Key="ForegroundThree">#fffcf2</Color>
-    <SolidColorBrush x:Key="ForegroundThreeBrush" Color="{StaticResource ForegroundThree}"/>
+    <!-- On Secondary color -->
+    <Color x:Key="OnSecondary">#fffcf2</Color>
+    <SolidColorBrush x:Key="OnSecondaryBrush" Color="{StaticResource OnSecondary}"/>
 
-    <Color x:Key="ForegroundFour">#252422</Color>
-    <SolidColorBrush x:Key="ForegroundFourBrush" Color="{StaticResource ForegroundFour}"/>
+
 
 </ResourceDictionary>
