@@ -24,7 +24,7 @@ namespace DayHelper
         /// <summary>
         /// Flag indicating theme style(true-dark)
         /// </summary>
-        private bool theme = true;
+        private bool theme = false;
 
         #endregion
 

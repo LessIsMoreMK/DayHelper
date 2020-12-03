@@ -35,7 +35,7 @@
                                 <!-- Main Content -->
                                 <Grid Grid.Row="2">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="35"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
@@ -47,7 +47,7 @@
                                     <!-- SIDE MENU GRID -->
                                     <Grid Grid.Column="0" 
                                           Background="{DynamicResource SurfaceBrush}"
-                                          Grid.RowSpan="2">
+                                        Grid.RowSpan="2">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="100"/>
@@ -60,15 +60,28 @@
                                                 <RowDefinition Height="65"/>
                                             </Grid.RowDefinitions>
 
+                                            <Rectangle Width="160"
+                                                       Height="450"
+                                                       Grid.RowSpan="10">
+                                                <Rectangle.Fill>
+                                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                        <GradientStop Color="{DynamicResource Surface}" Offset="0.3" />
+                                                        <GradientStop Color="{DynamicResource Background}" Offset="1.0" />
+                                                    </LinearGradientBrush>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+
                                             <!-- SIDE MENU LOGO -->
                                             <Button Content="Logo" Style="{StaticResource DefaultButton}" />
 
                                             <!-- SIDE MENU BUTTONS -->
+
                                             <Button Content="{StaticResource FontAwesomeUserIcon}" Grid.Row="1" FontSize="30" Style="{StaticResource DefaultButton}"/>
                                             <Button Content="Listy" Style="{StaticResource DefaultButton}" Grid.Row="2" />
                                             <Button Content="Pomodoro" Style="{StaticResource DefaultButton}" Grid.Row="3"/>
                                             <Button Content="Ukończone" Style="{StaticResource DefaultButton}" Grid.Row="4"/>
                                             <Button Content="Kosz" Style="{StaticResource DefaultButton}" Grid.Row="5"/>
+
 
 
                                             <!-- Change theme button -->
@@ -107,7 +120,7 @@
 
                                     <!-- TITLE BAR -->
                                     <Grid Grid.Column="1" Grid.ColumnSpan="2">
-                                        <Grid Background="{DynamicResource BackgroundBrush}">
+                                        <Grid Background="{DynamicResource OnBackgroundBrush}">
                                             <Grid.ColumnDefinitions>
                                                 <!-- Title -->
                                                 <ColumnDefinition Width="*"/>
@@ -116,13 +129,15 @@
                                             </Grid.ColumnDefinitions>
 
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="35"/>
                                             </Grid.RowDefinitions>
 
                                             <!-- Icon -->
-                                            <!--<Button Style="{StaticResource SystemIconButton}" 
-                                            Command="{Binding MenuCommand}">
-                                                <Image Source="/Images/Logo/logo.png"/>
+                                            
+                                            <!--<Button
+                                               Style="{StaticResource SystemIconButton}" 
+                                               Command="{Binding MenuCommand}">
+                                                <Image Source="/Images/Logo/logo.png" HorizontalAlignment="Left"/>
                                             </Button>-->
 
                                             <!-- Title -->

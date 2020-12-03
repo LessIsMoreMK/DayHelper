@@ -9,7 +9,7 @@
                 <!-- Order is important -->
                 <ResourceDictionary x:Name="ThemeDictionary">
                     <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="Styles/ColorsDark.xaml"/>
+                        <ResourceDictionary Source="Styles/ColorsLight.xaml"/>
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
                 <ResourceDictionary Source="Styles/Fonts.xaml"/>
