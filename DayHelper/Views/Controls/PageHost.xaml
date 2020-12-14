@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Frame x:Name="OldPage"/>
-        <Frame x:Name="NewPage"/>
+        <Frame x:Name="OldPage" local:NoNavigationHistory.Value="True"/>
+        <Frame x:Name="NewPage" local:NoNavigationHistory.Value="True"/>
     </Grid>
 </UserControl>
