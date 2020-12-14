@@ -1,22 +1,3 @@
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\DayHelper.exe.config
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\DayHelper.exe
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\DayHelper.pdb
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.csprojAssemblyReference.cache
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\MainWindow.g.cs
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\App.g.cs
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper_MarkupCompile.cache
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper_MarkupCompile.lref
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Fonts.baml
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\MainWindow.baml
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.g.resources
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.Properties.Resources.resources
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.GenerateResource.cache
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CoreCompileInputs.cache
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.exe
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.pdb
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Texts.baml
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\App.baml
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Buttons.baml
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\bin\Debug\DayHelper.exe.config
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\bin\Debug\DayHelper.exe
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\bin\Debug\DayHelper.pdb
@@ -37,6 +18,41 @@ C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CoreCompileInputs.cache
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.exe
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\DayHelper.pdb
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\DayHelper.exe.config
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\DayHelper.exe
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\DayHelper.pdb
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\Ninject.dll
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\Ninject.xml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.csprojAssemblyReference.cache
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\RegisterPage.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\LoginPage.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Controls\PageHost.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\App.g.cs
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper_MarkupCompile.cache
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper_MarkupCompile.lref
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\App.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\RegisterPage.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\LoginPage.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Buttons.baml
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\ColorsLight.baml
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\ColorsDark.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Fonts.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Styles\Texts.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Controls\PageHost.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\MainWindow.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.g.resources
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.Properties.Resources.resources
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.GenerateResource.cache
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CopyComplete
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.exe
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.pdb
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.Fody.CopyLocal.cache
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\SettingsPage.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\SettingsPage.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\MainPage.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\MainPage.baml

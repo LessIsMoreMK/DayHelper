@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace DayHelper
 {
@@ -20,6 +21,7 @@ namespace DayHelper
         /// </summary>
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        
         /// <summary>
         /// Call this to fire a <see cref="PropertyChanged"/> event with lambda
         /// </summary>

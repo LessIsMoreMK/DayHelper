@@ -9,6 +9,7 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         Title="Day Helper" 
+        x:Name="AppWindow"
         Height="450" Width="800">
 
     <Window.Resources>
@@ -28,7 +29,7 @@
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <!-- Title Bar -->
-                                    <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}"/>
+                                    <RowDefinition Height="{Binding TitleHeight, FallbackValue=42}"/>
                                     <!-- Underline -->
                                     <RowDefinition Height="Auto"/>
                                     <!-- Window Content -->
@@ -89,62 +90,11 @@
                                         </LinearGradientBrush>
                                     </Border.BorderBrush>
                                 </Border>
-
-
-                                <!-- Main Content -->
-                                <Grid Grid.Row="2">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="0.1*"/>
-                                        <RowDefinition Height="0.8*"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="150"/>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="2*"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <!-- SIDE MENU GRID -->
-                                    <Grid Grid.Column="0" 
-                                          Background="{DynamicResource ForegroundThreeBrush}" 
-                                          Grid.RowSpan="2">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="50"/>
-                                                <RowDefinition Height="2*"/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                            </Grid.RowDefinitions>
-
-
-                                            <Label Content="Username" Grid.Row="0"/>
-                                            <Label Content="{StaticResource FontAwesomeMenuIcon}" Grid.Row="1"/>
-                                            <Button Content="{StaticResource FontAwesomeCalendarIcon}" Grid.Row="1" FontSize="30"/>
-                                            <Label Content="Listy" Grid.Row="2"/>
-                                            <Label Content="Pomodoro" Grid.Row="3"/>
-                                            <Label Content="Ukończone" Grid.Row="4"/>
-                                            <Label Content="Kosz" Grid.Row="5"/>
-
-                                            <Button Grid.Row="6"
-                                            Style="{StaticResource RoundedButton}"
-                                            FontFamily="{StaticResource FontAwesome}"
-                                            Content="{StaticResource FontAwesomeCalendarIcon}"
-                                            Command="{Binding StartCommand}"
-                                            Width="50"
-                                            HorizontalAlignment="right"/>
-                                            <Button Grid.Row="7"
-                                            Style="{StaticResource RoundedButton}"
-                                            FontFamily="{StaticResource FontAwesome}"
-                                            Content="{StaticResource FontAwesomeCalendarIcon}"
-                                            Command="{Binding ThemeCommand}"
-                                            Width="50"
-                                            HorizontalAlignment="right"/>
-                                        </Grid>
-                                    </Grid>
-                                </Grid>
+                                
+                                
+                                <Border Grid.Row="2" ClipToBounds="True">
+                                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                                </Border>
                             </Grid>
                         </Grid>
                     </ControlTemplate>
@@ -159,4 +109,76 @@
                       CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" 
                       GlassFrameThickness="0"/>
     </WindowChrome.WindowChrome>
+    
+    <Border>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+            <!-- Main Content -->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.8*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- SIDE MENU GRID -->
+                <Grid Grid.Column="0" 
+                                          Background="{DynamicResource ForegroundThreeBrush}" 
+                                          Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+
+                        <Button Content="Login" Grid.Row="0" Command="{Binding LoginCommand}"/>
+                        <Button Content="Settings" Grid.Row="1" Command="{Binding SettingsCommand}"/>
+                        <Button Content="Zadania" Grid.Row="2" Command="{Binding MainCommand}"/>
+                        <Button Content="{StaticResource FontAwesomeMenuIcon}" 
+                                FontFamily="{StaticResource FontAwesome}" Grid.Row="3"/>
+                        <Label Content="Ukończone" Grid.Row="4"/>
+                        <Label Content="Kosz" Grid.Row="5"/>
+
+                        <Button Grid.Row="6"
+                                            Style="{StaticResource RoundedButton}"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Content="{StaticResource FontAwesomeCalendarIcon}"
+                                            Width="50"
+                                            HorizontalAlignment="right"/>
+                        <Button Grid.Row="7"
+                                            Style="{StaticResource RoundedButton}"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Content="{StaticResource FontAwesomeCalendarIcon}"
+                                            Command="{Binding ThemeCommand}"
+                                            Width="50"
+                                            HorizontalAlignment="right"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <!-- Main Content -->
+        <local:PageHost Grid.Column="1" 
+                        Background="Transparent"
+                        d:DataContext=""
+                        DataContext="{Binding ApplicationViewModel.CurrentPage, 
+                                         Source={x:Static local:ViewModelLocator.Instance},  
+                                         Converter={local:ApplicationPageValueConverter}}"
+                        CurrentPage="{Binding}" Margin="0,0,7,0"/>
+    </Grid>
+    </Border>
 </Window>

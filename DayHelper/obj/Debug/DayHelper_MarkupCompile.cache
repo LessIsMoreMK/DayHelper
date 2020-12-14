@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\App.xaml
-6150098913
+11-1884414249
 
-9-2099899546
-13-1505183044
-Styles\Buttons.xaml;Styles\ColorsLight.xaml;Styles\ColorsDark.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Views\MainWindow.xaml;
+31680514551
+16-218148303
+Views\Pages\MainPage.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\RegisterPage.xaml;Views\Pages\LoginPage.xaml;Styles\Buttons.xaml;Styles\ColorsLight.xaml;Styles\ColorsDark.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Views\Controls\PageHost.xaml;Views\MainWindow.xaml;
 
 False
 
