@@ -1,5 +1,8 @@
 ﻿
 FC:\Users\Maciej\Desktop\DayHelper\DayHelper\App.xaml;;
+FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Dialogs\DialogWindow.xaml;;
+FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Views\Pages\MainPage.xaml;;
+FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Views\Pages\SettingsPage.xaml;;
 FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Views\Pages\RegisterPage.xaml;;
 FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Views\Pages\LoginPage.xaml;;
 FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Styles\Buttons.xaml;;
@@ -9,6 +12,5 @@ FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Styles\Fonts.xaml;;
 FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Styles\Texts.xaml;;
 FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Views\Controls\PageHost.xaml;;
 FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Views\MainWindow.xaml;;
-FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Views\Pages\SettingsPage.xaml;;
-FC:\Users\Maciej\Desktop\DayHelper\DayHelper\Views\Pages\MainPage.xaml;;
+FC:\Users\Maciej\Desktop\DayHelper\DayHelper\ViewModels\Dialogs\DialogMessageBox.xaml;;
 

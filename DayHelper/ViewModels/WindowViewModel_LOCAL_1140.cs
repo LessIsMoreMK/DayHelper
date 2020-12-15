@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -12,9 +11,6 @@ namespace DayHelper
     {
         #region Private Member
 
-        public double WindowMinimumWidth { get; set; } = 800;
-
-        public double WindowMinimumHeight { get; set; } = 500;
         /// <summary>
         /// The window this view model controls
         /// </summary>
@@ -96,7 +92,6 @@ namespace DayHelper
         public ICommand LoginCommand { get; set; }
         public ICommand SettingsCommand { get; set; }
         public ICommand MainCommand { get; set; }
-        public ICommand DialogCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -127,7 +122,6 @@ namespace DayHelper
             LoginCommand = new RelayCommand(Login);
             SettingsCommand = new RelayCommand(Settings);
             MainCommand = new RelayCommand(Main);
-            DialogCommand = new RelayCommand(async () => await Dialog());
 
 
 
@@ -150,14 +144,6 @@ namespace DayHelper
         public void Main()
         {
             IoC.Application.GoToPage(ApplicationPage.Main);
-        }
-        public async Task Dialog()
-        {
-            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-            {
-                Title = "Custom Dialog",
-                Message = "bleble"
-            });
         }
 
         #endregion

@@ -56,3 +56,7 @@ C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\SettingsPage.g
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\SettingsPage.baml
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\MainPage.g.cs
 C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Views\Pages\MainPage.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Dialogs\DialogWindow.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\Dialogs\DialogWindow.baml
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\ViewModels\Dialogs\DialogMessageBox.g.cs
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\ViewModels\Dialogs\DialogMessageBox.baml

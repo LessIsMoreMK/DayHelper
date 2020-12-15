@@ -10,6 +10,8 @@
         WindowStartupLocation="CenterScreen"
         Title="Day Helper" 
         x:Name="AppWindow"
+        MinWidth="{Binding WindowMinimumWidth}"
+        MinHeight="{Binding WindowMinimumHeight}"
         Height="450" Width="800">
 
     <Window.Resources>
@@ -20,7 +22,7 @@
                         <!-- Main window outline -->
                         <Grid Background="{DynamicResource BackgroundMainBrush}">
                             <!-- Window border-->
-                            <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
+                            <Border CornerRadius="{Binding mWindowRadius, FallbackValue=10}"
                                     BorderThickness="0"
                                     Background="Transparent">
                             </Border>
@@ -106,7 +108,7 @@
     <WindowChrome.WindowChrome>
         <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}"
                       CaptionHeight="{Binding TitleHeight}"
-                      CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" 
+                      CornerRadius="{Binding mWindowRadius, FallbackValue=10}" 
                       GlassFrameThickness="0"/>
     </WindowChrome.WindowChrome>
     
@@ -151,7 +153,7 @@
                         <Button Content="Zadania" Grid.Row="2" Command="{Binding MainCommand}"/>
                         <Button Content="{StaticResource FontAwesomeMenuIcon}" 
                                 FontFamily="{StaticResource FontAwesome}" Grid.Row="3"/>
-                        <Label Content="Ukończone" Grid.Row="4"/>
+                        <Button Content="Dialog" Command="{Binding DialogCommand}" Grid.Row="4"/>
                         <Label Content="Kosz" Grid.Row="5"/>
 
                         <Button Grid.Row="6"

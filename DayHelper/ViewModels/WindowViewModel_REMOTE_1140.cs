@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -12,9 +11,6 @@ namespace DayHelper
     {
         #region Private Member
 
-        public double WindowMinimumWidth { get; set; } = 800;
-
-        public double WindowMinimumHeight { get; set; } = 500;
         /// <summary>
         /// The window this view model controls
         /// </summary>
@@ -28,7 +24,7 @@ namespace DayHelper
         /// <summary>
         /// Flag indicating theme style(true-dark)
         /// </summary>
-        private bool theme = true;
+        private bool theme = false;
 
         #endregion
 
@@ -91,12 +87,6 @@ namespace DayHelper
         /// The command to switch theme
         /// </summary>
         public ICommand ThemeCommand { get; set; }
-
-        // Navigation Commands
-        public ICommand LoginCommand { get; set; }
-        public ICommand SettingsCommand { get; set; }
-        public ICommand MainCommand { get; set; }
-        public ICommand DialogCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -121,15 +111,7 @@ namespace DayHelper
             MaximizeCommand = new RelayCommand(() => mWindow.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => mWindow.Close());
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(mWindow, GetMousePosition()));
-
             ThemeCommand = new RelayCommand(ChangeTheme);
-
-            LoginCommand = new RelayCommand(Login);
-            SettingsCommand = new RelayCommand(Settings);
-            MainCommand = new RelayCommand(Main);
-            DialogCommand = new RelayCommand(async () => await Dialog());
-
-
 
             // Fix window resize issue
             var resizer = new WindowResizer(mWindow);
@@ -137,32 +119,7 @@ namespace DayHelper
 
         #endregion
 
-        #region Navigation
-
-        public void Login()
-        {
-            IoC.Application.GoToPage(ApplicationPage.Login);
-        }
-        public void Settings()
-        {
-            IoC.Application.GoToPage(ApplicationPage.Settings);
-        }
-        public void Main()
-        {
-            IoC.Application.GoToPage(ApplicationPage.Main);
-        }
-        public async Task Dialog()
-        {
-            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-            {
-                Title = "Custom Dialog",
-                Message = "bleble"
-            });
-        }
-
-        #endregion
-
-        #region Private Helpers
+        #region Methods
 
         private void ChangeTheme()
         {
@@ -179,11 +136,17 @@ namespace DayHelper
             }
         }
 
+
+        #endregion
+
+        #region Private Helpers
+
+
         private Point GetMousePosition()
         {
             var position = Mouse.GetPosition(mWindow);
 
-            if (mWindow.WindowState == WindowState.Normal)
+            if (Application.Current.MainWindow.WindowState == WindowState.Normal)
                 return new Point(position.X + mWindow.Left, position.Y + mWindow.Top);
             else
                 return new Point(position.X, position.Y);
