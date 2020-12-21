@@ -9,12 +9,17 @@ DayHelper
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\App.xaml
 6150098913
+=======
+C:\Users\Maciej\Desktop\DayHelper\DayHelper\App.xaml
+13116948145
+>>>>>>> origin/develop
 
-9-2099899546
-13-1505183044
-Styles\Buttons.xaml;Styles\ColorsLight.xaml;Styles\ColorsDark.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Views\MainWindow.xaml;
+41349992305
+16-218148303
+Dialogs\DialogWindow.xaml;ViewModels\Dialogs\DialogMessageBox.xaml;Views\Pages\MainPage.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\RegisterPage.xaml;Views\Pages\LoginPage.xaml;Styles\Buttons.xaml;Styles\ColorsLight.xaml;Styles\ColorsDark.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Views\Controls\PageHost.xaml;Views\MainWindow.xaml;
 
 False
 

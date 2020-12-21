@@ -14,5 +14,21 @@ namespace DayHelper
             Application.Current.Resources.MergedDictionaries.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            ApplicationSetup();
+        }
+
+        private void ApplicationSetup()
+        {
+            IoC.Setup();
+
+            // Bind UI Manager
+            IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
+        }
+
     }
 }
