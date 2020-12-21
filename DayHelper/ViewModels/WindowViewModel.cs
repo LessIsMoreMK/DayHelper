@@ -179,12 +179,6 @@ namespace DayHelper
             }
         }
 
-
-        #endregion
-
-        #region Private Helpers
-
-
         private Point GetMousePosition()
         {
             var position = Mouse.GetPosition(mWindow);

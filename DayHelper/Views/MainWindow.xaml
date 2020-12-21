@@ -12,13 +12,16 @@
         x:Name="AppWindow"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
-        Height="450" Width="800">
+        Height="500" Width="800">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
+
+
+                        
                         <!-- Main window outline -->
                         <Grid Background="{DynamicResource BackgroundBrush}">
                             <!-- Window border-->
@@ -63,8 +66,8 @@
                                                 <RowDefinition Height="65"/>
                                             </Grid.RowDefinitions>
 
-                                            <Rectangle Width="160"
-                                                       Height="450"
+                                            <Rectangle Width="{Binding WindowMinimumWidth}"
+                                                       Height="{Binding WindowMinimumHeight}"
                                                        Grid.RowSpan="10">
                                                 <Rectangle.Fill>
                                                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -79,12 +82,16 @@
 
                                             <!-- SIDE MENU BUTTONS -->
 
-                                            <Button Content="{StaticResource FontAwesomeUserIcon}" Grid.Row="1" FontSize="30" Style="{StaticResource DefaultButton}"/>
+                                            <Button Content="{StaticResource FontAwesomeMenuIcon}" Grid.Row="1" Style="{StaticResource DefaultButton}"/>
                                             <Button Content="Listy" Style="{StaticResource DefaultButton}" Grid.Row="2" />
                                             <Button Content="Pomodoro" Style="{StaticResource DefaultButton}" Grid.Row="3"/>
                                             <Button Content="Ukończone" Style="{StaticResource DefaultButton}" Grid.Row="4"/>
                                             <Button Content="Kosz" Style="{StaticResource DefaultButton}" Grid.Row="5"/>
 
+
+                                            <!--<Border Grid.Row="2" ClipToBounds="True">
+                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                            </Border>-->
 
 
                                             <!-- Change theme button -->
@@ -116,6 +123,9 @@
                                                 Width="40"
                                                 Height="40"/>
 
+                                                
+                                                
+                                                
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
@@ -136,7 +146,7 @@
                                             </Grid.RowDefinitions>
 
                                             <!-- Icon -->
-                                            
+
                                             <!--<Button
                                                Style="{StaticResource SystemIconButton}" 
                                                Command="{Binding MenuCommand}">
@@ -181,6 +191,17 @@
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
+                                    <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+
+                                        <local:PageHost Grid.Column="1" 
+                                        Background="Transparent"
+                                        d:DataContext=""
+                                        DataContext="{Binding ApplicationViewModel.CurrentPage, 
+                                        Source={x:Static local:ViewModelLocator.Instance},  
+                                        Converter={local:ApplicationPageValueConverter}}"
+                                        CurrentPage="{Binding}" Margin="0,0,7,0"/>
+
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -189,15 +210,10 @@
             </Setter>
         </Style>
     </Window.Resources>
-
-            <!-- Main Content -->
-        <local:PageHost Grid.Column="1" 
-                        Background="Transparent"
-                        d:DataContext=""
-                        DataContext="{Binding ApplicationViewModel.CurrentPage, 
-                                         Source={x:Static local:ViewModelLocator.Instance},  
-                                         Converter={local:ApplicationPageValueConverter}}"
-                        CurrentPage="{Binding}" Margin="0,0,7,0"/>
-    </Grid>
-    </Border>
+    <WindowChrome.WindowChrome>
+        <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}"
+                                          CaptionHeight="{Binding TitleHeight}"
+                                          CornerRadius="{Binding mWindowRadius, FallbackValue=10}" 
+                                          GlassFrameThickness="0"/>
+    </WindowChrome.WindowChrome>
 </Window>

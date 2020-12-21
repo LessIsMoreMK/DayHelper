@@ -23,11 +23,11 @@
     <SolidColorBrush x:Key="OnBackgroundBrush" Color="{StaticResource OnBackground}"/>
 
     <!-- On Surface color -->
-    <Color x:Key="eOnSurface">#fffcf2</Color>
+    <Color x:Key="OnSurface">#fffcf2</Color>
     <SolidColorBrush x:Key="OnSurfaceBrush" Color="{StaticResource OnSurface}"/>
 
     <!-- On Primary color -->
-    <Color x:Key="OnPrimary">#252422</Color>
+    <Color x:Key="OnPrimary">#fffcf2</Color>
     <SolidColorBrush x:Key="OnPrimaryBrush" Color="{StaticResource OnPrimary}"/>
 
     <!-- On Secondary color -->
