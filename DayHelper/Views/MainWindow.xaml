@@ -78,7 +78,7 @@
                                             </Rectangle>
 
                                             <!-- SIDE MENU LOGO -->
-                                            <Button Content="Logo" Style="{StaticResource DefaultButton}" />
+                                            <Button Content="Logo" Style="{StaticResource DefaultButton}" Command="{Binding LoginCommand}"/>
 
                                             <!-- SIDE MENU BUTTONS -->
 

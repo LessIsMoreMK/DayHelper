@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DayHelper.DataModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -127,7 +130,7 @@ namespace DayHelper
             LoginCommand = new RelayCommand(Login);
             SettingsCommand = new RelayCommand(Settings);
             MainCommand = new RelayCommand(Main);
-            DialogCommand = new RelayCommand(async () => await Dialog());
+            //DialogCommand = new RelayCommand(async () => await Dialog());
 
 
 
@@ -141,7 +144,11 @@ namespace DayHelper
 
         public void Login()
         {
-            IoC.Application.GoToPage(ApplicationPage.Login);
+            using (var context = new DayHelperContext())
+            {
+                List<DayHelper.DataModel.Task> list = context.Tasks.ToList();
+                context.SaveChanges();
+            }
         }
         public void Settings()
         {
@@ -151,14 +158,14 @@ namespace DayHelper
         {
             IoC.Application.GoToPage(ApplicationPage.Main);
         }
-        public async Task Dialog()
+        /*public async Task Dialog()
         {
             await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
             {
                 Title = "Custom Dialog",
                 Message = "bleble"
             });
-        }
+        }*/
 
         #endregion
 

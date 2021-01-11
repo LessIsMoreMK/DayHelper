@@ -4,21 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\obj\Debug\
+C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\
 DayHelper
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\lordb\Desktop\ZAJECIA\PROJEKT ZESPOŁOWY\DayHelper\DayHelper\App.xaml
-6150098913
-=======
-C:\Users\Maciej\Desktop\DayHelper\DayHelper\App.xaml
+C:\Users\Maciej\Documents\DayHelper\DayHelper\App.xaml
 13116948145
->>>>>>> origin/develop
 
 41349992305
-16-218148303
+20654526805
 Dialogs\DialogWindow.xaml;ViewModels\Dialogs\DialogMessageBox.xaml;Views\Pages\MainPage.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\RegisterPage.xaml;Views\Pages\LoginPage.xaml;Styles\Buttons.xaml;Styles\ColorsLight.xaml;Styles\ColorsDark.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Views\Controls\PageHost.xaml;Views\MainWindow.xaml;
 
 False

@@ -58,12 +58,21 @@
     <Compile Include="DayHelperContext.cs" />
     <Compile Include="Enums\Difficulty.cs" />
     <Compile Include="Enums\Priority.cs" />
+    <Compile Include="Migrations\202101111226540_Initial.cs" />
+    <Compile Include="Migrations\202101111226540_Initial.designer.cs">
+      <DependentUpon>202101111226540_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202101111226540_Initial.resx">
+      <DependentUpon>202101111226540_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
