@@ -1,8 +1,8 @@
 ﻿namespace DayHelper
 {
-    public partial class MainPage : BasePage<MainViewModel>
+    public partial class TaskPage : BasePage<TaskViewModel>
     {
-        public MainPage()
+        public TaskPage()
         {
             InitializeComponent();
         }

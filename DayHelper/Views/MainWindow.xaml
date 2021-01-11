@@ -20,15 +20,13 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
 
-
-                        
                         <!-- Main window outline -->
                         <Grid Background="{DynamicResource BackgroundBrush}">
                             <!-- Window border-->
                             <Border CornerRadius="{Binding mWindowRadius, FallbackValue=10}"
                                     BorderThickness="0"
-                                    Background="Transparent">
-                            </Border>
+                                    Background="Transparent"/>
+
 
                             <!-- The main window content -->
                             <Grid>
@@ -41,19 +39,18 @@
                                 <!-- Main Content -->
                                 <Grid Grid.Row="2">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="35"/>
+                                        <RowDefinition Height="40"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="160"/>
-                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="180"/>
                                         <ColumnDefinition Width="2*"/>
                                     </Grid.ColumnDefinitions>
 
                                     <!-- SIDE MENU GRID -->
                                     <Grid Grid.Column="0" 
                                           Background="{DynamicResource SurfaceBrush}"
-                                        Grid.RowSpan="2">
+                                          Grid.RowSpan="2">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="100"/>
@@ -66,6 +63,25 @@
                                                 <RowDefinition Height="65"/>
                                             </Grid.RowDefinitions>
 
+
+                                            <Border Grid.Column="0" 
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="10"
+                                                    Margin="0 39 0 0"
+                                                    Width="1" 
+                                                    BorderThickness="10 2 5 5"
+                                                    Panel.ZIndex="2"
+                                                    HorizontalAlignment="Right">
+
+                                                <Border.BorderBrush>
+                                                    <LinearGradientBrush>
+                                                        <GradientStop Color="{DynamicResource Secondary}" Offset="0.2"/>
+                                                        <GradientStop Color="{DynamicResource Primary}" Offset="0.5"/>
+                                                        <GradientStop Color="{DynamicResource Secondary}" Offset="1"/>
+                                                    </LinearGradientBrush>
+                                                </Border.BorderBrush>
+                                            </Border>
+
                                             <Rectangle Width="{Binding WindowMinimumWidth}"
                                                        Height="{Binding WindowMinimumHeight}"
                                                        Grid.RowSpan="10">
@@ -77,63 +93,67 @@
                                                 </Rectangle.Fill>
                                             </Rectangle>
 
-                                            <!-- SIDE MENU LOGO -->
-                                            <Button Content="Logo" Style="{StaticResource DefaultButton}" Command="{Binding LoginCommand}"/>
+                                            <!-- SIDE MENU -->
+                                            <Button Content="Nazwa Użytkownika" 
+                                                    Style="{StaticResource DefaultButton}" 
+                                                    Command="{Binding LoginCommand}"/>
+                                            <Button Content="Listy Zadań" 
+                                                    Grid.Row="1" 
+                                                    Style="{StaticResource DefaultButton}"
+                                                    Command="{Binding LoginCommand}"/>
+                                            <Button Content="Zadania"
+                                                    Style="{StaticResource DefaultButton}" 
+                                                    Grid.Row="2" 
+                                                    Command="{Binding LoginCommand}"/>
+                                            <Button Content="Ukończone" 
+                                                    Style="{StaticResource DefaultButton}" 
+                                                    Grid.Row="3"
+                                                    Command="{Binding LoginCommand}"/>
+                                            <Button Content="Kosz" 
+                                                    Style="{StaticResource DefaultButton}"
+                                                    Grid.Row="4"
+                                                    Command="{Binding LoginCommand}"/>
+                                            <Button Content="Analiza" 
+                                                    Style="{StaticResource DefaultButton}" 
+                                                    Grid.Row="5"
+                                                    Command="{Binding DialogCommand}"/>
 
-                                            <!-- SIDE MENU BUTTONS -->
 
-                                            <Button Content="{StaticResource FontAwesomeMenuIcon}" Grid.Row="1" Style="{StaticResource DefaultButton}"/>
-                                            <Button Content="Listy" Style="{StaticResource DefaultButton}" Grid.Row="2" />
-                                            <Button Content="Pomodoro" Style="{StaticResource DefaultButton}" Grid.Row="3"/>
-                                            <Button Content="Ukończone" Style="{StaticResource DefaultButton}" Grid.Row="4"/>
-                                            <Button Content="Kosz" Style="{StaticResource DefaultButton}" Grid.Row="5"/>
-
-
-                                            <!--<Border Grid.Row="2" ClipToBounds="True">
-                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
-                                                            </Border>-->
-
-
-                                            <!-- Change theme button -->
                                             <StackPanel Orientation="Horizontal" Grid.Row="7" HorizontalAlignment="Center">
-
+                                                <!-- Change theme Button -->
                                                 <Button Margin="0 0 10 0"
-                                                Style="{StaticResource RoundedButton}"
-                                                FontFamily="{StaticResource FontAwesome}"
-                                                FontSize="{StaticResource FontSizeLarge}"
-                                                Content="{StaticResource FontAwesomeUserIcon}"
-                                                Command="{Binding ThemeCommand}"
-                                                Width="40"
-                                                Height="40"/>
+                                                        Style="{StaticResource RoundedButton}"
+                                                        FontFamily="{StaticResource FontAwesome}"
+                                                        FontSize="{StaticResource FontSizeLarge}"
+                                                        Content="{StaticResource FontAwesomeThemeIcon}"
+                                                        Command="{Binding ThemeCommand}"
+                                                        Width="40"
+                                                        Height="40"/>
 
-                                                <Button
-                                                Style="{StaticResource RoundedButton}"
-                                                FontFamily="{StaticResource FontAwesome}"
-                                                FontSize="{StaticResource FontSizeLarge}"
-                                                Content="{StaticResource FontAwesomeHeartIcon}"
-                                                Command="{Binding ThemeCommand}"
-                                                Width="40"
-                                                Height="40"/>
+                                                <!-- Open Clock Button -->
+                                                <Button Style="{StaticResource RoundedButton}"
+                                                        FontFamily="{StaticResource FontAwesome}"
+                                                        FontSize="{StaticResource FontSizeLarge}"
+                                                        Content="{StaticResource FontAwesomeClockIcon}"
+                                                        Command="{Binding ClockCommand}"
+                                                        Width="40"
+                                                        Height="40"/>
 
+                                                <!-- Settings -->
                                                 <Button Margin="10 0 0 0"
-                                                Style="{StaticResource RoundedButton}"
-                                                FontFamily="{StaticResource FontAwesome}"
-                                                FontSize="{StaticResource FontSizeLarge}"
-                                                Content="{StaticResource FontAwesomeMenuIcon}"
-                                                Width="40"
-                                                Height="40"/>
-
-                                                
-                                                
-                                                
+                                                        Style="{StaticResource RoundedButton}"
+                                                        FontFamily="{StaticResource FontAwesome}"
+                                                        FontSize="{StaticResource FontSizeLarge}"
+                                                        Content="{StaticResource FontAwesomeSettingsIcon}"
+                                                        Width="40"
+                                                        Height="40"/>
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
 
-
                                     <!-- TITLE BAR -->
-                                    <Grid Grid.Column="1" Grid.ColumnSpan="2">
-                                        <Grid Background="{DynamicResource OnBackgroundBrush}">
+                                    <Grid Grid.Column="1">
+                                        <Grid Background="{DynamicResource SurfaceBrush}">
                                             <Grid.ColumnDefinitions>
                                                 <!-- Title -->
                                                 <ColumnDefinition Width="*"/>
@@ -141,32 +161,30 @@
                                                 <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="35"/>
-                                            </Grid.RowDefinitions>
-
                                             <!-- Icon -->
-
                                             <!--<Button
                                                Style="{StaticResource SystemIconButton}" 
                                                Command="{Binding MenuCommand}">
-                                                <Image Source="/Images/Logo/logo.png" HorizontalAlignment="Left"/>
-                                            </Button>-->
+                                                <Image Source="/Images/Logo/logo.png" HorizontalAlignment="Left"/>-->
 
                                             <!-- Title -->
                                             <Viewbox Grid.Column="0" 
-                                             Grid.ColumnSpan="2" 
-                                             Margin="5">
-                                                <Label FontSize="{StaticResource FontSizeSmall}"
-                                                   FontFamily="{StaticResource CinzelDecorative}"
-                                                   Foreground="{DynamicResource PrimaryBrush}"
-                                                   Margin="0,0,0,0" 
+                                                     Grid.ColumnSpan="2" 
+                                                     Margin="2">
+                                                <Label FontSize="{StaticResource FontSizeLarge}"
+                                                       FontFamily="{StaticResource CinzelDecorative}"
+                                                       Foreground="{DynamicResource PrimaryBrush}"
+                                                       Margin="0,0,0,0" 
                                                    Content="DayHelper"/>
                                             </Viewbox>
 
 
                                             <!--Underline-->
-                                            <Border Grid.Column="0" Grid.ColumnSpan="2" Height="2" BorderThickness="0 1 0 0" VerticalAlignment="Bottom">
+                                            <Border Grid.Column="0" 
+                                                    Grid.ColumnSpan="2" 
+                                                    Height="1" 
+                                                    BorderThickness="0 2 0 0" 
+                                                    VerticalAlignment="Bottom">
                                                 <Border.BorderBrush>
                                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                                         <GradientStop Color="{DynamicResource Secondary}" Offset="0.2"/>
@@ -191,15 +209,18 @@
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
-                                    <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+                                    
+                                    <!--PAGE CONTENT -->
+                                    <Grid Grid.Column="1" Grid.Row="1">
 
                                         <local:PageHost Grid.Column="1" 
-                                        Background="Transparent"
-                                        d:DataContext=""
-                                        DataContext="{Binding ApplicationViewModel.CurrentPage, 
-                                        Source={x:Static local:ViewModelLocator.Instance},  
-                                        Converter={local:ApplicationPageValueConverter}}"
-                                        CurrentPage="{Binding}" Margin="0,0,7,0"/>
+                                                        Background="Transparent"
+                                                        d:DataContext=""
+                                                        DataContext="{Binding ApplicationViewModel.CurrentPage, 
+                                                            Source={x:Static local:ViewModelLocator.Instance},  
+                                                            Converter={local:ApplicationPageValueConverter}}"
+                                                        CurrentPage="{Binding}" 
+                                                        Margin="0,0,7,0"/>
 
                                     </Grid>
                                 </Grid>
@@ -212,8 +233,8 @@
     </Window.Resources>
     <WindowChrome.WindowChrome>
         <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}"
-                                          CaptionHeight="{Binding TitleHeight}"
-                                          CornerRadius="{Binding mWindowRadius, FallbackValue=10}" 
-                                          GlassFrameThickness="0"/>
+                      CaptionHeight="{Binding TitleHeight}"
+                      CornerRadius="{Binding mWindowRadius, FallbackValue=10}" 
+                      GlassFrameThickness="0"/>
     </WindowChrome.WindowChrome>
 </Window>

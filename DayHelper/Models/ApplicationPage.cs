@@ -5,6 +5,6 @@
         Register = 0,
         Login = 1,
         Settings = 2,
-        Main = 3,
+        Task = 3,
     }
 }

@@ -1,4 +1,4 @@
-﻿<local:BasePage x:TypeArguments="local:MainViewModel" x:Class="DayHelper.MainPage"
+﻿<local:BasePage x:TypeArguments="local:TaskViewModel" x:Class="DayHelper.TaskPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

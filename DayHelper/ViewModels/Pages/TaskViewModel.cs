@@ -1,6 +1,6 @@
 ﻿namespace DayHelper
 {
-    public class MainViewModel : BaseViewModel
+    public class TaskViewModel : BaseViewModel
     {
         #region Public Properties
 

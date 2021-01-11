@@ -14,7 +14,6 @@ namespace DayHelper
     public class WindowViewModel : BaseViewModel
     {
         #region Private Member
-
         public double WindowMinimumWidth { get; set; } = 800;
 
         public double WindowMinimumHeight { get; set; } = 500;
@@ -29,7 +28,7 @@ namespace DayHelper
         private int mWindowRadius = 15;
 
         /// <summary>
-        /// Flag indicating theme style(true-dark)
+        /// Flag indicating theme style
         /// </summary>
         private bool theme = false;
 
@@ -130,7 +129,7 @@ namespace DayHelper
             LoginCommand = new RelayCommand(Login);
             SettingsCommand = new RelayCommand(Settings);
             MainCommand = new RelayCommand(Main);
-            //DialogCommand = new RelayCommand(async () => await Dialog());
+            DialogCommand = new RelayCommand(async () => await Dialog());
 
 
 
@@ -156,16 +155,16 @@ namespace DayHelper
         }
         public void Main()
         {
-            IoC.Application.GoToPage(ApplicationPage.Main);
+            IoC.Application.GoToPage(ApplicationPage.Task);
         }
-        /*public async Task Dialog()
+        public async System.Threading.Tasks.Task Dialog()
         {
             await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
             {
                 Title = "Custom Dialog",
                 Message = "bleble"
             });
-        }*/
+        }
 
         #endregion
 

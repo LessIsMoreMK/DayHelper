@@ -83,7 +83,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\MainPage.xaml">
+    <Page Include="Views\Pages\TaskPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -156,11 +156,11 @@
       <DependentUpon>DialogMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Dialogs\DialogViewModel.cs" />
-    <Compile Include="ViewModels\Pages\MainViewModel.cs" />
+    <Compile Include="ViewModels\Pages\TaskViewModel.cs" />
     <Compile Include="ViewModels\Dialogs\MessageBoxDialogViewModel.cs" />
     <Compile Include="ViewModels\Pages\SettingsViewModel.cs" />
-    <Compile Include="Views\Pages\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Views\Pages\TaskPage.xaml.cs">
+      <DependentUpon>TaskPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>

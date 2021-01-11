@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Maciej\Documents\DayHelper\DayHelper\App.xaml
-13116948145
+131208321124
 
-41349992305
+41642958522
 20654526805
-Dialogs\DialogWindow.xaml;ViewModels\Dialogs\DialogMessageBox.xaml;Views\Pages\MainPage.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\RegisterPage.xaml;Views\Pages\LoginPage.xaml;Styles\Buttons.xaml;Styles\ColorsLight.xaml;Styles\ColorsDark.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Views\Controls\PageHost.xaml;Views\MainWindow.xaml;
+Dialogs\DialogWindow.xaml;ViewModels\Dialogs\DialogMessageBox.xaml;Views\Pages\TaskPage.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\RegisterPage.xaml;Views\Pages\LoginPage.xaml;Styles\Buttons.xaml;Styles\ColorsLight.xaml;Styles\ColorsDark.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Views\Controls\PageHost.xaml;Views\MainWindow.xaml;
 
 False
 

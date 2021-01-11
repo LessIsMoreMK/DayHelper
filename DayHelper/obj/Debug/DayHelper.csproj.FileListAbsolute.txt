@@ -63,7 +63,6 @@ C:\Users\Maciej\Desktop\DayHelper\DayHelper\obj\Debug\ViewModels\Dialogs\DialogM
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\DayHelper.csprojAssemblyReference.cache
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Dialogs\DialogWindow.g.cs
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\ViewModels\Dialogs\DialogMessageBox.g.cs
-C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\MainPage.g.cs
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\SettingsPage.g.cs
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\RegisterPage.g.cs
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\LoginPage.g.cs
@@ -92,7 +91,6 @@ C:\Users\Maciej\Documents\DayHelper\DayHelper\bin\Debug\Ninject.xml
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\App.baml
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Dialogs\DialogWindow.baml
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\ViewModels\Dialogs\DialogMessageBox.baml
-C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\MainPage.baml
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\SettingsPage.baml
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\RegisterPage.baml
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\LoginPage.baml
@@ -109,3 +107,5 @@ C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.Generat
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CoreCompileInputs.cache
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.Fody.CopyLocal.cache
 C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CopyComplete
+C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\TaskPage.g.cs
+C:\Users\Maciej\Documents\DayHelper\DayHelper\obj\Debug\Views\Pages\TaskPage.baml

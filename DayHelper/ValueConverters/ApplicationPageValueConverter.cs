@@ -23,8 +23,8 @@ namespace DayHelper
                 case ApplicationPage.Settings:
                     return new SettingsPage();
 
-                case ApplicationPage.Main:
-                    return new MainPage();
+                case ApplicationPage.Task:
+                    return new TaskPage();
 
                 default:
                     Debugger.Break();
