@@ -1,14 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:DayHelper">
-    
+
     <ResourceDictionary.MergedDictionaries>
         <!-- Order is important -->
         <ResourceDictionary Source="ColorsLight.xaml"/>
         <ResourceDictionary Source="Fonts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
-    
+
+
     <!-- Main Data Grid -->
     <Style TargetType="{x:Type DataGrid}" x:Key="MainDataGrid">
         <Setter Property="CanUserAddRows" Value="False"/>
@@ -18,14 +18,14 @@
         <Setter Property="SelectionMode" Value="Single"/>
         <Setter Property="RowHeaderWidth" Value="0" />
         <Setter Property="GridLinesVisibility" Value="None"/>
-        <Setter Property="Background" Value="Transparent"/>
+
     </Style>
 
     <!-- Main DataGrid Row -->
     <Style TargetType="{x:Type DataGridRow}" x:Key="MainDataGridRow">
-        <Setter Property="Margin" Value="3"/>
-        <Setter Property="Height" Value="55"/>
-        
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Height" Value="45"/>
+
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=Priority}" Value="NotDefined">
                 <Setter Property="Background" Value="{StaticResource NotDefinedBrush}"/>
@@ -34,7 +34,7 @@
                 <Setter Property="Background" Value="{StaticResource NormalBrush}"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding Path=Priority}" Value="Important">
-                    <Setter Property="Background" Value="{StaticResource ImportantBrush}"/>
+                <Setter Property="Background" Value="{StaticResource ImportantBrush}"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding Path=Priority}" Value="Critical">
                 <Setter Property="Background" Value="{StaticResource CriticalBrush}"/>
@@ -42,11 +42,12 @@
         </Style.Triggers>
     </Style>
 
-    
+
     <!-- Main DataGrid Cell -->
     <Style x:Key="MainDataGridCell"
         TargetType="{x:Type DataGridCell}">
-        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridCell}">
@@ -56,6 +57,38 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
-    
+
+    <!-- CheckBox -->
+    <Style TargetType="CheckBox" x:Key="CheckboxMain">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border" Width="30" Height="30" Margin="5"
+                                    CornerRadius="5" Background="{StaticResource PrimaryBrush}" BorderThickness="2" BorderBrush="Black">
+                                <Path Width="30" Height="30" x:Name="CheckMark" SnapsToDevicePixels="False" Stroke="Black" StrokeThickness="3" Data="M 4 13 L 11 24 M 11 24 L 22 4" />
+                            </Border>
+                        </BulletDecorator.Bullet>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

@@ -15,7 +15,7 @@
                   RowStyle="{StaticResource MainDataGridRow}">
 
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Binding="{Binding Finished}" />
+                <DataGridCheckBoxColumn Binding="{Binding Finished}" ElementStyle="{StaticResource CheckboxMain}"/>
                 <DataGridTextColumn  Binding="{Binding Content}" MinWidth="250" Width="*"/>
                 <DataGridTextColumn  Binding="{Binding Difficulty}"/>
                 <DataGridTextColumn  Binding="{Binding Priority}"/>
