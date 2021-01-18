@@ -21,7 +21,7 @@
                     <ControlTemplate TargetType="{x:Type Window}">
                         <Border BorderThickness="1" 
                                 BorderBrush="{StaticResource PrimaryBrush}" 
-                                Background="{DynamicResource BackgroundMainBrush}"
+                                Background="{DynamicResource OnBackgroundBrush}"
                                 CornerRadius="{Binding WindowCornerRadius, FallbackValue=11}"
                                 ClipToBounds="true">
 
@@ -60,7 +60,7 @@
                                         <!-- Icon -->
                                         <Button Style="{StaticResource SystemIconButton}" 
                                             Command="{Binding MenuCommand}">
-                                            <Image Source="/Images/Logo/logo.png"/>
+                                            <Image Source="/Images/Logo/logo.ico"/>
                                         </Button>
 
                                         <!-- Title -->

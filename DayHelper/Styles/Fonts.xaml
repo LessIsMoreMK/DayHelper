@@ -29,4 +29,7 @@
     <system:String x:Key="FontAwesomeCalendarIcon">&#xf073;</system:String>
     <system:String x:Key="FontAwesomeMenuIcon">&#xf0c9;</system:String>
     <system:String x:Key="FontAwesomeHeartIcon">&#xf004;</system:String>
+    
+    <system:String x:Key="FontAwesomeSaveIcon">&#xf0c7;</system:String>
+    <system:String x:Key="FontAwesomeDeleteIcon">&#xf1f8;</system:String>
 </ResourceDictionary>

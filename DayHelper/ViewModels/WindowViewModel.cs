@@ -151,7 +151,7 @@ namespace DayHelper
         }
         public void Settings()
         {
-            IoC.Application.GoToPage(ApplicationPage.Settings);
+            
         }
         public void Main()
         {

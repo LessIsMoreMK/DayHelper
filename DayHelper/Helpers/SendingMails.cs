@@ -11,7 +11,7 @@ namespace DayHelper
     {
         public void sendMails()
         {
-            var smtpServerName = ConfigurationManager.AppSettings["SmtpServer"];
+            /*var smtpServerName = ConfigurationManager.AppSettings["SmtpServer"];
             var port = ConfigurationManager.AppSettings["Port"];
             var senderEmailId = ConfigurationManager.AppSettings["SenderEmailId"];
             var senderPassword = ConfigurationManager.AppSettings["SenderPassword"];
@@ -26,7 +26,7 @@ namespace DayHelper
                 Credentials = new NetworkCredential(senderEmailId, senderPassword),
                 EnableSsl = true
             };
-            smptClient.Send(senderEmailId, sendTo, sendSubject, sendText);
+            smptClient.Send(senderEmailId, sendTo, sendSubject, sendText);*/
         }
         
 

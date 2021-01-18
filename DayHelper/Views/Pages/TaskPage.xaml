@@ -8,7 +8,79 @@
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <Label Content="Main"/>
-        <TextBox Height="25"/>
+
+        <DataGrid ItemsSource="{Binding Tasks}"
+                  Style="{StaticResource MainDataGrid}" 
+
+                  RowHeight="60"
+                  Padding="5"
+                  CellStyle="{StaticResource Body_Content_DataGrid_Centering}"
+                  >
+
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Priority}" Value="NotDefined">
+                            <Setter Property="Background" Value="#ccf2ff">
+                                </Setter>
+                                </DataTrigger>
+                        <DataTrigger Binding="{Binding Priority}" Value="Normal">
+                            <Setter Property="Background" Value="#ff8566">
+                                        </Setter>
+                                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Priority}" Value="Important">
+                            <Setter Property="Background" Value="#ffff99">
+                                                </Setter>
+                                                </DataTrigger>
+                        <DataTrigger Binding="{Binding Priority}" Value="Critical">
+                            <Setter Property="Background" Value="#c2f0c2">
+                                                        </Setter>
+                                                        </DataTrigger>
+                    </Style.Triggers>
+                    </Style>
+            </DataGrid.RowStyle>
+
+            <DataGrid.Columns>
+
+                <DataGridCheckBoxColumn Binding="{Binding Finished}" />
+                <DataGridTextColumn  Binding="{Binding Content}" MinWidth="250" Width="*">
+
+                </DataGridTextColumn>
+
+                <DataGridTextColumn  Binding="{Binding Difficulty}"/>
+                <DataGridTextColumn  Binding="{Binding Priority}"/>
+                <DataGridTextColumn  Binding="{Binding DateCreated}" />
+                <DataGridTextColumn  Binding="{Binding DateToFinish}"/>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Button Style="{StaticResource ActionButton}"
+                                    FontFamily="{StaticResource FontAwesome}"
+                                    FontSize="{StaticResource FontSizeLarge}"
+                                    Content="{StaticResource FontAwesomeSaveIcon}"
+                                    Width="30"
+                                    Height="30"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Button Style="{StaticResource ActionButton}"
+                                    FontFamily="{StaticResource FontAwesome}"
+                                    FontSize="{StaticResource FontSizeLarge}"
+                                    Content="{StaticResource FontAwesomeDeleteIcon}"
+                                    Width="30"
+                                    Height="30"
+                                    Margin="0 0 15 0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+
+        </DataGrid>
     </Grid>
 </local:BasePage>

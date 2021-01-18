@@ -55,6 +55,7 @@
     <Compile Include="Classes\Task.cs" />
     <Compile Include="Classes\TaskList.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="ConnectedRepository.cs" />
     <Compile Include="DayHelperContext.cs" />
     <Compile Include="Enums\Difficulty.cs" />
     <Compile Include="Enums\Priority.cs" />
