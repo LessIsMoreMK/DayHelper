@@ -94,6 +94,11 @@ namespace DayHelper
         /// </summary>
         public ICommand ThemeCommand { get; set; }
 
+        /// <summary>
+        /// The command to open window with clock
+        /// </summary>
+        public ICommand ClockCommand { get; set; }
+
         // Navigation Commands
         public ICommand LoginCommand { get; set; }
         public ICommand SettingsCommand { get; set; }
@@ -125,6 +130,8 @@ namespace DayHelper
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(mWindow, GetMousePosition()));
 
             ThemeCommand = new RelayCommand(ChangeTheme);
+
+            ClockCommand = new RelayCommand(async () => await Clock());
 
             LoginCommand = new RelayCommand(Login);
             SettingsCommand = new RelayCommand(Settings);
@@ -169,6 +176,14 @@ namespace DayHelper
         #endregion
 
         #region Private Helpers
+
+        private async System.Threading.Tasks.Task Clock()
+        {
+            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+            {
+                Title = "Pomodoro",
+            });
+        }
 
         private void ChangeTheme()
         {

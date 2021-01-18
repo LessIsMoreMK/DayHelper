@@ -34,7 +34,4 @@
     <Color x:Key="OnSecondary">#252422</Color>
     <SolidColorBrush x:Key="OnSecondaryBrush" Color="{StaticResource OnSecondary}"/>
 
-
-
- 
 </ResourceDictionary>

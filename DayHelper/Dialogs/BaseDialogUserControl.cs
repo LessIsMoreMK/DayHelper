@@ -69,7 +69,7 @@ namespace DayHelper
                     // Setup this controls data context binding to the view model 
                     DataContext = viewModel;
 
-                    mDialogWindow.ShowDialog();
+                    mDialogWindow.Show();
                 }
                 finally
                 {

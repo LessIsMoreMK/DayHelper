@@ -7,27 +7,55 @@
         <ResourceDictionary Source="ColorsLight.xaml"/>
         <ResourceDictionary Source="Fonts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-
+    
+    
     <!-- Main Data Grid -->
     <Style TargetType="{x:Type DataGrid}" x:Key="MainDataGrid">
-
         <Setter Property="CanUserAddRows" Value="False"/>
         <Setter Property="CanUserDeleteRows" Value="False"/>
         <Setter Property="HeadersVisibility" Value="None"/>
         <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="SelectionMode" Value="Single"/>
+        <Setter Property="RowHeaderWidth" Value="0" />
+        <Setter Property="GridLinesVisibility" Value="None"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
 
-        <Setter Property="BorderBrush">
+    <!-- Main DataGrid Row -->
+    <Style TargetType="{x:Type DataGridRow}" x:Key="MainDataGridRow">
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Height" Value="55"/>
+        
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=Priority}" Value="NotDefined">
+                <Setter Property="Background" Value="{StaticResource NotDefinedBrush}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=Priority}" Value="Normal">
+                <Setter Property="Background" Value="{StaticResource NormalBrush}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=Priority}" Value="Important">
+                    <Setter Property="Background" Value="{StaticResource ImportantBrush}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=Priority}" Value="Critical">
+                <Setter Property="Background" Value="{StaticResource CriticalBrush}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    
+    <!-- Main DataGrid Cell -->
+    <Style x:Key="MainDataGridCell"
+        TargetType="{x:Type DataGridCell}">
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
             <Setter.Value>
-                <LinearGradientBrush EndPoint="0.5,1"
-                           StartPoint="0.5,0">
-                    <GradientStop Color="{DynamicResource BorderLightColor}"
-                      Offset="0" />
-                    <GradientStop Color="{DynamicResource BorderDarkColor}"
-                      Offset="1" />
-                </LinearGradientBrush>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
-        
     </Style>
+    
 </ResourceDictionary>
