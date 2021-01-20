@@ -54,37 +54,25 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Style="{StaticResource ActionButton}"
-                                    FontFamily="{StaticResource FontAwesome}"
-                                    FontSize="{StaticResource FontSizeLarge}"
-                                    Content="{StaticResource FontAwesomeSaveIcon}"
-                                    Width="30"
-                                    Height="30"/>
+                            <Button Style="{StaticResource BorderButton}"
+                                    Content="{StaticResource FontAwesomeEditIcon}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Style="{StaticResource ActionButton}"
+                            <Button Style="{StaticResource BorderButton}"
                                     Command="{Binding DataContext.DeletedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
-                                    FontFamily="{StaticResource FontAwesome}"
-                                    FontSize="{StaticResource FontSizeLarge}"
-                                    Content="{StaticResource FontAwesomeDeleteIcon}"
-                                    Width="30"
-                                    Height="30"/>
+                                    Content="{StaticResource FontAwesomeDeleteIcon}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Style="{StaticResource ActionButton}"        
-                                    FontFamily="{StaticResource FontAwesome}"
-                                    FontSize="{StaticResource FontSizeLarge}"
+                            <Button Style="{StaticResource BorderButton}"        
                                     Content="{StaticResource FontAwesomeNotificationIcon}"
-                                    Width="30"
-                                    Height="30"
                                     Margin="0 0 15 0"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

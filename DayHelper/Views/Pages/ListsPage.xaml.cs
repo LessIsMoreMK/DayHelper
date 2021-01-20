@@ -1,8 +1,8 @@
 ﻿namespace DayHelper
 {
-    public partial class LoginPage : BasePage<LoginViewModel>
+    public partial class ListsPage : BasePage<ListsViewModel>
     {
-        public LoginPage()
+        public ListsPage()
         {
             InitializeComponent();
         }

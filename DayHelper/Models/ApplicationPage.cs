@@ -2,9 +2,10 @@
 {
     public enum ApplicationPage
     {
-        Register = 0,
-        Login = 1,
-        Settings = 2,
-        Task = 3,
+        Task = 1,
+        Lists = 2,
+        Finished = 3,
+        Deleted = 4,
+        Analyze = 5,
     }
 }

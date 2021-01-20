@@ -14,17 +14,20 @@ namespace DayHelper
             // Find the appropriate page
             switch ((ApplicationPage)value)
             {
-                case ApplicationPage.Login:
-                    return new LoginPage();
-
-                case ApplicationPage.Register:
-                    return new RegisterPage();
-
-                case ApplicationPage.Settings:
-                    return new SettingsPage();
-
                 case ApplicationPage.Task:
                     return new TaskPage();
+
+                case ApplicationPage.Lists:
+                    return new ListsPage();
+
+                case ApplicationPage.Finished:
+                    return new FinishedPage();
+
+                case ApplicationPage.Deleted:
+                    return new DeletedPage();
+
+                case ApplicationPage.Analyze:
+                    return new AnalyzePage();
 
                 default:
                     Debugger.Break();

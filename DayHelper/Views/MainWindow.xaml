@@ -27,14 +27,11 @@
                                     BorderThickness="0"
                                     Background="Transparent"/>
 
-
                             <!-- The main window content -->
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <!-- Window Content -->
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-
 
                                 <!-- Main Content -->
                                 <Grid Grid.Row="2">
@@ -43,32 +40,30 @@
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="180"/>
+                                        <ColumnDefinition Width="220"/>
                                         <ColumnDefinition Width="2*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <!-- SIDE MENU GRID -->
+                                    <!-- Side Menu Grid -->
                                     <Grid Grid.Column="0" 
                                           Background="{DynamicResource SurfaceBrush}"
                                           Grid.RowSpan="2">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="100"/>
-                                                <RowDefinition Height="50"/>
-                                                <RowDefinition Height="50"/>
-                                                <RowDefinition Height="50"/>
-                                                <RowDefinition Height="50"/>
-                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="100"/>
+                                                <RowDefinition Height="100"/>
+                                                <RowDefinition Height="100"/>
+                                                <RowDefinition Height="100"/>
                                                 <RowDefinition Height="*"/>
                                                 <RowDefinition Height="65"/>
                                             </Grid.RowDefinitions>
 
-
                                             <Border Grid.Column="0" 
                                                     Grid.Row="0"
                                                     Grid.RowSpan="10"
-                                                    Margin="0 39 0 0"
-                                                    Width="1" 
+                                                    Margin="0 38 0 0"
+                                                    Width="2" 
                                                     BorderThickness="10 2 5 5"
                                                     Panel.ZIndex="2"
                                                     HorizontalAlignment="Right">
@@ -93,30 +88,28 @@
                                                 </Rectangle.Fill>
                                             </Rectangle>
 
-                                            <!-- SIDE MENU -->
-                                            <Button Content="Nazwa Użytkownika" 
-                                                    Style="{StaticResource DefaultButton}" 
-                                                    Command="{Binding LoginCommand}"/>
+                                            <!-- Side Menu -->
                                             <Button Content="Listy Zadań" 
-                                                    Grid.Row="1" 
-                                                    Style="{StaticResource DefaultButton}"
-                                                    Command="{Binding LoginCommand}"/>
+                                                    Grid.Row="0" 
+                                                    Panel.ZIndex="15"
+                                                    Style="{StaticResource MenuButton}"
+                                                    Command="{Binding ListsCommand}"/>
                                             <Button Content="Zadania"
-                                                    Style="{StaticResource DefaultButton}" 
-                                                    Grid.Row="2" 
-                                                    Command="{Binding LoginCommand}"/>
+                                                    Style="{StaticResource MenuButton}" 
+                                                    Grid.Row="1" 
+                                                    Command="{Binding TasksCommand}"/>
                                             <Button Content="Ukończone" 
-                                                    Style="{StaticResource DefaultButton}" 
-                                                    Grid.Row="3"
-                                                    Command="{Binding LoginCommand}"/>
+                                                    Style="{StaticResource MenuButton}" 
+                                                    Grid.Row="2"
+                                                    Command="{Binding FinishedCommand}"/>
                                             <Button Content="Kosz" 
-                                                    Style="{StaticResource DefaultButton}"
-                                                    Grid.Row="4"
-                                                    Command="{Binding LoginCommand}"/>
+                                                    Style="{StaticResource MenuButton}"
+                                                    Grid.Row="3"
+                                                    Command="{Binding DeletedCommand}"/>
                                             <Button Content="Analiza" 
-                                                    Style="{StaticResource DefaultButton}" 
-                                                    Grid.Row="5"
-                                                    Command="{Binding DialogCommand}"/>
+                                                    Style="{StaticResource MenuButton}" 
+                                                    Grid.Row="4"
+                                                    Command="{Binding AnalyzeCommand}"/>
 
 
                                             <StackPanel Orientation="Horizontal" Grid.Row="7" HorizontalAlignment="Center">
@@ -139,19 +132,16 @@
                                                         Width="40"
                                                         Height="40"/>
 
-                                                <!-- Settings -->
+                                                <!-- Add Task Button -->
                                                 <Button Margin="10 0 0 0"
                                                         Style="{StaticResource RoundedButton}"
-                                                        FontFamily="{StaticResource FontAwesome}"
-                                                        FontSize="{StaticResource FontSizeLarge}"
-                                                        Content="{StaticResource FontAwesomeSettingsIcon}"
-                                                        Width="40"
-                                                        Height="40"/>
+                                                        Content="{StaticResource FontAwesomeAddIcon}"
+                                                        Command="{Binding TaskCommand}"/>
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
 
-                                    <!-- TITLE BAR -->
+                                    <!-- Title Bar -->
                                     <Grid Grid.Column="1">
                                         <Grid Background="{DynamicResource SurfaceBrush}">
                                             <Grid.ColumnDefinitions>
@@ -161,12 +151,6 @@
                                                 <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <!-- Icon -->
-                                            <!--<Button
-                                               Style="{StaticResource SystemIconButton}" 
-                                               Command="{Binding MenuCommand}">
-                                                <Image Source="/Images/Logo/logo.png" HorizontalAlignment="Left"/>-->
-
                                             <!-- Title -->
                                             <Viewbox Grid.Column="0" 
                                                      Grid.ColumnSpan="2" 
@@ -175,14 +159,14 @@
                                                        FontFamily="{StaticResource CinzelDecorative}"
                                                        Foreground="{DynamicResource PrimaryBrush}"
                                                        Margin="0,0,0,0" 
-                                                   Content="DayHelper"/>
+                                                       Content="DayHelper"/>
                                             </Viewbox>
 
 
                                             <!--Underline-->
                                             <Border Grid.Column="0" 
                                                     Grid.ColumnSpan="2" 
-                                                    Height="1" 
+                                                    Height="2" 
                                                     BorderThickness="0 2 0 0" 
                                                     VerticalAlignment="Bottom">
                                                 <Border.BorderBrush>
@@ -198,19 +182,19 @@
                                             <!-- Window Buttons -->
                                             <StackPanel Grid.Column="2" Orientation="Horizontal">
                                                 <Button Command="{Binding MinimizeCommand}" 
-                                                Style="{StaticResource WindowControlButton}"  
-                                                Content="{StaticResource FontAwesomeMinimize}"/>
+                                                        Style="{StaticResource WindowControlButton}"  
+                                                        Content="{StaticResource FontAwesomeMinimize}"/>
                                                 <Button Command="{Binding MaximizeCommand}"
-                                                Style="{StaticResource WindowControlButton}" 
-                                                Content="{StaticResource FontAwesomeMaximize}"/>
+                                                        Style="{StaticResource WindowControlButton}" 
+                                                        Content="{StaticResource FontAwesomeMaximize}"/>
                                                 <Button Command="{Binding CloseCommand}" 
-                                                Style="{StaticResource WindowControlButton}" 
-                                                Content="{StaticResource FontAwesomeCancel}"/>
+                                                        Style="{StaticResource WindowControlButton}" 
+                                                        Content="{StaticResource FontAwesomeCancel}"/>      
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
                                     
-                                    <!--PAGE CONTENT -->
+                                    <!-- Page Content -->
                                     <Grid Grid.Column="1" Grid.Row="1">
 
                                         <local:PageHost Grid.Column="1" 

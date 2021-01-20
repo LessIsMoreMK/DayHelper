@@ -98,21 +98,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\AnalzyePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\FinishedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\DeletedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\ListsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Pages\TaskPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Pages\SettingsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Pages\RegisterPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Pages\LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Buttons.xaml">
       <SubType>Designer</SubType>
@@ -177,26 +181,30 @@
       <DependentUpon>DialogMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Dialogs\DialogViewModel.cs" />
+    <Compile Include="ViewModels\Pages\DeletedViewModel.cs" />
+    <Compile Include="ViewModels\Pages\AnalyzeViewModel.cs" />
+    <Compile Include="ViewModels\Pages\FinishedViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ListsViewModel.cs" />
     <Compile Include="ViewModels\Pages\TaskViewModel.cs" />
     <Compile Include="ViewModels\Dialogs\MessageBoxDialogViewModel.cs" />
-    <Compile Include="ViewModels\Pages\SettingsViewModel.cs" />
+    <Compile Include="Views\Pages\AnalzyePage.xaml.cs">
+      <DependentUpon>AnalzyePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\FinishedPage.xaml.cs">
+      <DependentUpon>FinishedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DeletedPage.xaml.cs">
+      <DependentUpon>DeletedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ListsPage.xaml.cs">
+      <DependentUpon>ListsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\TaskPage.xaml.cs">
       <DependentUpon>TaskPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\RegisterPage.xaml.cs">
-      <DependentUpon>RegisterPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Pages\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ValueConverters\ApplicationPageValueConverter.cs" />
     <Compile Include="ValueConverters\BaseValueConverter.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
-    <Compile Include="ViewModels\Pages\RegisterViewModel.cs" />
-    <Compile Include="ViewModels\Pages\LoginViewModel.cs" />
     <Compile Include="Helpers\ViewModelLocator.cs" />
     <Compile Include="ViewModels\WindowViewModel.cs" />
     <Compile Include="Views\Controls\PageHost.xaml.cs">

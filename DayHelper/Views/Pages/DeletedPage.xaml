@@ -1,4 +1,4 @@
-﻿<local:BasePage x:TypeArguments="local:LoginViewModel" x:Class="DayHelper.LoginPage"
+﻿<local:BasePage x:TypeArguments="local:DeletedViewModel" x:Class="DayHelper.DeletedPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,11 +7,8 @@
       mc:Ignorable="d"         
       d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid>
-        <Button Command="{Binding RegisterCommand}"
-                Content="Go to register" 
-                HorizontalAlignment="Center"
-                Height="30"
-                Width="130"/>
+    <Grid Margin="5">
+        <Label Content="Deleted"></Label>
     </Grid>
+    
 </local:BasePage>

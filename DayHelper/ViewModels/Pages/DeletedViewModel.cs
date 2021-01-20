@@ -1,7 +1,11 @@
 ﻿namespace DayHelper
 {
-    public class SettingsViewModel : BaseViewModel
+    public class DeletedViewModel : BaseViewModel
     {
+        #region Private Members
+        
+        #endregion
+
         #region Public Properties
 
         #endregion
@@ -11,7 +15,10 @@
         #endregion
 
         #region Constructor
+        public DeletedViewModel()
+        {
 
+        }
         #endregion
 
         #region Methods

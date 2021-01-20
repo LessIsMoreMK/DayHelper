@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:DayHelper">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <ResourceDictionary.MergedDictionaries>
         <!-- Order is important -->
@@ -31,15 +30,28 @@
         <Setter Property="Padding" Value="10" />
     </Style>
 
+    <!-- Menu Button-->
+    <Style TargetType="{x:Type Button}" x:Key="MenuButton" BasedOn="{StaticResource Hoverless}">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource OnPrimaryBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <!-- Window Control Button -->
-    <Style TargetType="{x:Type Button}" x:Key="WindowControlButton">
+    <Style TargetType="{x:Type Button}" x:Key="WindowControlButton" BasedOn="{StaticResource MenuButton}">
         <Setter Property="FontFamily" Value="{StaticResource FontAwesome}"/>
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Padding" Value="10 0 10 0"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
-        
 
         <Setter Property="LayoutTransform">
             <Setter.Value>
@@ -59,35 +71,30 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource OnBackgroundBrush}" />
-            </Trigger>
-        </Style.Triggers>
-
     </Style>
-
     
-    <!-- Default Button -->
-    <Style TargetType="{x:Type Button}" x:Key="DefaultButton" BasedOn="{StaticResource Hoverless}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
-        <Setter Property="FontWeight" Value="Bold"/>
+    <!-- Basic Button-->
+    <Style TargetType="{x:Type Button}" x:Key="BasicButton">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
         <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
                 <Setter Property="Foreground" Value="{DynamicResource OnPrimaryBrush}" />
-                
             </Trigger>
         </Style.Triggers>
     </Style>
     
-    <!-- Round Button -->
-    <Style x:Key="RoundedButton" TargetType="{x:Type Button}">
+    <!-- Rounded Button-->
+    <Style x:Key="RoundedButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BasicButton}">
         <Style.Setters>
-            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontAwesome}"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -115,17 +122,16 @@
             </Setter>
         </Style.Setters>
     </Style>
-    
-    <!-- Action Button-->
-    <Style TargetType="{x:Type Button}" x:Key="ActionButton" BasedOn="{StaticResource RoundedButton}">
-        
+    <!-- Border Button-->
+    <Style TargetType="{x:Type Button}" x:Key="BorderButton" BasedOn="{StaticResource BasicButton}">
         <Style.Setters>
-            <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="Width" Value="32"/>
             <Setter Property="Height" Value="32"/>
             <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontAwesome}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -143,4 +149,19 @@
             </Setter>
         </Style.Setters>
     </Style>
+    
+    <!-- List Button-->
+    <Style TargetType="{x:Type Button}" x:Key="ListButton" BasedOn="{StaticResource BorderButton}">
+        <Setter Property="BorderBrush" Value="{StaticResource SecondaryBrush}"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeVeryLarge}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.8" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>

@@ -1,14 +1,8 @@
 ﻿using DayHelper.DataModel;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Windows.Data;
 using System.Windows.Input;
-using System.Threading.Tasks;
 using Task = DayHelper.DataModel.Task;
-using System.Threading;
 
 namespace DayHelper
 {

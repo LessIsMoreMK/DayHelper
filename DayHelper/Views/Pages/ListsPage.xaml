@@ -1,0 +1,28 @@
+﻿<local:BasePage x:TypeArguments="local:ListsViewModel" x:Class="DayHelper.ListsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DayHelper"
+      mc:Ignorable="d"         
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ItemsControl ItemsSource="{Binding TaskLists}" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Path=.}" Margin="5" VerticalContentAlignment="Stretch" Height="100" Style="{StaticResource ListButton}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Button VerticalAlignment="Top" Grid.Row="0"
+                Style="{StaticResource ListButton}"
+                Content="{StaticResource FontAwesomeAddIcon}" 
+                FontFamily="{StaticResource FontAwesome}" Margin="5" VerticalContentAlignment="Stretch" Height="100"/>
+    </Grid>
+    
+</local:BasePage>

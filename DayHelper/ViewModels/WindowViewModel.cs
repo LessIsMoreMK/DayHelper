@@ -1,8 +1,4 @@
-﻿using DayHelper.DataModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows;
 using System.Windows.Input;
 
@@ -36,6 +32,7 @@ namespace DayHelper
         public double WindowMinimumWidth { get; set; } = 800;
 
         public double WindowMinimumHeight { get; set; } = 500;
+
         /// <summary>
         /// The size of the resize border around the window
         /// </summary>
@@ -99,11 +96,17 @@ namespace DayHelper
         /// </summary>
         public ICommand ClockCommand { get; set; }
 
-        // Navigation Commands
-        public ICommand LoginCommand { get; set; }
-        public ICommand SettingsCommand { get; set; }
-        public ICommand MainCommand { get; set; }
-        public ICommand DialogCommand { get; set; }
+        /// <summary>
+        /// The command to open window with task add form
+        /// </summary>
+        public ICommand TaskCommand { get; set; }
+
+        /// Navigation Commands
+        public ICommand ListsCommand { get; set; }
+        public ICommand TasksCommand { get; set; }
+        public ICommand FinishedCommand { get; set; }
+        public ICommand DeletedCommand { get; set; }
+        public ICommand AnalyzeCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -124,20 +127,23 @@ namespace DayHelper
                 OnPropertyChanged(() => WindowCornerRadius);
             };
 
+            /// Window Commands
             MinimizeCommand = new RelayCommand(() => mWindow.WindowState = WindowState.Minimized);
             MaximizeCommand = new RelayCommand(() => mWindow.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => mWindow.Close());
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(mWindow, GetMousePosition()));
 
+            /// Navigation Commands
+            TasksCommand = new RelayCommand(Tasks);
+            ListsCommand = new RelayCommand(Lists);
+            FinishedCommand = new RelayCommand(Finished);
+            DeletedCommand = new RelayCommand(Deleted);
+            AnalyzeCommand = new RelayCommand(Analyze);
+
+            /// Action Commands
             ThemeCommand = new RelayCommand(ChangeTheme);
-
             ClockCommand = new RelayCommand(async () => await Clock());
-
-            LoginCommand = new RelayCommand(Login);
-            SettingsCommand = new RelayCommand(Settings);
-            MainCommand = new RelayCommand(Main);
-            DialogCommand = new RelayCommand(async () => await Dialog());
-
+            TaskCommand = new RelayCommand(async () => await AddTask());
 
 
             // Fix window resize issue
@@ -148,31 +154,26 @@ namespace DayHelper
 
         #region Navigation
 
-        public void Login()
+        public void Lists()
         {
-            using (var context = new DayHelperContext())
-            {
-                List<DayHelper.DataModel.Task> list = context.Tasks.ToList();
-                context.SaveChanges();
-            }
+            IoC.Application.GoToPage(ApplicationPage.Lists);
         }
-        public void Settings()
-        {
-            
-        }
-        public void Main()
+        public void Tasks()
         {
             IoC.Application.GoToPage(ApplicationPage.Task);
         }
-        public async System.Threading.Tasks.Task Dialog()
+        public void Finished()
         {
-            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-            {
-                Title = "Custom Dialog",
-                Message = "bleble"
-            });
+            IoC.Application.GoToPage(ApplicationPage.Finished);
         }
-
+        public void Deleted()
+        {
+            IoC.Application.GoToPage(ApplicationPage.Deleted);
+        }
+        public void Analyze()
+        {
+            IoC.Application.GoToPage(ApplicationPage.Analyze);
+        }
         #endregion
 
         #region Private Helpers
@@ -184,7 +185,13 @@ namespace DayHelper
                 Title = "Pomodoro",
             });
         }
-
+        private async System.Threading.Tasks.Task AddTask()
+        {
+            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+            {
+                Title = "Add Task",
+            });
+        }
         private void ChangeTheme()
         {
             var app = App.Current as App;

@@ -12,5 +12,10 @@ namespace DayHelper.DataModel
         {
             return context.Tasks.ToList();
         }
+
+        public List<TaskList> GetAllTaskLists()
+        {
+            return context.TaskLists.ToList();
+        }
     }
 }
