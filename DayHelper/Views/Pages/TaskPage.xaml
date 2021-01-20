@@ -7,21 +7,50 @@
       mc:Ignorable="d"         
       d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition/>
+           <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        <DataGrid ItemsSource="{Binding Tasks}"
+        <TextBox Grid.Row="0" Margin="0 0 0 5"></TextBox>
+            
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" ItemsSource="{Binding Tasks}"
                   Style="{StaticResource MainDataGrid}" 
                   CellStyle="{StaticResource MainDataGridCell}"
-                  RowStyle="{StaticResource MainDataGridRow}">
+                  RowStyle="{StaticResource MainDataGridRow}"
+                  SelectedItem="{Binding SelectedItem}">
 
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Binding="{Binding Finished}" ElementStyle="{StaticResource CheckboxMain}"/>
-                <DataGridTextColumn  Binding="{Binding Content}" MinWidth="250" Width="*"/>
-                <DataGridTextColumn  Binding="{Binding Difficulty}"/>
-                <DataGridTextColumn  Binding="{Binding Priority}"/>
-                <DataGridTextColumn  Binding="{Binding DateCreated}" />
-                <DataGridTextColumn  Binding="{Binding DateToFinish}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Style="{StaticResource CheckboxMain}" Command="{Binding DataContext.FinishedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
 
+                <DataGridTextColumn  Binding="{Binding Content}" IsReadOnly="true" MinWidth="250" Width="*" FontSize="{StaticResource FontSizeMedium}"/>
+
+                <DataGridTextColumn  Binding="{Binding Difficulty}" IsReadOnly="true"/>
+                <DataGridTextColumn  Binding="{Binding Priority}" IsReadOnly="true"/>
+
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding DateCreated, StringFormat=dd.MM.yyyy}" Foreground="Gray" FontWeight="Normal"/>
+                                <TextBlock Text="{Binding DateToFinish, StringFormat=dd.MM.yyyy}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -38,9 +67,22 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Style="{StaticResource ActionButton}"
+                                    Command="{Binding DataContext.DeletedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                     FontFamily="{StaticResource FontAwesome}"
                                     FontSize="{StaticResource FontSizeLarge}"
                                     Content="{StaticResource FontAwesomeDeleteIcon}"
+                                    Width="30"
+                                    Height="30"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource ActionButton}"        
+                                    FontFamily="{StaticResource FontAwesome}"
+                                    FontSize="{StaticResource FontSizeLarge}"
+                                    Content="{StaticResource FontAwesomeNotificationIcon}"
                                     Width="30"
                                     Height="30"
                                     Margin="0 0 15 0"/>
@@ -48,8 +90,6 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
-
-
         </DataGrid>
     </Grid>
 </local:BasePage>

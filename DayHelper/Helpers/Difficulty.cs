@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace DayHelper.DataModel
+namespace DayHelper
 {
     public enum Difficulty
     {

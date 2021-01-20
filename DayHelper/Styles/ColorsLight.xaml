@@ -35,13 +35,13 @@
     <SolidColorBrush x:Key="OnSecondaryBrush" Color="{StaticResource OnSecondary}"/>
 
     <!-- Tasks Priority colors-->
-    <Color x:Key="NotDefined">#e3e3e3</Color>
+    <Color x:Key="NotDefined">#ccc5b9</Color>
     <SolidColorBrush x:Key="NotDefinedBrush" Color="{StaticResource NotDefined}"/>
-    <Color x:Key="Normal">#b2fc97</Color>
+    <Color x:Key="Normal">#ccc5b9</Color>
     <SolidColorBrush x:Key="NormalBrush" Color="{StaticResource Normal}"/>
-    <Color x:Key="Important">#fdff9c</Color>
+    <Color x:Key="Important">#ccc5b9</Color>
     <SolidColorBrush x:Key="ImportantBrush" Color="{StaticResource Important}"/>
-    <Color x:Key="Critical">#fc8888</Color>
+    <Color x:Key="Critical">#ccc5b9</Color>
     <SolidColorBrush x:Key="CriticalBrush" Color="{StaticResource Critical}"/>
 
 </ResourceDictionary>

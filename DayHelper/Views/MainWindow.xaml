@@ -12,7 +12,7 @@
         x:Name="AppWindow"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
-        Height="500" Width="800">
+        Height="600" Width="1000">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">

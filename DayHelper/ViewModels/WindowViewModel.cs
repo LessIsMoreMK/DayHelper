@@ -14,9 +14,7 @@ namespace DayHelper
     public class WindowViewModel : BaseViewModel
     {
         #region Private Member
-        public double WindowMinimumWidth { get; set; } = 800;
-
-        public double WindowMinimumHeight { get; set; } = 500;
+        
         /// <summary>
         /// The window this view model controls
         /// </summary>
@@ -35,7 +33,9 @@ namespace DayHelper
         #endregion
 
         #region Public Properties
+        public double WindowMinimumWidth { get; set; } = 800;
 
+        public double WindowMinimumHeight { get; set; } = 500;
         /// <summary>
         /// The size of the resize border around the window
         /// </summary>

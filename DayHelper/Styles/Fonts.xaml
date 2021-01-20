@@ -12,6 +12,7 @@
     <system:Double x:Key="FontSizeVerySmall">8</system:Double>
     <system:Double x:Key="FontSizeSmall">12</system:Double>
     <system:Double x:Key="FontSizeRegular">14</system:Double>
+    <system:Double x:Key="FontSizeMedium">16</system:Double>
     <system:Double x:Key="FontSizeLarge">20</system:Double>
     <system:Double x:Key="FontSizeVeryLarge">30</system:Double>
 
@@ -25,11 +26,13 @@
     <system:String x:Key="FontAwesomeClockIcon">&#xf017;</system:String>
     <system:String x:Key="FontAwesomeSettingsIcon">&#xf013;</system:String>
     
+    <system:String x:Key="FontAwesomeSaveIcon">&#xf14b;</system:String>
+    <system:String x:Key="FontAwesomeDeleteIcon">&#xf1f8;</system:String>
+    <system:String x:Key="FontAwesomeNotificationIcon">&#xf024;</system:String>
+
+
     <system:String x:Key="FontAwesomeUserIcon">&#xf007;</system:String>
     <system:String x:Key="FontAwesomeCalendarIcon">&#xf073;</system:String>
     <system:String x:Key="FontAwesomeMenuIcon">&#xf0c9;</system:String>
     <system:String x:Key="FontAwesomeHeartIcon">&#xf004;</system:String>
-    
-    <system:String x:Key="FontAwesomeSaveIcon">&#xf0c7;</system:String>
-    <system:String x:Key="FontAwesomeDeleteIcon">&#xf1f8;</system:String>
 </ResourceDictionary>

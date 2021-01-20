@@ -20,7 +20,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
                         <Border BorderThickness="1" 
-                                BorderBrush="{StaticResource PrimaryBrush}" 
+                                BorderBrush="{DynamicResource PrimaryBrush}" 
                                 Background="{DynamicResource OnBackgroundBrush}"
                                 CornerRadius="{Binding WindowCornerRadius, FallbackValue=11}"
                                 ClipToBounds="true"
@@ -60,7 +60,7 @@
                                         </Grid.ColumnDefinitions>
 
                                         <!-- Icon -->
-                                        <Button Style="{StaticResource SystemIconButton}" 
+                                        <Button Style="{DynamicResource SystemIconButton}" 
                                             Command="{Binding MenuCommand}">
                                             <Image Source="/Images/Logo/logo.ico"/>
                                         </Button>

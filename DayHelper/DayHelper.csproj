@@ -159,6 +159,8 @@
     <Compile Include="Dialogs\DialogWindow.xaml.cs">
       <DependentUpon>DialogWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Difficulty.cs" />
+    <Compile Include="Helpers\EnumBindingSourceExtension.cs" />
     <Compile Include="Helpers\IUIManager.cs" />
     <Compile Include="Helpers\SendingMails.cs" />
     <Compile Include="Helpers\UIManager.cs" />
