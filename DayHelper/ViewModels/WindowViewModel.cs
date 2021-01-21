@@ -180,10 +180,12 @@ namespace DayHelper
 
         private async System.Threading.Tasks.Task Clock()
         {
-            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-            {
-                Title = "Pomodoro",
-            });
+            ClockWindow win2 = new ClockWindow();
+            win2.Show();
+            //await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+            //{
+            //    Title = "Pomodoro",
+            //});
         }
         private async System.Threading.Tasks.Task AddTask()
         {

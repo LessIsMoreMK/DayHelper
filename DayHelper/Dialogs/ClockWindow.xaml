@@ -15,7 +15,7 @@
         Title="{Binding Title}">
 
     <Window.Resources>
-        <Style TargetType="{x:Type local:DialogWindow}">
+        <Style TargetType="{x:Type local:ClockWindow}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
@@ -24,8 +24,8 @@
                                 Background="{DynamicResource OnBackgroundBrush}"
                                 CornerRadius="{Binding WindowCornerRadius, FallbackValue=11}"
                                 ClipToBounds="true"
-                                Width="200"
-                                Height="200">
+                                Width="300"
+                                Height="300">
 
                             <!-- Main window outline -->
                             <Grid >
@@ -47,8 +47,7 @@
                                     </Grid.RowDefinitions>
 
                                     <!-- Title Bar -->
-                                    <Grid Grid.Column="0"
-                                      >
+                                    <Grid Grid.Column="0">
 
                                         <Grid.ColumnDefinitions>
                                             <!-- Icon -->
@@ -61,30 +60,42 @@
 
                                         <!-- Icon -->
                                         <Button Style="{DynamicResource SystemIconButton}" 
-                                            Command="{Binding MenuCommand}">
+                                            Command="{Binding MenuCommand}" Height="40">
                                             <Image Source="/Images/Logo/logo.ico"/>
                                         </Button>
 
                                         <!-- Title -->
-                                        <Viewbox Grid.Column="0" 
-                                             Grid.ColumnSpan="3" 
-                                             Margin="5">
-                                            <TextBlock FontSize="{DynamicResource FontSizeSmall}"
-                                                   FontFamily="{DynamicResource CinzelDecorative}"
-                                                   Foreground="{DynamicResource PrimaryBrush}"
-                                                   Margin="0,0,0,0" 
-                                                   Text="DayHelper"/>
-                                        </Viewbox>
-
+                                        <Grid Grid.Column="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock FontSize="{DynamicResource FontSizeLarge}"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Bottom"
+                                                       FontFamily="{DynamicResource CinzelDecorative}"
+                                                       Foreground="{DynamicResource PrimaryBrush}"
+                                                       Margin="0,0,0,0" 
+                                                       Text="Pomodoro"
+                                                       Grid.Row="0"/>
+                                            <TextBlock FontSize="{DynamicResource FontSizeVerySmall}"
+                                                       HorizontalAlignment="Center"
+                                                       FontFamily="{DynamicResource CinzelDecorative}"
+                                                       Foreground="{DynamicResource PrimaryBrush}"
+                                                       Margin="0,0,0,0" 
+                                                       Text="DayHelper"
+                                                       Grid.Row="1"/>
+                                        </Grid>
                                         <!-- Window Buttons -->
                                         <StackPanel Grid.Column="2" Orientation="Horizontal">
-                                            <Button Command="{Binding CloseCommand}" 
+                                            <Button Command="{Binding CloseCommand2}" 
                                                 Style="{DynamicResource WindowControlButton}" 
-                                                Content="{DynamicResource FontAwesomeCancel}"/>
+                                                Content="{DynamicResource FontAwesomeCancel}"
+                                                FontSize="{DynamicResource FontSizeSmall}"/>
                                         </StackPanel>
                                     </Grid>
 
-                                    <Border Grid.Row="1" Height="1" BorderThickness="0 0.5 0 0">
+                                    <Border Grid.Row="1" Height="1" BorderThickness="1">
                                         <!--Underline-->
                                         <Border.BorderBrush>
                                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -108,20 +119,44 @@
         </Style>
     </Window.Resources>
 
+
+
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Label Content="00:00" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <!--<ContentControl Content="{Binding Content}"/>-->
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Slider Width="150" TickFrequency="10" Maximum="90" Value="30" IsSelectionRangeEnabled="True" TickPlacement="BottomRight"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="5px 0px 5px 0px">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="start" Style="{DynamicResource BasicButton}"/>
+                <Button Grid.Column="2" Content="stop" Style="{DynamicResource BasicButton}"/>
+            </Grid>
+
+        </Grid>
+    </Border>
+
     <WindowChrome.WindowChrome>
         <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}"
                       CaptionHeight="{Binding TitleHeight}"
                       CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" 
                       GlassFrameThickness="0"/>
     </WindowChrome.WindowChrome>
-    
-    <Border>
-        <Grid>
-            <Border Padding="15">
 
-                <ContentControl Content="{Binding Content}"/>
-
-            </Border>
-        </Grid>
-    </Border>
 </Window>
