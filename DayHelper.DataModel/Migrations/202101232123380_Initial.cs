@@ -8,19 +8,7 @@
         public override void Up()
         {
             CreateTable(
-                "dbo.Tags",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Task_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Tasks", t => t.Task_Id)
-                .Index(t => t.Task_Id);
-            
-            CreateTable(
-                "dbo.Tasks",
+                "dbo.TaskDeleteds",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -42,36 +30,37 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        User_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Users", t => t.User_Id)
-                .Index(t => t.User_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Users",
+                "dbo.Tasks",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Username = c.String(),
-                        Password = c.String(),
+                        Content = c.String(),
+                        Finished = c.Boolean(nullable: false),
+                        Priority = c.Int(nullable: false),
+                        Difficulty = c.Int(nullable: false),
+                        DateCreated = c.DateTime(nullable: false),
+                        DateToFinish = c.DateTime(nullable: false),
+                        TaskList_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.TaskLists", t => t.TaskList_Id)
+                .Index(t => t.TaskList_Id);
             
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Tasks", "TaskList_Id", "dbo.TaskLists");
-            DropForeignKey("dbo.TaskLists", "User_Id", "dbo.Users");
-            DropForeignKey("dbo.Tags", "Task_Id", "dbo.Tasks");
-            DropIndex("dbo.TaskLists", new[] { "User_Id" });
+            DropForeignKey("dbo.TaskDeleteds", "TaskList_Id", "dbo.TaskLists");
             DropIndex("dbo.Tasks", new[] { "TaskList_Id" });
-            DropIndex("dbo.Tags", new[] { "Task_Id" });
-            DropTable("dbo.Users");
-            DropTable("dbo.TaskLists");
+            DropIndex("dbo.TaskDeleteds", new[] { "TaskList_Id" });
             DropTable("dbo.Tasks");
-            DropTable("dbo.Tags");
+            DropTable("dbo.TaskLists");
+            DropTable("dbo.TaskDeleteds");
         }
     }
 }

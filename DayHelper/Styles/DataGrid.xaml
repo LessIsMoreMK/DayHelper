@@ -29,23 +29,22 @@
     <Style TargetType="{x:Type DataGridRow}" x:Key="MainDataGridRow">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Height" Value="45"/>
-        
+
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=Priority}" Value="NotDefined">
+            <DataTrigger Binding="{Binding Path=Priority}" Value="Niezdefiniowany">
                 <Setter Property="Foreground" Value="{StaticResource NotDefinedBrush}"/>
             </DataTrigger>
-            <DataTrigger Binding="{Binding Path=Priority}" Value="Normal">
+            <DataTrigger Binding="{Binding Path=Priority}" Value="Normalne">
                 <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
             </DataTrigger>
-            <DataTrigger Binding="{Binding Path=Priority}" Value="Important">
+            <DataTrigger Binding="{Binding Path=Priority}" Value="Ważne">
                 <Setter Property="Foreground" Value="{StaticResource ImportantBrush}"/>
             </DataTrigger>
-            <DataTrigger Binding="{Binding Path=Priority}" Value="Critical">
+            <DataTrigger Binding="{Binding Path=Priority}" Value="Krytyczne">
                 <Setter Property="Foreground" Value="{StaticResource CriticalBrush}"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
-
 
     <!-- Main DataGrid Cell -->
     <Style x:Key="MainDataGridCell"
@@ -97,6 +96,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
     
 </ResourceDictionary>

@@ -2,7 +2,7 @@
 
 namespace DayHelper.DataModel
 {
-    public class Task
+    public class TaskDeleted
     {
         public int Id { get; set; }
         public string Content { get; set; }

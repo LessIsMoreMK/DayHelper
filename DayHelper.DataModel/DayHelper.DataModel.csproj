@@ -51,17 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Tag.cs" />
+    <Compile Include="Classes\TaskDeleted.cs" />
     <Compile Include="Classes\Task.cs" />
     <Compile Include="Classes\TaskList.cs" />
-    <Compile Include="Classes\User.cs" />
     <Compile Include="ConnectedRepository.cs" />
     <Compile Include="DayHelperContext.cs" />
     <Compile Include="Enums\Difficulty.cs" />
     <Compile Include="Enums\Priority.cs" />
-    <Compile Include="Migrations\202101111226540_Initial.cs" />
-    <Compile Include="Migrations\202101111226540_Initial.designer.cs">
-      <DependentUpon>202101111226540_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202101232123380_Initial.cs" />
+    <Compile Include="Migrations\202101232123380_Initial.designer.cs">
+      <DependentUpon>202101232123380_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101111226540_Initial.resx">
-      <DependentUpon>202101111226540_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101232123380_Initial.resx">
+      <DependentUpon>202101232123380_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

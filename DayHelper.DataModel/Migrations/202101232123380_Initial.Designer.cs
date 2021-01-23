@@ -13,7 +13,7 @@ namespace DayHelper.DataModel.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202101111226540_Initial"; }
+            get { return "202101232123380_Initial"; }
         }
         
         string IMigrationMetadata.Source

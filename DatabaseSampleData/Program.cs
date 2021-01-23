@@ -47,8 +47,8 @@ namespace DatabaseSampleData
             {
                 Content = "Wynieść śmieci",
                 Finished = false,
-                Priority = Priority.Critical,
-                Difficulty = Difficulty.Easy,
+                Priority = Priority.Krytyczne,
+                Difficulty = Difficulty.Łatwe,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now,
                 TaskList = tasklist,
@@ -57,8 +57,8 @@ namespace DatabaseSampleData
             {
                 Content = "Odkurzyć",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now,
                 TaskList = tasklist,
@@ -67,8 +67,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zrobić zakupy",
                 Finished = true,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now.AddDays(-2),
                 DateToFinish = DateTime.Now.AddDays(-1),
                 TaskList = tasklist,
@@ -77,8 +77,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zrobić zakupy",
                 Finished = true,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now.AddDays(-8),
                 DateToFinish = DateTime.Now.AddDays(-6),
                 TaskList = tasklist,
@@ -87,8 +87,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zrobić zakupy",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now,
                 TaskList = tasklist,
@@ -97,8 +97,8 @@ namespace DatabaseSampleData
             {
                 Content = "Wymienić żarówkę",
                 Finished = false,
-                Priority = Priority.Important,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Ważne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now,
                 TaskList = tasklist,
@@ -107,8 +107,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zrobić zakupy",
                 Finished = true,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Easy,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Łatwe,
                 DateCreated = DateTime.Now.AddDays(-4),
                 DateToFinish = DateTime.Now.AddDays(-3),
                 TaskList = tasklist,
@@ -117,8 +117,8 @@ namespace DatabaseSampleData
             {
                 Content = "Naprawić stół",
                 Finished = false,
-                Priority = Priority.Critical,
-                Difficulty = Difficulty.Easy,
+                Priority = Priority.Krytyczne,
+                Difficulty = Difficulty.Łatwe,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now,
                 TaskList = tasklist,
@@ -127,8 +127,8 @@ namespace DatabaseSampleData
             {
                 Content = "Naprawić czajnik",
                 Finished = false,
-                Priority = Priority.Important,
-                Difficulty = Difficulty.Hard,
+                Priority = Priority.Ważne,
+                Difficulty = Difficulty.Trudne,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(2),
                 TaskList = tasklist,
@@ -137,8 +137,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zrobić obiad",
                 Finished = false,
-                Priority = Priority.NotDefined,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Niezdefiniowany,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now,
                 TaskList = tasklist,
@@ -148,8 +148,8 @@ namespace DatabaseSampleData
             {
                 Content = "George Orwell 1984",
                 Finished = false,
-                Priority = Priority.Critical,
-                Difficulty = Difficulty.NotDefined,
+                Priority = Priority.Krytyczne,
+                Difficulty = Difficulty.Niezdefiniowana,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(20),
                 TaskList = tasklist4,
@@ -158,18 +158,18 @@ namespace DatabaseSampleData
             {
                 Content = "Stanisław Lem Niezwyciężony",
                 Finished = false,
-                Priority = Priority.NotDefined,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Niezdefiniowany,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(10),
                 TaskList = tasklist4,
             };
             var task13 = new Task
             {
-                Content = "Richard Branson Kroki W Nieznane",
+                Content = "RicTrudne Branson Kroki W Nieznane",
                 Finished = false,
-                Priority = Priority.NotDefined,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Niezdefiniowany,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(35),
                 TaskList = tasklist4,
@@ -178,8 +178,8 @@ namespace DatabaseSampleData
             {
                 Content = "Remigiusz Mróz Nieodnaleziona",
                 Finished = false,
-                Priority = Priority.NotDefined,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Niezdefiniowany,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(90),
                 TaskList = tasklist4,
@@ -188,8 +188,8 @@ namespace DatabaseSampleData
             {
                 Content = "Faktfulness",
                 Finished = true,
-                Priority = Priority.NotDefined,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Niezdefiniowany,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now.AddDays(-5),
                 DateToFinish = DateTime.Now.AddDays(-3),
                 TaskList = tasklist4,
@@ -199,8 +199,8 @@ namespace DatabaseSampleData
             {
                 Content = "Czas present simple",
                 Finished = true,
-                Priority = Priority.NotDefined,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Niezdefiniowany,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now.AddDays(-5),
                 DateToFinish = DateTime.Now.AddDays(-3),
                 TaskList = tasklist3,
@@ -209,8 +209,8 @@ namespace DatabaseSampleData
             {
                 Content = "Czas past continuous",
                 Finished = true,
-                Priority = Priority.Important,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Ważne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now.AddDays(-8),
                 DateToFinish = DateTime.Now.AddDays(-4),
                 TaskList = tasklist3,
@@ -219,8 +219,8 @@ namespace DatabaseSampleData
             {
                 Content = "Czas future simple",
                 Finished = true,
-                Priority = Priority.Important,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Ważne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now.AddDays(-2),
                 DateToFinish = DateTime.Now,
                 TaskList = tasklist3,
@@ -229,8 +229,8 @@ namespace DatabaseSampleData
             {
                 Content = "Czas past perfect",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(6),
                 TaskList = tasklist3,
@@ -239,8 +239,8 @@ namespace DatabaseSampleData
             {
                 Content = "Czas past perfect continuous",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Hard,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Trudne,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(12),
                 TaskList = tasklist3,
@@ -249,8 +249,8 @@ namespace DatabaseSampleData
             {
                 Content = "Przeczytać arytkuł o zwierzętach",
                 Finished = true,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Easy,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Łatwe,
                 DateCreated = DateTime.Now.AddDays(-5),
                 DateToFinish = DateTime.Now.AddDays(-3),
                 TaskList = tasklist3,
@@ -259,8 +259,8 @@ namespace DatabaseSampleData
             {
                 Content = "Przeczytać artykuł o kosmosie",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Easy,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Łatwe,
                 DateCreated = DateTime.Now.AddDays(-1),
                 DateToFinish = DateTime.Now.AddDays(6),
                 TaskList = tasklist3,
@@ -269,8 +269,8 @@ namespace DatabaseSampleData
             {
                 Content = "Przeczytać artykuł o dyskach",
                 Finished = false,
-                Priority = Priority.NotDefined,
-                Difficulty = Difficulty.Easy,
+                Priority = Priority.Niezdefiniowany,
+                Difficulty = Difficulty.Łatwe,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(8),
                 TaskList = tasklist3,
@@ -279,8 +279,8 @@ namespace DatabaseSampleData
             {
                 Content = "Nuaczyć się 30 słówek",
                 Finished = false,
-                Priority = Priority.Critical,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Krytyczne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now.AddDays(-5),
                 DateToFinish = DateTime.Now.AddDays(2),
                 TaskList = tasklist3,
@@ -289,8 +289,8 @@ namespace DatabaseSampleData
             {
                 Content = "Nauczyć się 30 słówek",
                 Finished = false,
-                Priority = Priority.Important,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Ważne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(7),
                 TaskList = tasklist3,
@@ -300,8 +300,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zadanie domowe matematyka",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Hard,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Trudne,
                 DateCreated = DateTime.Now.AddDays(-2),
                 DateToFinish = DateTime.Now.AddDays(7),
                 TaskList = tasklist2,
@@ -310,8 +310,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zadanie domowe geografia",
                 Finished = false,
-                Priority = Priority.Important,
-                Difficulty = Difficulty.NotDefined,
+                Priority = Priority.Ważne,
+                Difficulty = Difficulty.Niezdefiniowana,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(5),
                 TaskList = tasklist2,
@@ -320,8 +320,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zadanie domowe historia",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.NotDefined,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Niezdefiniowana,
                 DateCreated = DateTime.Now.AddDays(-1),
                 DateToFinish = DateTime.Now.AddDays(2),
                 TaskList = tasklist2,
@@ -330,8 +330,8 @@ namespace DatabaseSampleData
             {
                 Content = "Zadanie domowe matymatyka",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now.AddDays(-2),
                 DateToFinish = DateTime.Now.AddDays(5),
                 TaskList = tasklist2,
@@ -340,8 +340,8 @@ namespace DatabaseSampleData
             {
                 Content = "Projekt z chemii",
                 Finished = true,
-                Priority = Priority.NotDefined,
-                Difficulty = Difficulty.Easy,
+                Priority = Priority.Niezdefiniowany,
+                Difficulty = Difficulty.Łatwe,
                 DateCreated = DateTime.Now.AddDays(-4),
                 DateToFinish = DateTime.Now.AddDays(-3),
                 TaskList = tasklist2,
@@ -350,8 +350,8 @@ namespace DatabaseSampleData
             {
                 Content = "Projekt zaliczeniowy z informatyki",
                 Finished = false,
-                Priority = Priority.Important,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Ważne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(14),
                 TaskList = tasklist2,
@@ -360,8 +360,8 @@ namespace DatabaseSampleData
             {
                 Content = "Prezentacja na biologię",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Easy,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Łatwe,
                 DateCreated = DateTime.Now.AddHours(-20),
                 DateToFinish = DateTime.Now.AddDays(9),
                 TaskList = tasklist2,
@@ -370,8 +370,8 @@ namespace DatabaseSampleData
             {
                 Content = "Kartkówka chemia",
                 Finished = false,
-                Priority = Priority.Important,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Ważne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(1),
                 TaskList = tasklist2,
@@ -380,8 +380,8 @@ namespace DatabaseSampleData
             {
                 Content = "Sprawdzian informatyka",
                 Finished = false,
-                Priority = Priority.Critical,
-                Difficulty = Difficulty.Medium,
+                Priority = Priority.Krytyczne,
+                Difficulty = Difficulty.Średnie,
                 DateCreated = DateTime.Now,
                 DateToFinish = DateTime.Now.AddDays(7),
                 TaskList = tasklist2,
@@ -390,207 +390,11 @@ namespace DatabaseSampleData
             {
                 Content = "Dodatkowe zadanie z polskiego",
                 Finished = false,
-                Priority = Priority.Normal,
-                Difficulty = Difficulty.Hard,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Trudne,
                 DateCreated = DateTime.Now.AddDays(-2),
                 DateToFinish = DateTime.Now.AddDays(7),
                 TaskList = tasklist2,
-            };
-            #endregion
-
-            #region Tags
-            var tag = new Tag
-            {
-                Name = "Sprzątanie",
-                Task = task,
-            };
-            var tag2 = new Tag
-            {
-                Name = "Sprzątanie",
-                Task = task2,
-            };
-            var tag3 = new Tag
-            {
-                Name = "Naprawa",
-                Task = task6,
-            };
-            var tag4 = new Tag
-            {
-                Name = "Naprawa",
-                Task = task8,
-            };
-            var tag5 = new Tag
-            {
-                Name = "Naprawa",
-                Task = task9,
-            };
-            var tag6 = new Tag
-            {
-                Name = "Naprawa",
-                Task = task9,
-            };
-
-            var tag7 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task11,
-            };
-            var tag8 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task12,
-            };
-            var tag9 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task13,
-            };
-            var tag10 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task14,
-            };
-            var tag11 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task15,
-            };
-
-            var tag12 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task21,
-            };
-            var tag13 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task22,
-            };
-            var tag14 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task23,
-            };
-            var tag15 = new Tag
-            {
-                Name = "Nauka",
-                Task = task16,
-            };
-            var tag16 = new Tag
-            {
-                Name = "Nauka",
-                Task = task17,
-            };
-            var tag17 = new Tag
-            {
-                Name = "Nauka",
-                Task = task18,
-            };
-            var tag18 = new Tag
-            {
-                Name = "Nauka",
-                Task = task19,
-            };
-            var tag19 = new Tag
-            {
-                Name = "Nauka",
-                Task = task20,
-            };
-            var tag20 = new Tag
-            {
-                Name = "Nauka",
-                Task = task21,
-            };
-            var tag21 = new Tag
-            {
-                Name = "Nauka",
-                Task = task22,
-            };
-            var tag22 = new Tag
-            {
-                Name = "Nauka",
-                Task = task23,
-            };
-            var tag23 = new Tag
-            {
-                Name = "Nauka",
-                Task = task24,
-            };
-            var tag24 = new Tag
-            {
-                Name = "Nauka",
-                Task = task25,
-            };
-
-            var tag25 = new Tag
-            {
-                Name = "Nauka",
-                Task = task26,
-            };
-            var tag26 = new Tag
-            {
-                Name = "Nauka",
-                Task = task27,
-            };
-            var tag27 = new Tag
-            {
-                Name = "Nauka",
-                Task = task28,
-            };
-            var tag28 = new Tag
-            {
-                Name = "Nauka",
-                Task = task29,
-            };
-            var tag29 = new Tag
-            {
-                Name = "Nauka",
-                Task = task30,
-            };
-            var tag30 = new Tag
-            {
-                Name = "Nauka",
-                Task = task31,
-            };
-            var tag31 = new Tag
-            {
-                Name = "Nauka",
-                Task = task32,
-            };
-            var tag32 = new Tag
-            {
-                Name = "Nauka",
-                Task = task33,
-            };
-            var tag33 = new Tag
-            {
-                Name = "Nauka",
-                Task = task34,
-            };
-            var tag34 = new Tag
-            {
-                Name = "Nauka",
-                Task = task35,
-            };
-            var tag35 = new Tag
-            {
-                Name = "Dodatkowe",
-                Task = task32,
-            };
-            var tag36 = new Tag
-            {
-                Name = "Dodatkowe",
-                Task = task30,
-            };
-            var tag37 = new Tag
-            {
-                Name = "Dodatkowe",
-                Task = task35,
-            };
-            var tag38 = new Tag
-            {
-                Name = "Czytanie",
-                Task = task35,
             };
             #endregion
 
@@ -598,13 +402,9 @@ namespace DatabaseSampleData
             {
                 context.TaskLists.AddRange(new List<TaskList> { tasklist, tasklist2, tasklist3, tasklist4 });
                 context.Tasks.AddRange(new List<Task> { task, task2, task3, task4, task5, task6, task7, task8, task9, task10 });
-                context.Tags.AddRange(new List<Tag> { tag, tag2, tag3, tag4, tag5, tag6 });
                 context.Tasks.AddRange(new List<Task> { task11, task12, task13, task14, task15});
-                context.Tags.AddRange(new List<Tag> { tag7, tag8, tag9, tag10, tag11});
                 context.Tasks.AddRange(new List<Task> { task16, task17, task18, task19, task20, task21, task22, task23, task24, task25 });
-                context.Tags.AddRange(new List<Tag> { tag12, tag13, tag14, tag15, tag16, tag17, tag18, tag19, tag20, tag21, tag22, tag23, tag24 });
                 context.Tasks.AddRange(new List<Task> { task25, task26, task27, task28, task29, task30, task31, task22, task33, task34, task35 });
-                context.Tags.AddRange(new List<Tag> { tag25, tag26, tag27, tag28, tag29, tag30, tag31, tag32, tag33, tag34, tag35, tag36, tag37, tag38});
                 context.SaveChanges();
             }
         }

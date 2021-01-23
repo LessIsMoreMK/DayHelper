@@ -2,9 +2,9 @@
 {
     public enum Priority
     {
-        NotDefined = 0,
-        Normal = 1,
-        Important = 2,
-        Critical = 3,
+        Niezdefiniowany = 0,
+        Normalne = 1,
+        Ważne = 2,
+        Krytyczne = 3,
     }
 }
