@@ -11,7 +11,19 @@
     <local:BasePage.Resources>
         <CollectionViewSource Source="{Binding Tasks}" x:Key="X_CVS"/>
     </local:BasePage.Resources>
-    
+    <local:BasePage.InputBindings>
+        <KeyBinding Command="{Binding ResetFiltersCommand}"
+              Gesture="CTRL+R"/>
+        <KeyBinding Command="{Binding DeletedCommand}"
+              Gesture="Delete"/>
+        <KeyBinding Command="{Binding FinishedCommand}"
+              Gesture="CTRL+F"/>
+        <KeyBinding Command="{Binding EditCommand}"
+              Gesture="CTRL+E"/>
+        <KeyBinding Command="{Binding NotificationCommand}"
+              Gesture="CTRL+A"/>
+    </local:BasePage.InputBindings>
+
     <Grid Margin="5" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

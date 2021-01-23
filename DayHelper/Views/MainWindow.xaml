@@ -12,7 +12,26 @@
         x:Name="AppWindow"
         Height="600" 
         Width="1000">
-
+    
+    
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding ListsCommand}"
+              Gesture="CTRL+L"/>
+        <KeyBinding Command="{Binding TasksCommand}"
+              Gesture="CTRL+Z"/>
+        <KeyBinding Command="{Binding FinishedCommand}"
+              Gesture="CTRL+U"/>
+        <KeyBinding Command="{Binding DeletedCommand}"
+              Gesture="CTRL+K"/>
+        <KeyBinding Command="{Binding AnalyzeCommand}"
+              Gesture="CTRL+A"/>
+        <KeyBinding Command="{Binding ThemeCommand}"
+              Gesture="CTRL+T"/>
+        <KeyBinding Command="{Binding ClockCommand}"
+              Gesture="CTRL+C"/>
+        <KeyBinding Command="{Binding TaskCommand}"
+              Gesture="CTRL+P"/>
+    </Window.InputBindings>
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
             <Setter Property="Template">
