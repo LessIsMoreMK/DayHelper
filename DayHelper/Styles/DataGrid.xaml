@@ -83,7 +83,6 @@
                                     CornerRadius="5" Background="{StaticResource PrimaryBrush}" BorderThickness="2" BorderBrush="Black">
                                 <Path Width="30" Height="30" x:Name="CheckMark" SnapsToDevicePixels="False" Stroke="Black" StrokeThickness="3" Data="M 4 13 L 11 24 M 11 24 L 22 4" />
                             </Border>
-                            
                         </BulletDecorator.Bullet>
                     </BulletDecorator>
                     <ControlTemplate.Triggers>

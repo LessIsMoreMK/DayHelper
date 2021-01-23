@@ -10,7 +10,6 @@
         WindowStartupLocation="CenterScreen"
         Title="Day Helper" 
         x:Name="AppWindow"
-        MinHeight="500"
         Height="600" 
         Width="1000">
 

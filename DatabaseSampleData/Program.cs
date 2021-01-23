@@ -12,7 +12,7 @@ namespace DatabaseSampleData
             InitializeDatabase();
             Console.WriteLine("Database created.");
             InsertSampleData();
-            Console.WriteLine("Sample data for User: Adam Password: Adam23 added.");
+            Console.WriteLine("Sample data added.");
         }
 
         private static void InitializeDatabase()
@@ -23,34 +23,22 @@ namespace DatabaseSampleData
 
         private static void InsertSampleData()
         {
-            #region User
-            var user = new User
-            {
-                Username = "Adam",
-                Password = "Adam23",
-            };
-            #endregion Users
-
             #region TaskList
             var tasklist = new TaskList
             {
                 Name = "Dom",
-                User = user,
             };
             var tasklist2 = new TaskList
             {
                 Name = "Szkoła",
-                User = user,
             };
             var tasklist3 = new TaskList
             {
                 Name = "Język Obcy",
-                User = user,
             };
             var tasklist4 = new TaskList
             {
                 Name = "Książki",
-                User = user,
             };
             #endregion
 
@@ -62,7 +50,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Critical,
                 Difficulty = Difficulty.Easy,
                 DateCreated = DateTime.Now,
-                DateToFinish = DateTime.Now.AddHours(1),
+                DateToFinish = DateTime.Now,
                 TaskList = tasklist,
             };
             var task2 = new Task
@@ -72,7 +60,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Normal,
                 Difficulty = Difficulty.Medium,
                 DateCreated = DateTime.Now,
-                DateToFinish = DateTime.Now.AddHours(2),
+                DateToFinish = DateTime.Now,
                 TaskList = tasklist,
             };
             var task3 = new Task
@@ -82,7 +70,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Normal,
                 Difficulty = Difficulty.Medium,
                 DateCreated = DateTime.Now.AddDays(-2),
-                DateToFinish = DateTime.Now.AddDays(-1).AddHours(-12),
+                DateToFinish = DateTime.Now.AddDays(-1),
                 TaskList = tasklist,
             };
             var task4 = new Task
@@ -102,7 +90,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Normal,
                 Difficulty = Difficulty.Medium,
                 DateCreated = DateTime.Now,
-                DateToFinish = DateTime.Now.AddHours(4),
+                DateToFinish = DateTime.Now,
                 TaskList = tasklist,
             };
             var task6 = new Task
@@ -112,7 +100,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Important,
                 Difficulty = Difficulty.Medium,
                 DateCreated = DateTime.Now,
-                DateToFinish = DateTime.Now.AddHours(12),
+                DateToFinish = DateTime.Now,
                 TaskList = tasklist,
             };
             var task7 = new Task
@@ -122,7 +110,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Normal,
                 Difficulty = Difficulty.Easy,
                 DateCreated = DateTime.Now.AddDays(-4),
-                DateToFinish = DateTime.Now.AddDays(-3).AddHours(-2),
+                DateToFinish = DateTime.Now.AddDays(-3),
                 TaskList = tasklist,
             };
             var task8 = new Task
@@ -132,7 +120,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Critical,
                 Difficulty = Difficulty.Easy,
                 DateCreated = DateTime.Now,
-                DateToFinish = DateTime.Now.AddHours(6),
+                DateToFinish = DateTime.Now,
                 TaskList = tasklist,
             };
             var task9 = new Task
@@ -142,7 +130,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Important,
                 Difficulty = Difficulty.Hard,
                 DateCreated = DateTime.Now,
-                DateToFinish = DateTime.Now.AddDays(2).AddHours(2),
+                DateToFinish = DateTime.Now.AddDays(2),
                 TaskList = tasklist,
             };
             var task10 = new Task
@@ -152,7 +140,7 @@ namespace DatabaseSampleData
                 Priority = Priority.NotDefined,
                 Difficulty = Difficulty.Medium,
                 DateCreated = DateTime.Now,
-                DateToFinish = DateTime.Now.AddHours(3),
+                DateToFinish = DateTime.Now,
                 TaskList = tasklist,
             };
 
@@ -224,7 +212,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Important,
                 Difficulty = Difficulty.Medium,
                 DateCreated = DateTime.Now.AddDays(-8),
-                DateToFinish = DateTime.Now.AddDays(-4).AddHours(-3),
+                DateToFinish = DateTime.Now.AddDays(-4),
                 TaskList = tasklist3,
             };
             var task18 = new Task
@@ -234,7 +222,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Important,
                 Difficulty = Difficulty.Medium,
                 DateCreated = DateTime.Now.AddDays(-2),
-                DateToFinish = DateTime.Now.AddHours(-3),
+                DateToFinish = DateTime.Now,
                 TaskList = tasklist3,
             };
             var task19 = new Task
@@ -405,7 +393,7 @@ namespace DatabaseSampleData
                 Priority = Priority.Normal,
                 Difficulty = Difficulty.Hard,
                 DateCreated = DateTime.Now.AddDays(-2),
-                DateToFinish = DateTime.Now.AddDays(7).AddHours(-3),
+                DateToFinish = DateTime.Now.AddDays(7),
                 TaskList = tasklist2,
             };
             #endregion
@@ -606,10 +594,8 @@ namespace DatabaseSampleData
             };
             #endregion
 
-
             using (var context = new DayHelperContext())
             {
-                context.Users.Add(user);
                 context.TaskLists.AddRange(new List<TaskList> { tasklist, tasklist2, tasklist3, tasklist4 });
                 context.Tasks.AddRange(new List<Task> { task, task2, task3, task4, task5, task6, task7, task8, task9, task10 });
                 context.Tags.AddRange(new List<Tag> { tag, tag2, tag3, tag4, tag5, tag6 });

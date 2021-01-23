@@ -1,5 +1,6 @@
 ﻿using DayHelper.DataModel;
 using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -17,12 +18,23 @@ namespace DayHelper
 
         private ObservableCollection<Task> tasks;
         private Task selectedItem;
+        private string selectedText;
 
         private ObservableCollection<Difficulty> difficulty;
         private Difficulty selectedDifficulty;
         private bool canCanRemoveDifficultyFilter;
 
-        
+        private ObservableCollection<Priority> priority;
+        private Priority selectedPriority;
+        private bool canCanRemovePriorityFilter;
+
+        private ObservableCollection<DateTime> startDate;
+        private DateTime selectedStartDate;
+        private bool canCanRemoveStartDateFilter;
+
+        private ObservableCollection<DateTime> endDate;
+        private DateTime selectedEndDate;
+        private bool canCanRemoveEndDateFilter;
         #endregion
 
         #region Public Properties
@@ -54,7 +66,24 @@ namespace DayHelper
                 OnPropertyChanged("SelectedItem");
             }
         }
-
+        public string SelectedText
+        {
+            get { return selectedText; }
+            set
+            {
+                selectedText = value;
+                CVS.Filter += new FilterEventHandler(FilterByText);
+                OnPropertyChanged("SelectedText");
+            }
+        }
+        private void FilterByText(object sender, FilterEventArgs e)
+        {
+            var src = e.Item as Task;
+            if (src == null)
+                e.Accepted = false;
+            else if (!src.Content.ToLower().Contains(SelectedText.ToLower()))
+                e.Accepted = false;
+        }
         public Difficulty SelectedDifficulty
         {
             get { return selectedDifficulty; }
@@ -77,7 +106,71 @@ namespace DayHelper
             }
         }
 
-        
+        public Priority SelectedPriority
+        {
+            get { return selectedPriority; }
+            set
+            {
+                if (selectedPriority == value)
+                    return;
+                selectedPriority = value;
+                OnPropertyChanged("SelectedPriority");
+                ApplyFilter(FilterField.Priority);
+            }
+        }
+        public bool CanRemovePriorityFilter
+        {
+            get { return canCanRemovePriorityFilter; }
+            set
+            {
+                canCanRemovePriorityFilter = value;
+                OnPropertyChanged("CanRemovePriorityFilter");
+            }
+        }
+
+        public DateTime SelectedStartDate
+        {
+            get { return selectedStartDate; }
+            set
+            {
+                if (selectedStartDate == value)
+                    return;
+                selectedStartDate = value;
+                OnPropertyChanged("SelectedStartDate");
+                ApplyFilter(FilterField.StartDate);
+            }
+        }
+        public bool CanRemoveStartDateFilter
+        {
+            get { return canCanRemoveStartDateFilter; }
+            set
+            {
+                canCanRemoveStartDateFilter = value;
+                OnPropertyChanged("CanRemoveStartDateFilter");
+            }
+        }
+
+        public DateTime SelectedEndDate
+        {
+            get { return selectedEndDate; }
+            set
+            {
+                if (selectedEndDate == value)
+                    return;
+                selectedEndDate = value;
+                OnPropertyChanged("SelectedEndDate");
+                ApplyFilter(FilterField.EndDate);
+            }
+        }
+        public bool CanRemoveEndDateFilter
+        {
+            get { return canCanRemoveEndDateFilter; }
+            set
+            {
+                canCanRemoveEndDateFilter = value;
+                OnPropertyChanged("CanRemoveEndDateFilter");
+            }
+        }
         #endregion
 
         #region Commands
@@ -87,6 +180,11 @@ namespace DayHelper
         public ICommand NotificationCommand { get; set; }
 
         public ICommand RemoveDifficultyFilterCommand { get; set; }
+        public ICommand RemovePriorityFilterCommand { get; set; }
+        public ICommand RemoveStartDateFilterCommand { get; set; }
+        public ICommand RemoveEndDateFilterCommand { get; set; }
+
+        public ICommand ResetFiltersCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -96,7 +194,6 @@ namespace DayHelper
             
             Messenger.Default.Register<ViewCollectionViewSourceMessageToken>(this, Handle_ViewCollectionViewSourceMessageToken);
 
-
             //Action Buttons
             DeletedCommand = new RelayCommand(Deleted);
             FinishedCommand = new RelayCommand(async () => await Finished());
@@ -104,7 +201,12 @@ namespace DayHelper
             NotificationCommand = new RelayCommand(Notification);
 
             //Filter Buttons
-            RemoveDifficultyFilterCommand = new RelayCommand(RemoveYearFilter, () => CanRemoveDifficultyFilter);
+            RemoveDifficultyFilterCommand = new RelayCommand(RemoveDifficultyFilter, () => CanRemoveDifficultyFilter);
+            RemovePriorityFilterCommand = new RelayCommand(RemovePriorityFilter, () => CanRemovePriorityFilter);
+            RemoveStartDateFilterCommand = new RelayCommand(RemoveStartDateFilter, () => CanRemoveStartDateFilter);
+            RemoveEndDateFilterCommand = new RelayCommand(RemoveEndDateFilter, () => CanRemoveEndDateFilter);
+
+            ResetFiltersCommand = new RelayCommand(ResetFilters, null);
         }
         #endregion
 
@@ -114,11 +216,21 @@ namespace DayHelper
             List<DayHelper.DataModel.Task> list = repository.GetAllTasks();
             Tasks = new ObservableCollection<Task>(list);
 
-
-            var things = repository.GetAllTasks();
             var q1 = from t in list
                      select t.Difficulty;
             difficulty = new ObservableCollection<Difficulty>(q1.Distinct());
+
+            var q2 = from t in list
+                     select t.Priority;
+            priority = new ObservableCollection<Priority>(q2.Distinct());
+
+            var q3 = from t in list
+                     select t.DateCreated;
+            startDate = new ObservableCollection<DateTime>(q3.Distinct());
+
+            var q4 = from t in list
+                     select t.DateToFinish;
+            endDate = new ObservableCollection<DateTime>(q4.Distinct());
         }
 
         private void Handle_ViewCollectionViewSourceMessageToken(ViewCollectionViewSourceMessageToken token)
@@ -136,7 +248,6 @@ namespace DayHelper
             }
             //TODO: Move to Finished
         }
-
         public void Deleted()
         {
             if (null != SelectedItem)
@@ -157,9 +268,20 @@ namespace DayHelper
         #endregion
 
         #region Filtering Methods
+        public void ResetFilters()
+        {
+            RemoveDifficultyFilter();
+            RemovePriorityFilter();
+            RemoveStartDateFilter();
+            RemoveEndDateFilter();
+            SelectedText = "";
+        }
         private enum FilterField
         {
             Difficulty,
+            Priority,
+            StartDate,
+            EndDate,
             None
         }
         private void ApplyFilter(FilterField field)
@@ -168,6 +290,15 @@ namespace DayHelper
             {
                 case FilterField.Difficulty:
                     AddDifficultyFilter();
+                    break;
+                case FilterField.Priority:
+                    AddPriorityFilter();
+                    break;
+                case FilterField.StartDate:
+                    AddStartDateFilter();
+                    break;
+                case FilterField.EndDate:
+                    AddEndDateFilter();
                     break;
                 default:
                     break;
@@ -196,14 +327,92 @@ namespace DayHelper
                 CanRemoveDifficultyFilter = true;
             }
         }
-        public void RemoveYearFilter()
+        public void RemoveDifficultyFilter()
         {
             CVS.Filter -= new FilterEventHandler(FilterByDifficulty);
-            SelectedDifficulty = DataModel.Difficulty.NotDefined; //TODO: nothing
             CanRemoveDifficultyFilter = false;
+        }
+
+        private void FilterByPriority(object sender, FilterEventArgs e)
+        {
+            var src = e.Item as Task;
+            if (src == null)
+                e.Accepted = false;
+            else if (SelectedPriority != src.Priority)
+                e.Accepted = false;
+        }
+        public void AddPriorityFilter()
+        {
+            if (canCanRemoveDifficultyFilter)
+            {
+                CVS.Filter -= new FilterEventHandler(FilterByPriority);
+                CVS.Filter += new FilterEventHandler(FilterByPriority);
+            }
+            else
+            {
+                CVS.Filter += new FilterEventHandler(FilterByPriority);
+                CanRemoveDifficultyFilter = true;
+            }
+        }
+        public void RemovePriorityFilter()
+        {
+            CVS.Filter -= new FilterEventHandler(FilterByPriority);
+            CanRemovePriorityFilter = false;
+        }
+
+        private void FilterByStartDate(object sender, FilterEventArgs e)
+        {
+            var src = e.Item as Task;
+            if (src == null)
+                e.Accepted = false;
+            else if (SelectedStartDate >= src.DateCreated)
+                e.Accepted = false;
+        }
+        public void AddStartDateFilter()
+        {
+            if (canCanRemoveStartDateFilter)
+            {
+                CVS.Filter -= new FilterEventHandler(FilterByStartDate);
+                CVS.Filter += new FilterEventHandler(FilterByStartDate);
+            }
+            else
+            {
+                CVS.Filter += new FilterEventHandler(FilterByStartDate);
+                CanRemoveStartDateFilter = true;
+            }
+        }
+        public void RemoveStartDateFilter()
+        {
+            CVS.Filter -= new FilterEventHandler(FilterByStartDate);
+            CanRemoveStartDateFilter = false;
+        }
+
+        private void FilterByEndDate(object sender, FilterEventArgs e)
+        {
+            var src = e.Item as Task;
+            if (src == null)
+                e.Accepted = false;
+            else if (SelectedEndDate <= src.DateToFinish) //TODO: Check validity
+                e.Accepted = false;
+        }
+        public void AddEndDateFilter()
+        {
+            if (canCanRemoveEndDateFilter)
+            {
+                CVS.Filter -= new FilterEventHandler(FilterByEndDate);
+                CVS.Filter += new FilterEventHandler(FilterByEndDate);
+            }
+            else
+            {
+                CVS.Filter += new FilterEventHandler(FilterByEndDate);
+                CanRemoveEndDateFilter = true;
+            }
+        }
+        public void RemoveEndDateFilter()
+        {
+            CVS.Filter -= new FilterEventHandler(FilterByEndDate);
+            CanRemoveEndDateFilter = false;
         }
         #endregion
     }
-
-
 }

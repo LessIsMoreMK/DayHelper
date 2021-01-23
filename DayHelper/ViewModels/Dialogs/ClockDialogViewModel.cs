@@ -46,18 +46,8 @@ namespace DayHelper
         #region Constructor
 
         public ClockDialogViewModel(Window window) : base(window)
-<<<<<<< HEAD
         {  
-=======
-        {
-            cWindow = window;
-            WindowMinimumWidth = 300;
-            WindowMinimumHeight = 300;
->>>>>>> 04a018682d0da939d693c91c9a252a7a6476ab5d
             TitleHeight = 30;
-
-
-
             CloseCommand2 = new RelayCommand(essa);
 
 
