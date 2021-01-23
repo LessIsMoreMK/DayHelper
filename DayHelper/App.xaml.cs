@@ -11,7 +11,6 @@ namespace DayHelper
         public void ChangeTheme(Uri uri)
         {
             ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
-            Application.Current.Resources.MergedDictionaries.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
 

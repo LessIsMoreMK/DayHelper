@@ -10,7 +10,7 @@ namespace DayHelper
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new WindowViewModel(this);
+            DataContext = new WindowViewModel(this);  
         }
     }
 }

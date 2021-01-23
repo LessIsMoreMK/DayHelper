@@ -1,6 +1,7 @@
 ﻿using DayHelper.DataModel;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 
 namespace DayHelper
@@ -16,7 +17,7 @@ namespace DayHelper
         #endregion
 
         #region Commands
-        public ICommand TestCommand { get; private set; }
+        public ICommand GoToTaskCommand { get; set; }
         #endregion
 
         #region Constructor
@@ -24,21 +25,19 @@ namespace DayHelper
         {
             List<TaskList> list = repository.GetAllTaskLists();
             TaskLists = new ObservableCollection<string>();
-            foreach(TaskList item in list)
+            foreach (TaskList item in list)
             {
                 TaskLists.Add(item.Name);
             }
 
-
-            
-            TestCommand = new RelayCommand(CommandMethod);
+            GoToTaskCommand = new RelayCommand(GoToTask);
         }
         #endregion
 
         #region Methods
-        public void CommandMethod()
+        public void GoToTask()
         {
-            
+            IoC.Application.GoToPage(ApplicationPage.Task);
         }
         #endregion
     }

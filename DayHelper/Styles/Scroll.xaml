@@ -11,7 +11,7 @@
                     <Border x:Name="rectangle"
                                 SnapsToDevicePixels="True"
                                 CornerRadius="3"
-                                Background="{StaticResource PrimaryBrush}"
+                                Background="{DynamicResource PrimaryBrush}"
                                 Height="{TemplateBinding Height}"
                                 Width="{TemplateBinding Width}"/>
                 </ControlTemplate>
@@ -42,7 +42,7 @@
                                     <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageDownCommand}" />
                                 </Track.IncreaseRepeatButton>
                                 <Track.Thumb>
-                                    <Thumb Style="{StaticResource ScrollBarThumb}" />
+                                    <Thumb Style="{DynamicResource ScrollBarThumb}" />
                                 </Track.Thumb>
                             </Track>
                         </Border>
@@ -72,7 +72,7 @@
                                         <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageRightCommand}"/>
                                     </Track.IncreaseRepeatButton>
                                     <Track.Thumb>
-                                        <Thumb Style="{StaticResource ScrollBarThumb}" />
+                                        <Thumb Style="{DynamicResource ScrollBarThumb}" />
                                     </Track.Thumb>
                                 </Track>
                             </Grid>

@@ -73,7 +73,7 @@ namespace DayHelper
             switch (PageUnloadAnimation)
             {
                 case PageAnimation.SlideAndFadeOutToLeft:
-                    await this.SlideAndFadeOutAsync(AnimationSlideInDirection.Left, SlideSeconds);
+                    await this.SlideAndFadeOutAsync(AnimationSlideInDirection.Bottom, SlideSeconds);
                     break;
             }
         }

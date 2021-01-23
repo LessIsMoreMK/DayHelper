@@ -4,10 +4,9 @@
 
     <ResourceDictionary.MergedDictionaries>
         <!-- Order is important -->
-        <ResourceDictionary Source="ColorsLight.xaml"/>
+        <ResourceDictionary Source="ColorsDark.xaml"/>
         <ResourceDictionary Source="Fonts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-
 
     <!-- Main Data Grid -->
     <Style TargetType="{x:Type DataGrid}" x:Key="MainDataGrid">
@@ -19,27 +18,30 @@
         <Setter Property="RowHeaderWidth" Value="0" />
         <Setter Property="GridLinesVisibility" Value="None"/>
         <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
         <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Margin" Value="0 0 -10 0"/>
     </Style>
 
     <!-- Main DataGrid Row -->
     <Style TargetType="{x:Type DataGridRow}" x:Key="MainDataGridRow">
-        
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Height" Value="45"/>
-
+        
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=Priority}" Value="NotDefined">
-                <Setter Property="Background" Value="{StaticResource NotDefinedBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource NotDefinedBrush}"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding Path=Priority}" Value="Normal">
-                <Setter Property="Background" Value="{StaticResource NormalBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding Path=Priority}" Value="Important">
-                <Setter Property="Background" Value="{StaticResource ImportantBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource ImportantBrush}"/>
             </DataTrigger>
             <DataTrigger Binding="{Binding Path=Priority}" Value="Critical">
-                <Setter Property="Background" Value="{StaticResource CriticalBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource CriticalBrush}"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
@@ -63,6 +65,7 @@
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -70,6 +73,7 @@
     <!-- CheckBox -->
     <Style TargetType="CheckBox" x:Key="CheckboxMain">
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="Yellow"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
@@ -79,6 +83,7 @@
                                     CornerRadius="5" Background="{StaticResource PrimaryBrush}" BorderThickness="2" BorderBrush="Black">
                                 <Path Width="30" Height="30" x:Name="CheckMark" SnapsToDevicePixels="False" Stroke="Black" StrokeThickness="3" Data="M 4 13 L 11 24 M 11 24 L 22 4" />
                             </Border>
+                            
                         </BulletDecorator.Bullet>
                     </BulletDecorator>
                     <ControlTemplate.Triggers>
@@ -89,7 +94,6 @@
                             <Setter TargetName="Border" Property="Background" Value="White" />
                         </Trigger>
                     </ControlTemplate.Triggers>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

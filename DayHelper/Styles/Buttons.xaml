@@ -34,7 +34,7 @@
     <Style TargetType="{x:Type Button}" x:Key="MenuButton" BasedOn="{StaticResource Hoverless}">
         <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
@@ -49,15 +49,15 @@
         <Setter Property="FontFamily" Value="{StaticResource FontAwesome}"/>
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Padding" Value="10 0 10 0"/>
+        <Setter Property="Padding" Value="15 0 15 0"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
 
-        <Setter Property="LayoutTransform">
+        <!--<Setter Property="LayoutTransform">
             <Setter.Value>
                 <ScaleTransform ScaleX="1.4" ScaleY="1.4"/>
             </Setter.Value>
-        </Setter>
+        </Setter>-->
 
         <Setter Property="Template">
             <Setter.Value>

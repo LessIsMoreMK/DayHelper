@@ -10,9 +10,9 @@
         WindowStartupLocation="CenterScreen"
         Title="Day Helper" 
         x:Name="AppWindow"
-        MinWidth="{Binding WindowMinimumWidth}"
-        MinHeight="{Binding WindowMinimumHeight}"
-        Height="600" Width="1000">
+        MinHeight="500"
+        Height="600" 
+        Width="1000">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
@@ -50,11 +50,13 @@
                                           Grid.RowSpan="2">
                                         <Grid>
                                             <Grid.RowDefinitions>
+                                                <RowDefinition Height="40"/>
                                                 <RowDefinition Height="100"/>
                                                 <RowDefinition Height="100"/>
                                                 <RowDefinition Height="100"/>
                                                 <RowDefinition Height="100"/>
                                                 <RowDefinition Height="100"/>
+                                                <RowDefinition Height="*"/>
                                                 <RowDefinition Height="*"/>
                                                 <RowDefinition Height="65"/>
                                             </Grid.RowDefinitions>
@@ -90,29 +92,28 @@
 
                                             <!-- Side Menu -->
                                             <Button Content="Listy Zadań" 
-                                                    Grid.Row="0" 
-                                                    Panel.ZIndex="15"
+                                                    Grid.Row="1" 
                                                     Style="{StaticResource MenuButton}"
                                                     Command="{Binding ListsCommand}"/>
                                             <Button Content="Zadania"
                                                     Style="{StaticResource MenuButton}" 
-                                                    Grid.Row="1" 
+                                                    Grid.Row="2" 
                                                     Command="{Binding TasksCommand}"/>
                                             <Button Content="Ukończone" 
                                                     Style="{StaticResource MenuButton}" 
-                                                    Grid.Row="2"
+                                                    Grid.Row="3"
                                                     Command="{Binding FinishedCommand}"/>
                                             <Button Content="Kosz" 
                                                     Style="{StaticResource MenuButton}"
-                                                    Grid.Row="3"
+                                                    Grid.Row="4"
                                                     Command="{Binding DeletedCommand}"/>
                                             <Button Content="Analiza" 
                                                     Style="{StaticResource MenuButton}" 
-                                                    Grid.Row="4"
+                                                    Grid.Row="5"
                                                     Command="{Binding AnalyzeCommand}"/>
 
 
-                                            <StackPanel Orientation="Horizontal" Grid.Row="7" HorizontalAlignment="Center">
+                                            <StackPanel Orientation="Horizontal" Grid.Row="8" HorizontalAlignment="Center">
                                                 <!-- Change theme Button -->
                                                 <Button Margin="0 0 10 0"
                                                         Style="{StaticResource RoundedButton}"

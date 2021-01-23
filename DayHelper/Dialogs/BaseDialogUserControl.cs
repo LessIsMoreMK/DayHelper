@@ -58,8 +58,6 @@ namespace DayHelper
                 try
                 {
                     // Match controls expected sizes to dialog window view model
-                    mDialogWindow.ViewModel.WindowMinimumHeight = WindowMinimumHeight;
-                    mDialogWindow.ViewModel.WindowMinimumWidth = WindowMinimumWidth;
                     mDialogWindow.ViewModel.TitleHeight = TitleHeight;
                     mDialogWindow.ViewModel.Title = string.IsNullOrEmpty(viewModel.Title) ? Title : viewModel.Title;
 

@@ -17,9 +17,7 @@ namespace DayHelper
         #region Constructor
 
         public ClockDialogViewModel(Window window) : base(window)
-        {
-            WindowMinimumWidth = 200;
-            WindowMinimumHeight = 100;
+        {  
             TitleHeight = 30;
         }
         #endregion

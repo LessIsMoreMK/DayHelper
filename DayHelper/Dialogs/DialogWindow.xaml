@@ -12,7 +12,7 @@
         SizeToContent="WidthAndHeight"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
-        Title="{Binding Title}">
+        Title="{Binding Title}" Height="173.334">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:DialogWindow}">

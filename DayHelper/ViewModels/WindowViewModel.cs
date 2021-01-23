@@ -24,14 +24,11 @@ namespace DayHelper
         /// <summary>
         /// Flag indicating theme style
         /// </summary>
-        private bool theme = false;
+        private bool theme = true;
 
         #endregion
 
         #region Public Properties
-        public double WindowMinimumWidth { get; set; } = 800;
-
-        public double WindowMinimumHeight { get; set; } = 500;
 
         /// <summary>
         /// The size of the resize border around the window
@@ -187,10 +184,7 @@ namespace DayHelper
         }
         private async System.Threading.Tasks.Task AddTask()
         {
-            await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-            {
-                Title = "Add Task",
-            });
+            new ClockDialogViewModel(mWindow);
         }
         private void ChangeTheme()
         {

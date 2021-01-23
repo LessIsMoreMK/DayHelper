@@ -29,7 +29,11 @@ namespace DayHelper
         {
             mAction = action;
         }
-
+        public RelayCommand(Action action, Func<bool> canExecute)
+        {
+            mAction = action;
+            //TODO: Update 
+        }
         #endregion
 
         #region Command Methods

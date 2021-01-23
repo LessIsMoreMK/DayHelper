@@ -7,22 +7,26 @@
       mc:Ignorable="d"         
       d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <ItemsControl ItemsSource="{Binding TaskLists}" Grid.Row="1">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding Path=.}" Margin="5" VerticalContentAlignment="Stretch" Height="100" Style="{StaticResource ListButton}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-        <Button VerticalAlignment="Top" Grid.Row="0"
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ItemsControl ItemsSource="{Binding TaskLists}" Grid.Row="1">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Content="{Binding Path=.}" Margin="5" VerticalContentAlignment="Stretch" Height="100" 
+                                Command="{Binding DataContext.GoToTaskCommand, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ItemsControl}}}"
+                                Style="{StaticResource ListButton}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <Button VerticalAlignment="Top" Grid.Row="0"
                 Style="{StaticResource ListButton}"
                 Content="{StaticResource FontAwesomeAddIcon}" 
+                Command="{Binding GoToTaskCommand}"
                 FontFamily="{StaticResource FontAwesome}" Margin="5" VerticalContentAlignment="Stretch" Height="100"/>
-    </Grid>
-    
+        </Grid>
+    </ScrollViewer>
 </local:BasePage>

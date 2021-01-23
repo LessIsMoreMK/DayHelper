@@ -18,8 +18,6 @@ namespace DayHelper
 
         public DialogViewModel(Window window) : base(window)
         {
-            WindowMinimumWidth = 200;
-            WindowMinimumHeight = 100;
             TitleHeight = 30;
         }
         #endregion
