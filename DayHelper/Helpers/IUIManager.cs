@@ -5,5 +5,6 @@ namespace DayHelper
     public interface IUIManager
     {
         Task ShowMessage(MessageBoxDialogViewModel viewModel);
+        Task ShowMessage(ClockDialogViewModel clockDialogViewModel);
     }
 }
