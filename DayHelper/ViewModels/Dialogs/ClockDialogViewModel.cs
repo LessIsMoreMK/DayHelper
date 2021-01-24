@@ -30,10 +30,7 @@ namespace DayHelper
         public Thickness OuterMarginThickness { get; set; } = new Thickness(1);
 
 
-        /// <summary>
-        /// The height of the title bar / caption of the window
-        /// </summary>
-        public int TitleHeight { get; set; } = 42;
+        
         #endregion
 
         #region Commands
@@ -46,9 +43,9 @@ namespace DayHelper
         #region Constructor
 
         public ClockDialogViewModel(Window window) : base(window)
-        {  
-            TitleHeight = 30;
-            CloseCommand2 = new RelayCommand(essa);
+        {
+           // CloseCommand = new RelayCommand(() => mWindow.Close());
+           // CloseCommand2 = new RelayCommand(essa);
 
 
         }

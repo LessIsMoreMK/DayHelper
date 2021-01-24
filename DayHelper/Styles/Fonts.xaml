@@ -27,4 +27,5 @@
     <system:String x:Key="FontAwesomeEditIcon">&#xf14b;</system:String>
     <system:String x:Key="FontAwesomeDeleteIcon">&#xf1f8;</system:String>
     <system:String x:Key="FontAwesomeNotificationIcon">&#xf024;</system:String>
+    <system:String x:Key="FontAwesomeRestoreIcon">&#xf0e2;</system:String>
 </ResourceDictionary>

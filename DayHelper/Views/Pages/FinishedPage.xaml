@@ -8,7 +8,48 @@
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid Margin="5">
-        <Label Content="Finished"></Label>
+        <DataGrid Grid.Row="6" Grid.ColumnSpan="4" Grid.Column="0" ItemsSource="{Binding Tasks}"
+                  Style="{StaticResource MainDataGrid}" 
+                  CellStyle="{StaticResource MainDataGridCell}"
+                  RowStyle="{StaticResource MainDataGridRow}"
+                  SelectedItem="{Binding SelectedItem}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn  Binding="{Binding Content}" IsReadOnly="true" MinWidth="200" Width="*" FontSize="{StaticResource FontSizeMedium}"/>
+
+                <DataGridTextColumn  Binding="{Binding Difficulty}" IsReadOnly="true"/>
+                
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding DateCreated, StringFormat=dd.MM.yyyy}" FontWeight="Normal"/>
+                                <TextBlock Text="{Binding DateToFinish, StringFormat=dd.MM.yyyy}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource BorderButton}"
+                                    Command="{Binding DataContext.RestoreCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                    Content="{StaticResource FontAwesomeRestoreIcon}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource BorderButton}"
+                                    Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                    Content="{StaticResource FontAwesomeDeleteIcon}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
     
 </local:BasePage>

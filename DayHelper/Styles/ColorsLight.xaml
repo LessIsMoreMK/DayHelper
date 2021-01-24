@@ -34,4 +34,7 @@
     <Color x:Key="OnSecondary">#fffcf2</Color>
     <SolidColorBrush x:Key="OnSecondaryBrush" Color="{StaticResource OnSecondary}"/>
 
+    <!-- Tasks Priority colors-->
+    <Color x:Key="NotDefined">#ccc5b9</Color>
+    <SolidColorBrush x:Key="NotDefinedBrush" Color="{StaticResource NotDefined}"/>
 </ResourceDictionary>

@@ -6,6 +6,6 @@ namespace DayHelper.DataModel
     {
         public DbSet<TaskList> TaskLists { get; set; }
         public DbSet<Task> Tasks { get; set; }
-        public DbSet<TaskDeleted> Tags { get; set; }
+        public DbSet<TaskDeleted> TaskDeleted { get; set; }
     }
 }

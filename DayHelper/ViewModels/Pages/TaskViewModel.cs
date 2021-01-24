@@ -15,6 +15,7 @@ namespace DayHelper
         #region Private Members
         private readonly ConnectedRepository repository = new ConnectedRepository();
         private CollectionViewSource CVS { get; set; }
+        private TaskList TL { get; set; }
 
         private ObservableCollection<Task> tasks;
         private Task selectedItem;
@@ -84,6 +85,7 @@ namespace DayHelper
             else if (!src.Content.ToLower().Contains(SelectedText.ToLower()))
                 e.Accepted = false;
         }
+
         public Difficulty SelectedDifficulty
         {
             get { return selectedDifficulty; }
@@ -183,7 +185,6 @@ namespace DayHelper
         public ICommand RemovePriorityFilterCommand { get; set; }
         public ICommand RemoveStartDateFilterCommand { get; set; }
         public ICommand RemoveEndDateFilterCommand { get; set; }
-
         public ICommand ResetFiltersCommand { get; set; }
         #endregion
 
@@ -193,6 +194,7 @@ namespace DayHelper
             LoadData();
             
             Messenger.Default.Register<ViewCollectionViewSourceMessageToken>(this, Handle_ViewCollectionViewSourceMessageToken);
+            Messenger.Default.Unregister<TaskListMessageToken>(this, Handle_TaskListSourceMessageToken);
 
             //Action Buttons
             DeletedCommand = new RelayCommand(Deleted);
@@ -208,6 +210,7 @@ namespace DayHelper
 
             ResetFiltersCommand = new RelayCommand(ResetFilters, null);
         }
+
         #endregion
 
         #region Methods
@@ -215,6 +218,9 @@ namespace DayHelper
         {
             List<DayHelper.DataModel.Task> list = repository.GetAllTasks();
             Tasks = new ObservableCollection<Task>(list);
+
+            selectedStartDate = System.DateTime.Today;
+            selectedEndDate = System.DateTime.Today;
 
             var q1 = from t in list
                      select t.Difficulty;
@@ -238,24 +244,29 @@ namespace DayHelper
             CVS = token.CVS;
         }
 
+        private void Handle_TaskListSourceMessageToken(TaskListMessageToken token)
+        {
+            TL = token.TL;
+        }
+
         public async System.Threading.Tasks.Task Finished()
         {
             await System.Threading.Tasks.Task.Delay(1000);
-
+            repository.MarkAsFinished(SelectedItem);
             if (null != SelectedItem)
             {
                 tasks.Remove(SelectedItem);
             }
-            //TODO: Move to Finished
+            
         }
         public void Deleted()
         {
+            repository.MoveToDelted(SelectedItem);
             if (null != SelectedItem)
             {
                 tasks.Remove(SelectedItem);
             }
-
-            //TODO: Database Move to Deleted
+            
         }
         public void Edit()
         {

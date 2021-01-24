@@ -97,19 +97,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Dialogs\DialogWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Styles\DataGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\Scroll.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewModels\Dialogs\DialogMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,16 +163,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
-    <Compile Include="Dialogs\BaseDialogUserControl.cs" />
     <Compile Include="Dialogs\ClockWindow.xaml.cs">
       <DependentUpon>ClockWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\DialogWindow.xaml.cs">
-      <DependentUpon>DialogWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EnumBindingSourceExtension.cs" />
     <Compile Include="Helpers\IUIManager.cs" />
     <Compile Include="Helpers\SendingMails.cs" />
+    <Compile Include="Helpers\TaskListMessageToken.cs" />
     <Compile Include="Helpers\UIManager.cs" />
     <Compile Include="Helpers\ViewCollectionViewSourceMessageToken.cs" />
     <Compile Include="ViewModels\Dialogs\BaseDialogViewModel.cs" />
@@ -193,9 +182,6 @@
     <Compile Include="Helpers\BasePage.cs" />
     <Compile Include="ValueConverters\IoCConverter.cs" />
     <Compile Include="ViewModels\Dialogs\ClockDialogViewModel.cs" />
-    <Compile Include="ViewModels\Dialogs\DialogMessageBox.xaml.cs">
-      <DependentUpon>DialogMessageBox.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\Dialogs\DialogViewModel.cs" />
     <Compile Include="ViewModels\Pages\DeletedViewModel.cs" />
     <Compile Include="ViewModels\Pages\AnalyzeViewModel.cs" />

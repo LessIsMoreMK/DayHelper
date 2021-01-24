@@ -139,8 +139,8 @@ namespace DayHelper
 
             /// Action Commands
             ThemeCommand = new RelayCommand(ChangeTheme);
-            ClockCommand = new RelayCommand(async () => await Clock());
-            TaskCommand = new RelayCommand(async () => await AddTask());
+            ClockCommand = new RelayCommand(Clock);
+            TaskCommand = new RelayCommand(AddTask);
 
 
             // Fix window resize issue
@@ -175,16 +175,12 @@ namespace DayHelper
 
         #region Private Helpers
 
-        private async System.Threading.Tasks.Task Clock()
+        private void Clock()
         {
             ClockWindow win2 = new ClockWindow();
             win2.Show();
-            //await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-            //{
-            //    Title = "Pomodoro",
-            //});
         }
-        private async System.Threading.Tasks.Task AddTask()
+        private void AddTask()
         {
             new ClockDialogViewModel(mWindow);
         }

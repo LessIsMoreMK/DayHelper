@@ -1,22 +1,27 @@
 ﻿using System.Threading.Tasks;
+using System.Windows;
 
 namespace DayHelper
 {
     public class UIManager : IUIManager
     {
-        /// <summary>
-        /// Displays a single message box to the user
-        /// </summary>
-        /// <param name="viewModel">The view model</param>
-        /// <returns></returns>
         public Task ShowMessage(MessageBoxDialogViewModel viewModel)
         {
-            return new DialogMessageBox().ShowDialog(viewModel);
+            var tcs = new TaskCompletionSource<bool>();
+
+            Application.Current.Dispatcher.Invoke(async () =>
+            {
+                try
+                {
+                    //await new DialogMessageBox().ShowDialog(viewModel);
+                }
+                finally
+                {
+                    tcs.SetResult(true);
+                }
+            });
+            return tcs.Task;
         }
 
-        public Task ShowMessage2(ClockDialogViewModel clockDialogViewModel)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

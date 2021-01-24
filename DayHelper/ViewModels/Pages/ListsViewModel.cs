@@ -1,4 +1,5 @@
 ﻿using DayHelper.DataModel;
+using GalaSoft.MvvmLight.Messaging;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -37,6 +38,9 @@ namespace DayHelper
         #region Methods
         public void GoToTask()
         {
+            List<TaskList> list = repository.GetAllTaskLists();
+            TaskList TL = list.First();
+            Messenger.Default.Send<TaskList>(TL);
             IoC.Application.GoToPage(ApplicationPage.Task);
         }
         #endregion

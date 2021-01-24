@@ -15,16 +15,14 @@
         <KeyBinding Command="{Binding ResetFiltersCommand}"
               Gesture="CTRL+R"/>
         <KeyBinding Command="{Binding DeletedCommand}"
-              Gesture="Delete"/>
-        <KeyBinding Command="{Binding FinishedCommand}"
-              Gesture="CTRL+F"/>
+              Gesture="CTRL+D"/>
         <KeyBinding Command="{Binding EditCommand}"
               Gesture="CTRL+E"/>
         <KeyBinding Command="{Binding NotificationCommand}"
               Gesture="CTRL+A"/>
     </local:BasePage.InputBindings>
 
-    <Grid Margin="5" >
+    <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -34,53 +32,78 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-           <ColumnDefinition/>
            <ColumnDefinition Width="Auto"/>
            <ColumnDefinition/>
            <ColumnDefinition Width="Auto"/>
+           <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Trudność: " Grid.Row="0" Grid.Column="0"/>
-        <ComboBox Grid.Row="1" Grid.Column="0"
+        <Label Content="Trudność: " Grid.Row="0" Grid.Column="0"  Margin="10 0 0 0" Style="{StaticResource GridLabel}"/>
+        <ComboBox Grid.Row="1" Grid.Column="0" Margin="10 0 0 0"
                   ItemsSource="{Binding Source={local:EnumBindingSource {x:Type data:Difficulty}}}" 
-                  SelectedItem="{Binding SelectedDifficulty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                  SelectedItem="{Binding SelectedDifficulty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  Style="{StaticResource GirdComboBox}"/>
         <Button Grid.Row="1" Grid.Column="1" 
-                Height="20" Width="20" 
-                Style="{StaticResource BasicButton}"
+                Height="25" Width="25" 
+                Margin="5"
+                HorizontalAlignment="Left"
+                Style="{StaticResource RoundedCleanButton}"
                 Command="{Binding RemoveDifficultyFilterCommand, Mode=OneWay}"/>
 
-        <Label Content="Piorytet: " Grid.Row="2" Grid.Column="0"/>
+        <Label Content="Piorytet: " Grid.Row="2" Margin="10 0 0 0" Grid.Column="0" Style="{StaticResource GridLabel}"/>
         <ComboBox Grid.Row="3" Grid.Column="0"
+                  Margin="10 0 0 0"
                   ItemsSource="{Binding Source={local:EnumBindingSource {x:Type data:Priority}}}" 
-                  SelectedItem="{Binding SelectedPriority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                  SelectedItem="{Binding SelectedPriority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  Style="{StaticResource GirdComboBox}"/>
         <Button Grid.Row="3" Grid.Column="1" 
-                Height="20" Width="20" 
-                Style="{StaticResource BasicButton}"
+                Height="25" Width="25" 
+                Margin="5"
+                HorizontalAlignment="Left"
+                Style="{StaticResource RoundedCleanButton}"
                 Command="{Binding RemovePriorityFilterCommand, Mode=OneWay}"/>
 
-        <Label Content="Dzień start: " Grid.Row="0" Grid.Column="2"/>
+        <Label Content="Od dnia: " Grid.Row="0" Grid.Column="2" Style="{StaticResource GridLabel}"/>
         <StackPanel Grid.Row="1" Grid.Column="2">
             <DatePicker SelectedDate="{Binding SelectedStartDate, UpdateSourceTrigger=PropertyChanged}"
-                        DisplayDate="02/2021"/>
+                        DisplayDateStart="01/02/2021"
+                        Style="{StaticResource GirdDatePicker}"
+                        Width="200"
+                        HorizontalAlignment="Left"/>
         </StackPanel>
         <Button Grid.Row="1" Grid.Column="3" 
-                Height="20" Width="20" 
-                Style="{StaticResource BasicButton}"
-                Command="{Binding RemoveStartDateFilterCommand, Mode=OneWay}"/>
+                Height="25" Width="25" 
+                Margin="5"
+                Style="{StaticResource RoundedCleanButton}"
+                Command="{Binding RemoveStartDateFilterCommand, Mode=OneWay}"
+                HorizontalAlignment="Left"/>
 
-        <Label Content="Dzień koniec: " Grid.Row="2" Grid.Column="2"/>
+        <Label Content="Do dnia: " Grid.Row="2" Grid.Column="2" Style="{StaticResource GridLabel}"/>
         <StackPanel Grid.Row="3" Grid.Column="2">
             <DatePicker SelectedDate="{Binding SelectedEndDate, UpdateSourceTrigger=PropertyChanged}"
-                        DisplayDate="02/2021"/>
+                        DisplayDate="02/02/02"
+                        Style="{StaticResource GirdDatePicker}"
+                        Width="200"
+                        HorizontalAlignment="Left"/>
         </StackPanel>
         <Button Grid.Row="3" Grid.Column="4" 
-                Height="20" Width="20" 
-                Style="{StaticResource BasicButton}"
-                Command="{Binding RemoveEndDateFilterCommand, Mode=OneWay}"/>
+                Height="25" Width="25" 
+                Margin="5"
+                Style="{StaticResource RoundedCleanButton}"
+                Command="{Binding RemoveEndDateFilterCommand, Mode=OneWay}"
+                HorizontalAlignment="Left"/>
 
-        <TextBox  Grid.Row="4" Grid.Column="0" Text="{Binding SelectedText, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <TextBox  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                  Text="{Binding SelectedText, UpdateSourceTrigger=PropertyChanged}"
+                  Style="{StaticResource GridTextBox}"
+                  Margin="50 10 10 10"/>
         <Button  Grid.Row="4" Grid.Column="2" Content="Reset"
-                 Command="{Binding ResetFiltersCommand}"/>
+                 Command="{Binding ResetFiltersCommand}"
+                 Style="{StaticResource BorderButton}"
+                 Width="100"
+                 Margin="5"
+                 FontWeight="Bold"/>
 
         <DataGrid Grid.Row="6" Grid.ColumnSpan="4" Grid.Column="0" ItemsSource="{Binding Source={StaticResource X_CVS}}"
                   Style="{StaticResource MainDataGrid}" 
@@ -97,7 +120,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                    
-                <DataGridTextColumn  Binding="{Binding Content}" IsReadOnly="true" MinWidth="250" Width="*" FontSize="{StaticResource FontSizeMedium}"/>
+                <DataGridTextColumn  Binding="{Binding Content}" IsReadOnly="true" MinWidth="150" Width="*" FontSize="{StaticResource FontSizeMedium}"/>
 
                 <DataGridTextColumn  Binding="{Binding Difficulty}" IsReadOnly="true"/>
                 
@@ -105,7 +128,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <TextBlock Text="{Binding DateCreated, StringFormat=dd.MM.yyyy}" Foreground="{StaticResource SurfaceBrush}" FontWeight="Normal"/>
+                                <TextBlock Text="{Binding DateCreated, StringFormat=dd.MM.yyyy}" FontWeight="Normal"/>
                                 <TextBlock Text="{Binding DateToFinish, StringFormat=dd.MM.yyyy}"/>
                             </StackPanel>
                         </DataTemplate>

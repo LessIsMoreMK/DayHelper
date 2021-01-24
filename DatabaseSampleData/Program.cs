@@ -398,6 +398,39 @@ namespace DatabaseSampleData
             };
             #endregion
 
+            #region Task Deleted
+            var taskdeleted = new TaskDeleted
+            {
+                Content = "Dodatkowe zadanie z polskiego",
+                Finished = false,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Trudne,
+                DateCreated = DateTime.Now.AddDays(-5),
+                DateToFinish = DateTime.Now.AddDays(-3),
+                TaskList = tasklist2,
+            };
+            var taskdeleted2 = new TaskDeleted
+            {
+                Content = "Książka",
+                Finished = false,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Trudne,
+                DateCreated = DateTime.Now.AddDays(-4),
+                DateToFinish = DateTime.Now.AddDays(-3),
+                TaskList = tasklist4,
+            };
+            var taskdeleted3 = new TaskDeleted
+            {
+                Content = "Zadanie dom",
+                Finished = false,
+                Priority = Priority.Normalne,
+                Difficulty = Difficulty.Trudne,
+                DateCreated = DateTime.Now.AddDays(-2),
+                DateToFinish = DateTime.Now.AddDays(-1),
+                TaskList = tasklist2,
+            };
+            #endregion
+
             using (var context = new DayHelperContext())
             {
                 context.TaskLists.AddRange(new List<TaskList> { tasklist, tasklist2, tasklist3, tasklist4 });
@@ -405,6 +438,7 @@ namespace DatabaseSampleData
                 context.Tasks.AddRange(new List<Task> { task11, task12, task13, task14, task15});
                 context.Tasks.AddRange(new List<Task> { task16, task17, task18, task19, task20, task21, task22, task23, task24, task25 });
                 context.Tasks.AddRange(new List<Task> { task25, task26, task27, task28, task29, task30, task31, task22, task33, task34, task35 });
+                context.TaskDeleted.AddRange(new List<TaskDeleted> { taskdeleted, taskdeleted2, taskdeleted3 });
                 context.SaveChanges();
             }
         }
