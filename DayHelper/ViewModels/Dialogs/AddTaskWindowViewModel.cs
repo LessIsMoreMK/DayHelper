@@ -2,11 +2,11 @@
 
 namespace DayHelper
 {
-    public class ClockDialogViewModel : WindowViewModel
+    public class AddTaskWindowViewModel : WindowViewModel
     {
         #region Private Fields
 
-        
+
         #endregion
 
         #region Commands
@@ -14,7 +14,7 @@ namespace DayHelper
 
         #region Constructor
 
-        public ClockDialogViewModel(Window window) : base(window)
+        public AddTaskWindowViewModel(Window window) : base(window)
         {
 
         }

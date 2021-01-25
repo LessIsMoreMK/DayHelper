@@ -403,7 +403,7 @@ namespace DayHelper
             var src = e.Item as Task;
             if (src == null)
                 e.Accepted = false;
-            else if (SelectedEndDate <= src.DateToFinish) //TODO: Check validity
+            else if (SelectedEndDate <= src.DateToFinish)
                 e.Accepted = false;
         }
         public void AddEndDateFilter()

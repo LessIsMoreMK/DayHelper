@@ -24,9 +24,6 @@ namespace DayHelper
         private void ApplicationSetup()
         {
             IoC.Setup();
-
-            // Bind UI Manager
-            IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
         }
 
     }

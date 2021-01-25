@@ -101,7 +101,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Dialogs\ClockWindow.xaml">
+    <Page Include="Views\Dialogs\RemoveListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dialogs\AddListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dialogs\AddTaskWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dialogs\ClockWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -171,16 +183,25 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
-    <Compile Include="Dialogs\ClockWindow.xaml.cs">
+    <Compile Include="ViewModels\Dialogs\RemoveListWindowViewModel.cs" />
+    <Compile Include="ViewModels\Dialogs\AddListWindowViewModel.cs" />
+    <Compile Include="ViewModels\Dialogs\AddTaskWindowViewModel.cs" />
+    <Compile Include="Views\Dialogs\RemoveListWindow.xaml.cs">
+      <DependentUpon>RemoveListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\AddListWindow.xaml.cs">
+      <DependentUpon>AddListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\AddTaskWindow.xaml.cs">
+      <DependentUpon>AddTaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\ClockWindow.xaml.cs">
       <DependentUpon>ClockWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EnumBindingSourceExtension.cs" />
-    <Compile Include="Helpers\IUIManager.cs" />
-    <Compile Include="Helpers\SendingMails.cs" />
+    <Compile Include="Helpers\MessageBoxDialogViewModel.cs" />
     <Compile Include="Helpers\TaskListMessageToken.cs" />
-    <Compile Include="Helpers\UIManager.cs" />
     <Compile Include="Helpers\ViewCollectionViewSourceMessageToken.cs" />
-    <Compile Include="ViewModels\Dialogs\BaseDialogViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Helpers\IoC.cs" />
     <Compile Include="AttachedProperties\NoNavigationHistory.cs" />
@@ -190,13 +211,11 @@
     <Compile Include="Helpers\BasePage.cs" />
     <Compile Include="ValueConverters\IoCConverter.cs" />
     <Compile Include="ViewModels\Dialogs\ClockDialogViewModel.cs" />
-    <Compile Include="ViewModels\Dialogs\DialogViewModel.cs" />
     <Compile Include="ViewModels\Pages\DeletedViewModel.cs" />
     <Compile Include="ViewModels\Pages\AnalyzeViewModel.cs" />
     <Compile Include="ViewModels\Pages\FinishedViewModel.cs" />
     <Compile Include="ViewModels\Pages\ListsViewModel.cs" />
     <Compile Include="ViewModels\Pages\TaskViewModel.cs" />
-    <Compile Include="ViewModels\Dialogs\MessageBoxDialogViewModel.cs" />
     <Compile Include="Views\Pages\AnalzyePage.xaml.cs">
       <DependentUpon>AnalzyePage.xaml</DependentUpon>
     </Compile>

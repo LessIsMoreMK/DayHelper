@@ -13,7 +13,11 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <ItemsControl ItemsSource="{Binding TaskLists}" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ItemsControl ItemsSource="{Binding TaskLists}" Grid.Row="1" Grid.ColumnSpan="2">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button Content="{Binding Path=.}" Margin="5" VerticalContentAlignment="Stretch" Height="100" 
@@ -22,10 +26,15 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            <Button VerticalAlignment="Top" Grid.Row="0"
+            <Button VerticalAlignment="Top" Grid.Row="0" Grid.Column="0"
                 Style="{StaticResource ListButton}"
                 Content="{StaticResource FontAwesomeAddIcon}" 
-                Command="{Binding GoToTaskCommand}"
+                Command="{Binding CreateListCommand}"
+                FontFamily="{StaticResource FontAwesome}" Margin="5" VerticalContentAlignment="Stretch" Height="100"/>
+            <Button VerticalAlignment="Top" Grid.Row="0" Grid.Column="1"
+                Style="{StaticResource ListButton}"
+                Content="{StaticResource FontAwesomeMinusIcon}" 
+                Command="{Binding RemoveListCommand}"
                 FontFamily="{StaticResource FontAwesome}" Margin="5" VerticalContentAlignment="Stretch" Height="100"/>
         </Grid>
     </ScrollViewer>

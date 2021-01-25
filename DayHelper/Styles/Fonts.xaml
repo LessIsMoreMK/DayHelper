@@ -23,6 +23,7 @@
     <system:String x:Key="FontAwesomeThemeIcon">&#xf042;</system:String>
     <system:String x:Key="FontAwesomeClockIcon">&#xf017;</system:String>
     <system:String x:Key="FontAwesomeAddIcon">&#xf055;</system:String>
+    <system:String x:Key="FontAwesomeMinusIcon">&#xf056;</system:String>
     
     <system:String x:Key="FontAwesomeEditIcon">&#xf14b;</system:String>
     <system:String x:Key="FontAwesomeDeleteIcon">&#xf1f8;</system:String>

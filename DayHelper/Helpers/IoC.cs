@@ -10,8 +10,6 @@ namespace DayHelper
 
         public static ApplicationViewModel Application { get; set; } = IoC.Get<ApplicationViewModel>();
 
-        public static IUIManager UI => IoC.Get<IUIManager>();
-
         #endregion
 
         #region Construction

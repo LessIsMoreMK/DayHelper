@@ -84,6 +84,24 @@ namespace DayHelper.DataModel
             context.Tasks.Add(task);
             context.SaveChanges();
         }
+        public void AddList(string name)
+        {
+            var tasklist = new TaskList
+            {
+                Name = name,
+            };
+            context.TaskLists.Add(tasklist);
+            context.SaveChanges();
+        }
+        public void RemoveList(string name)
+        {
+            TaskList tasklist = context.TaskLists.Where(t => t.Name == name).First();
+            if(tasklist!=null)
+            {
+                context.TaskLists.Remove(tasklist);
+                context.SaveChanges();
+            }
+        }
         #endregion
 
         #region Analyze Methods

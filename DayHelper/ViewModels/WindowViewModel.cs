@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -182,7 +183,8 @@ namespace DayHelper
         }
         private void AddTask()
         {
-            new ClockDialogViewModel(mWindow);
+            AddTaskWindow win2 = new AddTaskWindow();
+            win2.Show();
         }
         private void ChangeTheme()
         {
@@ -198,7 +200,6 @@ namespace DayHelper
                 theme = true;
             }
         }
-
         private Point GetMousePosition()
         {
             var position = Mouse.GetPosition(mWindow);
