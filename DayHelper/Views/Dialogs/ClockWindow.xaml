@@ -9,10 +9,9 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        SizeToContent="WidthAndHeight"
-        MinWidth="{Binding WindowMinimumWidth}"
-        MinHeight="{Binding WindowMinimumHeight}"
-        Title="{Binding Title}">
+        Width="200"
+        Height="200"
+        Title="Pomodoro">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:ClockWindow}">
@@ -58,7 +57,7 @@
                                                        FontFamily="{StaticResource CinzelDecorative}"
                                                        Foreground="{DynamicResource PrimaryBrush}"
                                                        Margin="0,0,0,0" 
-                                                       Content="Pomodoro Clock"/>
+                                                       Content="Pomodoro"/>
                                                 </Viewbox>
 
 
@@ -87,15 +86,14 @@
                                             </Grid>
                                         </Grid>
 
-                                        <!-- Page Content -->
+                                        <!-- Widnow Content -->
                                         <Grid Grid.Column="1" Grid.Row="1">
-                                            <Label>asdf</Label>
-                                            <Button Command="{Binding CloseCommand}" 
-                                                        Style="{StaticResource BorderButton}" 
-                                                Padding="25"
-                                                FontWeight="Bold"
-                                                Width="100"
-                                                        Content="Zamknij"/>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
                                         </Grid>
                                     </Grid>
                                 </Grid>

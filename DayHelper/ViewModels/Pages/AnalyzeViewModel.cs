@@ -74,21 +74,29 @@ namespace DayHelper
         {
             StatisticData.Add(new Data("Aktywne zadania: ", repository.AmountOfActiveTasks()));
             StatisticData.Add(new Data("Skończone zadania: ", repository.AmountOfFinishedTasks()));
-            
+            StatisticData.Add(new Data("Ilość zadań znajdujących się w koszu: ", repository.AmountOfFDeletedTasks()));
+            StatisticData.Add(new Data("Średnia ilość dni potrzebnych na wykonanie zadania: ", repository.AverageFinishTime()));
+            StatisticData.Add(new Data("Ilość dni najdłuższej trwającego zakończonego zadania: ", repository.DaysOfLongestTask()));
+
             StatisticData.Add(new Data("Wykonanych zadań na poziomie trudne: ", repository.AmountOfFinishedHardTasks()));
             StatisticData.Add(new Data("Wykonanych zadań na poziomie średnie: ", repository.AmountOfFinishedMediumTasks()));
             StatisticData.Add(new Data("Wykonanych zadań na poziomie łatwe: ", repository.AmountOfFinishedEasyTasks()));
             StatisticData.Add(new Data("Wykonanych zadań bez określonego poziomu: ", repository.AmountOfFinishedUndefinedTasks()));
             
-            StatisticData.Add(new Data("Wykonanych zadań o piorytecie normalnym: ", repository.AmountOfFinishedHardTasks()));
-            StatisticData.Add(new Data("Wykonanych zadań o piorytecie ważnym: ", repository.AmountOfFinishedImportantTasks()));
-            StatisticData.Add(new Data("Wykonanych zadań o piorytecie krytycznym: ", repository.AmountOfFinishedCriticalTasks()));
-            StatisticData.Add(new Data("Wykonanych zadań bez określonego piorytetu: ", repository.AmountOfFinishedUndefinedPriorityTasks()));
+            StatisticData.Add(new Data("Wykonanych zadań o priorytecie normalnym: ", repository.AmountOfFinishedHardTasks()));
+            StatisticData.Add(new Data("Wykonanych zadań o priorytecie ważnym: ", repository.AmountOfFinishedImportantTasks()));
+            StatisticData.Add(new Data("Wykonanych zadań o priorytecie krytycznym: ", repository.AmountOfFinishedCriticalTasks()));
+            StatisticData.Add(new Data("Wykonanych zadań bez określonego priorytetu: ", repository.AmountOfFinishedUndefinedPriorityTasks()));
 
-            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadania o piorytecie normlanym: ", repository.AmountOfDaysNeededForFinishingNormalTasks()));
-            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadania o piorytecie ważnym: ", repository.AmountOfDaysNeededForFinishingImportantTasks()));
-            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadania o piorytecie krytycznym: ", repository.AmountOfDaysNeededForFinishingCriticalTasks()));
-            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadania bez określonego piorytetu: ", repository.AmountOfDaysNeededForFinishingUndefinedTasks()));
+            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadania o priorytecie normlanym: ", repository.AmountOfDaysNeededForFinishingNormalTasks()));
+            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadania o priorytecie ważnym: ", repository.AmountOfDaysNeededForFinishingImportantTasks()));
+            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadania o priorytecie krytycznym: ", repository.AmountOfDaysNeededForFinishingCriticalTasks()));
+            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadania bez określonego priorytetu: ", repository.AmountOfDaysNeededForFinishingUndefinedTasks()));
+
+            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie trudnych zadań: ", repository.AmountOfDaysNeededForFinishingHardTasks()));
+            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie średnich zadań: ", repository.AmountOfDaysNeededForFinishingMediumTasks()));
+            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie łatwych zadań: ", repository.AmountOfDaysNeededForFinishingCriticalTasks()));
+            StatisticData.Add(new Data("Średnia ilość dni potrzebna na wykonanie zadań bez okreśłonego poziomu: ", repository.AmountOfDaysNeededForFinishingEasyTasks()));
         }
 
         #endregion

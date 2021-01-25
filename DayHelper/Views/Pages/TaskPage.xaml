@@ -50,7 +50,7 @@
                 Style="{StaticResource RoundedCleanButton}"
                 Command="{Binding RemoveDifficultyFilterCommand, Mode=OneWay}"/>
 
-        <Label Content="Piorytet: " Grid.Row="2" Margin="10 0 0 0" Grid.Column="0" Style="{StaticResource GridLabel}"/>
+        <Label Content="Priorytet: " Grid.Row="2" Margin="10 0 0 0" Grid.Column="0" Style="{StaticResource GridLabel}"/>
         <ComboBox Grid.Row="3" Grid.Column="0"
                   Margin="10 0 0 0"
                   ItemsSource="{Binding Source={local:EnumBindingSource {x:Type data:Priority}}}" 
@@ -66,7 +66,6 @@
         <Label Content="Od dnia: " Grid.Row="0" Grid.Column="2" Style="{StaticResource GridLabel}"/>
         <StackPanel Grid.Row="1" Grid.Column="2">
             <DatePicker SelectedDate="{Binding SelectedStartDate, UpdateSourceTrigger=PropertyChanged}"
-                        DisplayDateStart="01/02/2021"
                         Style="{StaticResource GirdDatePicker}"
                         Width="200"
                         HorizontalAlignment="Left"/>
@@ -81,7 +80,6 @@
         <Label Content="Do dnia: " Grid.Row="2" Grid.Column="2" Style="{StaticResource GridLabel}"/>
         <StackPanel Grid.Row="3" Grid.Column="2">
             <DatePicker SelectedDate="{Binding SelectedEndDate, UpdateSourceTrigger=PropertyChanged}"
-                        DisplayDate="02/02/02"
                         Style="{StaticResource GirdDatePicker}"
                         Width="200"
                         HorizontalAlignment="Left"/>

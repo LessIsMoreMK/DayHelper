@@ -86,7 +86,7 @@
                                             </Grid>
                                         </Grid>
 
-                                        <!-- Page Content -->
+                                        <!-- Window Content -->
                                         <Grid Grid.Column="1" Grid.Row="1">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>

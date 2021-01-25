@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using DayHelper.DataModel;
+using System.Windows;
 
 namespace DayHelper
 {
@@ -10,6 +11,11 @@ namespace DayHelper
         {
             InitializeComponent();
             DataContext = new AddTaskWindowViewModel(this);
+        }
+        public AddTaskWindow(int taskID)
+        {
+            InitializeComponent();
+            DataContext = new AddTaskWindowViewModel(this, taskID);
         }
 
         #endregion

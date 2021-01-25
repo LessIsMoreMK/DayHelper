@@ -270,7 +270,8 @@ namespace DayHelper
         }
         public void Edit()
         {
-
+            AddTaskWindow win2 = new AddTaskWindow(SelectedItem.Id);
+            win2.Show();
         }
         public void Notification()
         {

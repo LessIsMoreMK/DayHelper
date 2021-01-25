@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace DayHelper.DataModel
@@ -102,6 +103,15 @@ namespace DayHelper.DataModel
                 context.SaveChanges();
             }
         }
+        public void AddTask(Task task)
+        {
+            context.Tasks.AddOrUpdate(task);
+            context.SaveChanges();
+        }
+        public Task GetTask(int taskID)
+        {
+            return context.Tasks.Find(taskID);
+        }
         #endregion
 
         #region Analyze Methods
@@ -194,6 +204,83 @@ namespace DayHelper.DataModel
                 amount += 1;
             }
             return (int)(sum / amount);
+        }
+
+        public int AmountOfDaysNeededForFinishingEasyTasks()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true) && (t.Difficulty == Difficulty.Łatwe)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach (Task l in list)
+            {
+                sum += (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum / amount);
+        }
+        public int AmountOfDaysNeededForFinishingMediumTasks()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true) && (t.Difficulty == Difficulty.Średnie)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach (Task l in list)
+            {
+                sum += (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum / amount);
+        }
+        public int AmountOfDaysNeededForFinishingHardTasks()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true) && (t.Difficulty == Difficulty.Trudne)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach (Task l in list)
+            {
+                sum += (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum / amount);
+        }
+        public int AmountOfDaysNeededForFinishingUndefinedDiffciltyTasks()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true) && (t.Difficulty == Difficulty.Niezdefiniowana)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach (Task l in list)
+            {
+                sum += (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum / amount);
+        }
+        public int AmountOfFDeletedTasks()
+        {
+            return context.TaskDeleted.ToList().Count();
+        }
+        public int AverageFinishTime()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach (Task l in list)
+            {
+                sum += (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum / amount);
+        }
+        public int DaysOfLongestTask()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true)).ToList();
+
+            double sum = 0;
+            foreach (Task l in list)
+            {
+                if ((l.DateToFinish - l.DateCreated).TotalDays > sum)
+                    sum = (l.DateToFinish - l.DateCreated).TotalDays;
+            }
+            return (int)sum;
         }
         #endregion
 

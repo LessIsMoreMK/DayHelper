@@ -3,15 +3,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:data="clr-namespace:DayHelper.DataModel;assembly=DayHelper.DataModel"
         xmlns:local="clr-namespace:DayHelper"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Width="300"
+        Width="470"
         Height="400"
-        Title="">
+        Title="Dodaj Zadanie">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:AddTaskWindow}">
@@ -57,7 +58,7 @@
                                                        FontFamily="{StaticResource CinzelDecorative}"
                                                        Foreground="{DynamicResource PrimaryBrush}"
                                                        Margin="0,0,0,0" 
-                                                       Content="Pomodoro Clock"/>
+                                                       Content="Dodwanie Zadania"/>
                                                 </Viewbox>
 
 
@@ -86,15 +87,88 @@
                                             </Grid>
                                         </Grid>
 
-                                        <!-- Page Content -->
+                                        <!-- Widnow Content -->
                                         <Grid Grid.Column="1" Grid.Row="1">
-                                            <Label>asdf</Label>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Label Style="{StaticResource GridLabel}"
+                                                   HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                   Grid.Row="0" Grid.Column="0">Treść zadania:</Label>
+                                            <TextBox  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
+                                                      HorizontalAlignment="Left"
+                                                      Text="{Binding SelectedText, UpdateSourceTrigger=PropertyChanged}"
+                                                      Style="{StaticResource GridTextBox}"
+                                                      Height="40" Width="300"
+                                                      VerticalContentAlignment="Center"
+                                                      Margin="10"/>
+
+                                            <Label Style="{StaticResource GridLabel}"
+                                                   HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                   Grid.Row="1" Grid.Column="0">Trudność:</Label>
+                                            <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                                                      Margin="10"
+                                                      ItemsSource="{Binding Source={local:EnumBindingSource {x:Type data:Difficulty}}}" 
+                                                      SelectedItem="{Binding SelectedDifficulty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                      Style="{StaticResource GirdComboBox}"/>
+                                            
+                                            <Label Style="{StaticResource GridLabel}"
+                                                   HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                   Grid.Row="2" Grid.Column="0">Priorytet:</Label>
+                                            <ComboBox Grid.Row="2" Grid.Column="1"
+                                                      Grid.ColumnSpan="3"
+                                                      Margin="10"
+                                                      ItemsSource="{Binding Source={local:EnumBindingSource {x:Type data:Priority}}}" 
+                                                      SelectedItem="{Binding SelectedPriority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                      Style="{StaticResource GirdComboBox}"/>
+                                            
+                                            <Label Style="{StaticResource GridLabel}"
+                                                   HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                   Grid.Row="3" Grid.Column="0">Lista:</Label>
+                                            <ComboBox Grid.Row="3" Grid.Column="1"
+                                                      Grid.ColumnSpan="3"
+                                                      Margin="10"
+                                                      ItemsSource="{Binding TaskListName, Mode=TwoWay}" 
+                                                      SelectedValue="{Binding SelectedTaskList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                      Style="{StaticResource GirdComboBox}"/>
+
+                                            <Label Style="{StaticResource GridLabel}"
+                                                   HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                   Grid.Row="4" Grid.Column="0">Zakończenie:</Label>
+                                            <StackPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" 
+                                                      HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                <DatePicker SelectedDate="{Binding SelectedEndDate, UpdateSourceTrigger=PropertyChanged}"
+                                                            Style="{StaticResource GirdDatePicker}"
+                                                            Width="200"
+                                                            HorizontalAlignment="Left"/>
+                                            </StackPanel>
+
                                             <Button Command="{Binding CloseCommand}" 
-                                                        Style="{StaticResource BorderButton}" 
-                                                Padding="25"
-                                                FontWeight="Bold"
-                                                Width="100"
-                                                        Content="Zamkfdsfsfnij"/>
+                                                    Style="{StaticResource BorderButton}" 
+                                                    FontWeight="Bold"
+                                                    Width="100"
+                                                    Content="Anuluj"
+                                                    Grid.Row="6" Grid.Column="0"
+                                                    Grid.ColumnSpan="2"/>
+                                            <Button Command="{Binding SaveCommand}" 
+                                                    Style="{StaticResource BorderButton}" 
+                                                    FontWeight="Bold"
+                                                    Width="100"
+                                                    Content="Stwórz"
+                                                    Grid.Row="6" Grid.Column="2" 
+                                                    Grid.ColumnSpan="2" />
                                         </Grid>
                                     </Grid>
                                 </Grid>
