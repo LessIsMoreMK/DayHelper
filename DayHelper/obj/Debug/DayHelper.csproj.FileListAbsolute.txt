@@ -172,3 +172,5 @@ C:\Users\Maciej\Desktop\EBook\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.Fod
 C:\Users\Maciej\Desktop\EBook\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.CopyComplete
 C:\Users\Maciej\Desktop\EBook\DayHelper\DayHelper\obj\Debug\DayHelper.exe
 C:\Users\Maciej\Desktop\EBook\DayHelper\DayHelper\obj\Debug\DayHelper.pdb
+C:\Users\Maciej\Desktop\EBook\DayHelper\DayHelper\bin\Debug\System.Drawing.Common.dll
+C:\Users\Maciej\Desktop\EBook\DayHelper\DayHelper\obj\Debug\DayHelper.csproj.ResolveComReference.cache

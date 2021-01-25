@@ -13,7 +13,6 @@
         Height="600" 
         Width="1100">
     
-    
     <Window.InputBindings>
         <KeyBinding Command="{Binding ListsCommand}"
               Gesture="CTRL+L"/>

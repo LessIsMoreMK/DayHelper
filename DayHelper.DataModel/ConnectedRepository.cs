@@ -9,6 +9,7 @@ namespace DayHelper.DataModel
     {
         private readonly DayHelperContext context = new DayHelperContext();
 
+        #region Display Methods
         public List<Task> GetAllTasks()
         {
             return context.Tasks.Where(t => t.Finished == false).ToList();
@@ -25,6 +26,9 @@ namespace DayHelper.DataModel
         {
             return context.TaskLists.ToList();
         }
+        #endregion
+
+        #region Commands Methods
         public void DeleteTask(TaskDeleted deleted)
         {
             context.TaskDeleted.Remove(deleted);
@@ -80,5 +84,100 @@ namespace DayHelper.DataModel
             context.Tasks.Add(task);
             context.SaveChanges();
         }
+        #endregion
+
+        #region Analyze Methods
+        public int AmountOfActiveTasks()
+        {
+            return context.Tasks.Where(t => t.Finished == false).ToList().Count();
+        }
+        public int AmountOfFinishedTasks()
+        {
+            return context.Tasks.Where(t => t.Finished == true).ToList().Count();
+        }
+        public int AmountOfFinishedHardTasks()
+        {
+            return context.Tasks.Where(t => (t.Finished == true) && (t.Difficulty == Difficulty.Trudne)).ToList().Count();
+        }
+        public int AmountOfFinishedMediumTasks()
+        {
+            return context.Tasks.Where(t => (t.Finished == true) && (t.Difficulty == Difficulty.Średnie)).ToList().Count();
+        }
+        public int AmountOfFinishedEasyTasks()
+        {
+            return context.Tasks.Where(t => (t.Finished == true) && (t.Difficulty == Difficulty.Łatwe)).ToList().Count();
+        }
+        public int AmountOfFinishedUndefinedTasks()
+        {
+            return context.Tasks.Where(t => (t.Finished == true) && (t.Difficulty == Difficulty.Niezdefiniowana)).ToList().Count();
+        }
+
+        public int AmountOfFinishedNormalTasks()
+        {
+            return context.Tasks.Where(t => (t.Finished == true) && (t.Priority == Priority.Normalne)).ToList().Count();
+        }
+        public int AmountOfFinishedImportantTasks()
+        {
+            return context.Tasks.Where(t => (t.Finished == true) && (t.Priority == Priority.Ważne)).ToList().Count();
+        }
+        public int AmountOfFinishedCriticalTasks()
+        {
+            return context.Tasks.Where(t => (t.Finished == true) && (t.Priority == Priority.Krytyczne)).ToList().Count();
+        }
+        public int AmountOfFinishedUndefinedPriorityTasks()
+        {
+            return context.Tasks.Where(t => (t.Finished == true) && (t.Priority == Priority.Niezdefiniowany)).ToList().Count();
+        }
+
+        public int AmountOfDaysNeededForFinishingNormalTasks()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true) && (t.Priority == Priority.Normalne)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach(Task l in list)
+            {
+                sum +=  (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum/amount);
+        }
+        public int AmountOfDaysNeededForFinishingImportantTasks()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true) && (t.Priority == Priority.Ważne)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach (Task l in list)
+            {
+                sum += (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum / amount);
+        }
+        public int AmountOfDaysNeededForFinishingCriticalTasks()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true) && (t.Priority == Priority.Krytyczne)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach (Task l in list)
+            {
+                sum += (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum / amount);
+        }
+        public int AmountOfDaysNeededForFinishingUndefinedTasks()
+        {
+            List<Task> list = context.Tasks.Where(t => (t.Finished == true) && (t.Priority == Priority.Niezdefiniowany)).ToList();
+
+            double sum = 0, amount = 0;
+            foreach (Task l in list)
+            {
+                sum += (l.DateToFinish - l.DateCreated).TotalDays;
+                amount += 1;
+            }
+            return (int)(sum / amount);
+        }
+        #endregion
+
     }
 }

@@ -7,8 +7,45 @@
       mc:Ignorable="d"         
       d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid Margin="5">
-        <Label Content="Analyze"></Label>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0" 
+                Style="{StaticResource BorderButton}" 
+                Width="150" Margin="5"
+                Content="Exportuj"
+                FontWeight="Bold"
+                Command="{Binding ExportCommand, Mode=OneWay}"
+                CommandParameter="{Binding ElementName=dataGrid, Mode=OneWay}"/>
+
+        <Button Grid.Row="0" Grid.Column="1" 
+                Style="{StaticResource BorderButton}" 
+                Width="150" Margin="5"
+                Content="Wydrukuj"
+                FontWeight="Bold"
+                Command="{Binding PrintCommand, Mode=OneWay}"
+                CommandParameter="{Binding ElementName=dataGrid, Mode=OneWay}"/>
+        
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" ItemsSource="{Binding StatisticData}"
+                  x:Name="dataGrid" 
+                  Margin="20 0 0 0"
+                  Style="{StaticResource MainDataGrid}"
+                  RowStyle="{StaticResource MainDataGridRow}"
+                  CellStyle="{StaticResource MainDataGridCell}"
+                  HeadersVisibility="None">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Binding="{Binding Description}" IsReadOnly="true" FontSize="{StaticResource FontSizeMedium}"/>
+                    <DataGridTextColumn  Binding="{Binding Value}" IsReadOnly="true"/>
+                </DataGrid.Columns>
+            </DataGrid>
     </Grid>
-    
+
 </local:BasePage>
